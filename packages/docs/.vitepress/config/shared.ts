@@ -1,5 +1,5 @@
 import { defineConfig, HeadConfig } from 'vitepress'
-import { zhSearch } from './zh'
+import { esSearch } from './es'
 
 // TODO:
 // export const META_IMAGE = 'https://router.vuejs.org/social.png'
@@ -135,13 +135,14 @@ export const sharedConfig = defineConfig({
     ],
 
     footer: {
-      copyright: 'Copyright © 2014-present Evan You, Eduardo San Martin Morote',
-      message: 'Released under the MIT License.',
+      copyright:
+        'Copyright © 2014-presente Evan You, Eduardo San Martin Morote',
+      message: 'Publicado bajo licencia MIT.',
     },
 
     editLink: {
       pattern: 'https://github.com/vuejs/router/edit/main/packages/docs/:path',
-      text: 'Suggest changes',
+      text: 'Sugiere cambios',
     },
 
     search: {
@@ -150,7 +151,7 @@ export const sharedConfig = defineConfig({
         appId: 'BTNTW3I1XP',
         apiKey: '771d10c8c5cc48f7922f15048b4d931c',
         indexName: 'next_router_vuejs',
-        locales: { ...zhSearch },
+        locales: { ...esSearch },
       },
     },
 
