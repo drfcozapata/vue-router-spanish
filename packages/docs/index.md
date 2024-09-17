@@ -2,39 +2,39 @@
 layout: home
 
 title: Vue Router
-titleTemplate: The official Router for Vue.js
+titleTemplate: El Router oficial para Vue.js
 
-hero: 
+hero:
   name: Vue Router
-  text: The official Router for Vue.js
-  tagline: Expressive, configurable and convenient routing for Vue.js
+  text: El Router oficial para Vue.js
+  tagline: Enrutamiento expresivo, configurable y conveniente para Vue.js
   image:
     src: /logo.svg
     alt: Vue Router
   actions:
     - theme: brand
-      text: Get Started
+      text: Comenzar
       link: /installation
     - theme: cta vueschool
-      text: Free Video Course
+      text: Video Curso Gratuito
       link: https://vueschool.io/courses/vue-router-4-for-everyone?friend=vuerouter&utm_source=vuerouter&utm_medium=link&utm_campaign=homepage
     - theme: cta vue-mastery
-      text: Get the Vue Router Cheat Sheet
+      text: Descarga la Hoja de Trucos de Vue Router
       link: https://www.vuemastery.com/vue-router?coupon=ROUTER-DOCS&via=eduardo
 
 features:
-  - title: 🛣 Expressive route syntax
-    details: Define static and dynamic routes with an intuitive and powerful syntax.
-  - title: 🛑 Fine-grained Navigation control
-    details: Intercept any navigation and precisely control its outcome.
-  - title: 🧱 Component-based configuration
-    details: Map each route to the component that should display.
-  - title: 🔌 History modes
-    details: Choose between HTML5, Hash or Memory history modes.
-  - title: 🎚 Scroll control
-    details: Precisely control the scroll position in every page.
-  - title: 🌐 Automatic Encoding
-    details: Directly use unicode characters (你好) in your code.
+  - title: 🛣 Sintaxis de rutas expresiva
+    details: Define rutas estáticas y dinámicas con una sintaxis intuitiva y potente.
+  - title: 🛑 Control detallado de la navegación
+    details: Intercepta cualquier navegación y controla con precisión su resultado.
+  - title: 🧱 Configuración basada en componentes
+    details: Asigna cada ruta al componente que debe mostrarse.
+  - title: 🔌 Historial de modos
+    details: Elige entre los modos de historial HTML5, Hash o Memoria.
+  - title: 🎚 Control de desplazamiento
+    details: Controla con precisión la posición de desplazamiento en cada página.
+  - title: 🌐 Codificación automática
+    details: Utiliza directamente caracteres unicode (你好) en tu código.
 ---
 
 <script setup>

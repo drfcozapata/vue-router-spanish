@@ -6,8 +6,9 @@ import { useData } from 'vitepress'
 const { site } = useData()
 const translations = {
   en: 'Become a sponsor',
-  'en-US': 'Become a Sponsor!',
+  'en-US': '¡Conviértete en Patrocinador!',
   'zh-CN': '成为赞助者！',
+  'es-ES': '¡Conviértete en Patrocinador!',
 }
 </script>
 
@@ -37,7 +38,6 @@ const translations = {
   </div>
 </template>
 
-
 <style scoped>
 .become-sponsor {
   font-size: 0.9em;
@@ -47,7 +47,7 @@ const translations = {
   background-color: transparent;
   padding: 0.75em 2em;
   border-radius: 2em;
-  transition: all 0.30s ease;
+  transition: all 0.3s ease;
   box-sizing: border-box;
   border: 2px solid var(--vp-button-brand-hover-bg);
   text-decoration: none;
