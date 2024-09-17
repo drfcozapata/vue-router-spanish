@@ -15,7 +15,8 @@
           />
         </span>
         <span class="description">
-          Get the <span class="highlight">Pinia Cheat Sheet</span> from Vue
+          Descarga la
+          <span class="highlight">Hoja de Trucos de Pinia</span> desde Vue
           Mastery
         </span>
       </a>

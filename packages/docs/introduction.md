@@ -1,24 +1,23 @@
-# Introduction
+# Introducción
 
 <VueSchoolLink
-  href="https://vueschool.io/courses/vue-router-4-for-everyone"
-  title="Learn how to build powerful Single Page Applications with the Vue Router on Vue School"
->Watch a Free Vue Router Video Course</VueSchoolLink>
+href="https://vueschool.io/courses/vue-router-4-for-everyone"
+title="Aprende a crear potentes Aplicaciones de Página Única (SPA) con Vue Router en Vue School"> Ve un Curso de Vídeo Gratuito sobre Vue Router</VueSchoolLink>
 
-Vue Router is the official router for [Vue.js](https://vuejs.org). It deeply integrates with Vue.js core to make building Single Page Applications with Vue.js a breeze. Features include:
+Vue Router es el router oficial para [Vue.js](https://vuejs.org). Se integra profundamente con el núcleo de Vue.js para hacer la construcción de Aplicaciones de Página Única (SPA) con Vue.js una tarea fácil. Sus características incluyen:
 
-- Nested routes mapping
-- Dynamic Routing
-- Modular, component-based router configuration
-- Route params, query, wildcards
-- View transition effects powered by Vue.js' transition system
-- Fine-grained navigation control
-- Links with automatic active CSS classes
-- HTML5 history mode or hash mode
-- Customizable Scroll Behavior
-- Proper encoding for URLs
+- Mapeo de rutas anidadas
+- Enrutamiento Dinámico
+- Configuración modular del router basada en componentes
+- Parámetros de ruta, consultas, comodines
+- Efectos de transición de vista potenciados por el sistema de transición de Vue.js
+- Control detallado de la navegación
+- Enlaces con clases CSS activas automáticas
+- Modo de historial HTML5 o modo hash
+- Comportamiento de desplazamiento personalizable
+- Codificación adecuada de las URL
 
-[Get started](./guide/) or play with the [playground](https://github.com/vuejs/router/tree/main/packages/playground) (see [`README.md`](https://github.com/vuejs/router) to run them).
+[Comienza](./guide/) o juega con el [playground](https://github.com/vuejs/router/tree/main/packages/playground) (consulta [`README.md`](https://github.com/vuejs/router) para ejecutarlos).
 
 <HomeSponsors />
 

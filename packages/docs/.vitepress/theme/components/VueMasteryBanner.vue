@@ -18,10 +18,12 @@
       />
       <div class="vm-banner-wrapper">
         <div class="vm-banner-content">
-          <h1 class="vm-banner-title">Learn Vue with Evan You</h1>
-          <p class="vm-banner-sub">Get 60% off a year of Vue courses</p>
+          <h1 class="vm-banner-title">Aprende Vue con Evan You</h1>
+          <p class="vm-banner-sub">
+            Obtén un 60% de descuento en un año de cursos de Vue
+          </p>
         </div>
-        <button id="vm-banner-cta">Unlock your discount</button>
+        <button id="vm-banner-cta">Desbloquea tu descuento</button>
       </div>
       <button id="vm-banner-close" @click.prevent="closeBanner">
         <span class="close">&times;</span>

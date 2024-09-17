@@ -15,17 +15,19 @@ const asideSponsors = computed(() => {
   return [
     {
       size: 'mini',
-      items: sponsors.platinum.length ? sponsors.platinum.map((sponsor: Sponsor) => ({
-        name: sponsor.alt,
-        url: sponsor.href,
-        img: sponsor.imgSrcLight,
-      })) : [
-        {
-          name: 'Become a sponsor',
-          url: 'https://github.com/sponsors/posva',
-          img: '/your-logo-here.svg'
-        }
-      ],
+      items: sponsors.platinum.length
+        ? sponsors.platinum.map((sponsor: Sponsor) => ({
+            name: sponsor.alt,
+            url: sponsor.href,
+            img: sponsor.imgSrcLight,
+          }))
+        : [
+            {
+              name: 'Become a sponsor',
+              url: 'https://github.com/sponsors/posva',
+              img: '/your-logo-here.svg',
+            },
+          ],
     },
     {
       size: 'xmini',
@@ -50,9 +52,9 @@ const asideSponsors = computed(() => {
   >
     <img width="22" height="22" src="/mp-pinia-logo.svg" />
     <span>
-      <p class="extra-info">Complete guide to</p>
-      <p class="heading">Mastering Pinia</p>
-      <p class="extra-info">written by its creator</p>
+      <p class="extra-info">Guía completa para</p>
+      <p class="heading">Dominar Pinia</p>
+      <p class="extra-info">escrita por su creador</p>
     </span>
   </a>
 
@@ -63,9 +65,9 @@ const asideSponsors = computed(() => {
   >
     <img width="22" height="22" src="/vue-cert-logo.svg" />
     <span>
-      <p class="extra-info">The official</p>
-      <p class="heading">Vue.js Certification</p>
-      <p class="extra-info">Get certified!</p>
+      <p class="extra-info">La</p>
+      <p class="heading">Certificación Vue.js</p>
+      <p class="extra-info">oficial ¡Certifícate!</p>
     </span>
   </a>
 </template>

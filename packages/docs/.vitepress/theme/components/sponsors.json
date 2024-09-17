@@ -1,7 +1,7 @@
 {
-  "platinum": [],
-  "gold": [],
-  "silver": [
+  "platino": [],
+  "oro": [],
+  "plata": [
     {
       "alt": "Route Optimizer and Route Planner Software",
       "href": "https://route4me.com",
@@ -21,7 +21,7 @@
       "imgSrcLight": "https://posva-sponsors.pages.dev/logos/vuemastery-light.svg"
     }
   ],
-  "bronze": [
+  "bronce": [
     {
       "alt": "Storyblok",
       "href": "https://storyblok.com",

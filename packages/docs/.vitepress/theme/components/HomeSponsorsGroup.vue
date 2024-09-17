@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 const { name, size = 140 } = defineProps<{
-  name: 'Gold' | 'Platinum' | 'Silver' | 'Bronze'
+  name: 'Oro' | 'Platino' | 'Plata' | 'Bronce'
   size?: number | string
 }>()
 

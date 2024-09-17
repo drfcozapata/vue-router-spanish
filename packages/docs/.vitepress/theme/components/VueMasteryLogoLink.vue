@@ -11,7 +11,7 @@
       />
     </span>
     <span class="description">
-      Get the <span>Vue Router Cheat Sheet</span> from Vue Mastery
+      Descarga la <span>Hoja de Trucos de Vue Router</span> desde Vue Mastery
     </span>
   </a>
 </template>

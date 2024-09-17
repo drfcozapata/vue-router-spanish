@@ -11,6 +11,7 @@ import status from '../translation-status.json'
 
 const i18nLabels = {
   zh: '该翻译已同步到了 ${date} 的版本，其对应的 commit hash 是 <code>${hash}</code>。',
+  es: 'La traducción se sincroniza con los documentos en ${date} cuyo hash de confirmación es <code>${hash}</code>.',
 }
 
 const theme: Theme = {

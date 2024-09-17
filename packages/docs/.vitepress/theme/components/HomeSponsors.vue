@@ -9,6 +9,8 @@ const translations = {
   'en-US': '¡Conviértete en Patrocinador!',
   'zh-CN': '成为赞助者！',
   'es-ES': '¡Conviértete en Patrocinador!',
+  es: '¡Conviértete en Patrocinador!',
+  'es-VE': '¡Conviértete en Patrocinador!',
 }
 </script>
 
@@ -16,18 +18,14 @@ const translations = {
   <div class="sponsors_outer">
     <div>
       <HomeSponsorsGroup
-        v-if="sponsors.platinum.length"
-        name="Platinum"
+        v-if="sponsors.platino.length"
+        name="Platino"
         size="96"
       />
 
-      <HomeSponsorsGroup v-if="sponsors.gold.length" name="Gold" size="38" />
+      <HomeSponsorsGroup v-if="sponsors.oro.length" name="Oro" size="38" />
 
-      <HomeSponsorsGroup
-        v-if="sponsors.silver.length"
-        name="Silver"
-        size="24"
-      />
+      <HomeSponsorsGroup v-if="sponsors.plata.length" name="Plata" size="24" />
 
       <div class="cta">
         <a class="become-sponsor" href="https://github.com/sponsors/posva">{{

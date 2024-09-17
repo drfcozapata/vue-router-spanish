@@ -11,6 +11,7 @@
     </a>
   </div>
 </template>
+
 <script setup lang="ts">
 import { useData } from 'vitepress'
 
@@ -22,6 +23,7 @@ const translations = {
 }
 defineProps<{ href: string; title: string }>()
 </script>
+
 <style scoped>
 .vueschool {
   margin-top: 20px;
