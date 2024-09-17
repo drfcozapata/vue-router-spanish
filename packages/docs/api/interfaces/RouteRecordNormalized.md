@@ -87,6 +87,14 @@ Arbitrary data attached to the record.
 
 ___
 
+### mods
+
+• **mods**: `Record`\<`string`, `unknown`\>
+
+Contains the original modules for lazy loaded components.
+
+___
+
 ### name
 
 • **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
