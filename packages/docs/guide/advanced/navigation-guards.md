@@ -1,4 +1,4 @@
-# Navigation Guards
+# Protectores de Navegación
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/route-guards"
@@ -7,7 +7,7 @@
 
 As the name suggests, the navigation guards provided by Vue router are primarily used to guard navigations either by redirecting it or canceling it. There are a number of ways to hook into the route navigation process: globally, per-route, or in-component.
 
-## Global Before Guards
+## Global Antes de Protectores
 
 You can register global before guards using `router.beforeEach`:
 

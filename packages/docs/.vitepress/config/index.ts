@@ -34,7 +34,7 @@ export default defineConfig({
     root: {
       label: 'Español',
       lang: 'es-ES',
-      link: 'https://vue-router-es.netlify.app',
+      link: '/',
       ...esConfig,
     },
   },

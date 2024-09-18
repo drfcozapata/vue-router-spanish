@@ -15,8 +15,8 @@ const asideSponsors = computed(() => {
   return [
     {
       size: 'mini',
-      items: sponsors.platinum.length
-        ? sponsors.platinum.map((sponsor: Sponsor) => ({
+      items: sponsors.platino.length
+        ? sponsors.platino.map((sponsor: Sponsor) => ({
             name: sponsor.alt,
             url: sponsor.href,
             img: sponsor.imgSrcLight,
@@ -32,7 +32,7 @@ const asideSponsors = computed(() => {
     {
       size: 'xmini',
       // TODO: use gold instead once I have some
-      items: sponsors.silver.map((sponsor: Sponsor) => ({
+      items: sponsors.plata.map((sponsor: Sponsor) => ({
         name: sponsor.alt,
         url: sponsor.href,
         img: sponsor.imgSrcLight,

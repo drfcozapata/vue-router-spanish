@@ -1,4 +1,4 @@
-# Getting Started
+# Primeros Pasos
 
 <VueSchoolLink
 href="https://vueschool.io/courses/vue-router-4-for-everyone"
@@ -14,7 +14,7 @@ Vue Router is built on Vue's component system. You configure **routes** to tell 
 This guide will assume that you are already familiar with Vue itself. You don't need to be a Vue expert, but you may occasionally need to refer back to [the core Vue documentation](https://vuejs.org/) for more information about certain features.
 :::
 
-## An example
+## Un ejemplo
 
 To introduce some of the main ideas, we're going to consider this example:
 
@@ -27,9 +27,7 @@ Let's start by looking at the root component, `App.vue`.
 ```vue
 <template>
   <h1>Hello App!</h1>
-  <p>
-    <strong>Current route path:</strong> {{ $route.fullPath }}
-  </p>
+  <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
   <nav>
     <RouterLink to="/">Go to Home</RouterLink>
     <RouterLink to="/about">Go to About</RouterLink>
@@ -82,9 +80,7 @@ The `history` option controls how routes are mapped onto URLs and vice versa. Fo
 Once we've created our router instance, we need to register it as a plugin by calling `use()` on our application:
 
 ```js
-createApp(App)
-  .use(router)
-  .mount('#app')
+createApp(App).use(router).mount('#app')
 ```
 
 Or, equivalently:
@@ -142,7 +138,7 @@ const search = computed({
   },
   set(search) {
     router.replace({ query: { search } })
-  }
+  },
 })
 </script>
 ```

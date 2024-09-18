@@ -8,9 +8,8 @@ const translations = {
   en: 'Become a sponsor',
   'en-US': '¡Conviértete en Patrocinador!',
   'zh-CN': '成为赞助者！',
-  'es-ES': '¡Conviértete en Patrocinador!',
   es: '¡Conviértete en Patrocinador!',
-  'es-VE': '¡Conviértete en Patrocinador!',
+  'es-ES': '¡Conviértete en Patrocinador!',
 }
 </script>
 
@@ -29,7 +28,7 @@ const translations = {
 
       <div class="cta">
         <a class="become-sponsor" href="https://github.com/sponsors/posva">{{
-          translations[site.lang] || translations.en
+          translations[site.lang] || translations.es
         }}</a>
       </div>
     </div>

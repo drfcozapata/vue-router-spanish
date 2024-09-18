@@ -2,7 +2,7 @@ import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress'
 
 export const META_URL = 'https://router.vuejs.org'
 export const META_TITLE = 'Vue Router'
-export const META_DESCRIPTION = 'El Router oficial para Vue.js'
+export const META_DESCRIPTION = 'The official Router for Vue.js'
 
 export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   description: META_DESCRIPTION,
@@ -17,14 +17,14 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   themeConfig: {
     editLink: {
       pattern: 'https://github.com/vuejs/router/edit/main/packages/docs/:path',
-      text: 'Sugiere cambios a esta página',
+      text: 'Suggest changes to this page',
     },
 
     nav: [
       // { text: 'Config', link: '/config/' },
       // { text: 'Plugins', link: '/plugins/' },
       {
-        text: 'Guía',
+        text: 'Guide',
         link: '/guide/',
         activeMatch: '^/guide/',
       },
@@ -34,18 +34,18 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         items: [{ text: 'v3.x', link: 'https://v3.router.vuejs.org' }],
       },
       {
-        text: 'Enlaces',
+        text: 'Links',
         items: [
           {
-            text: 'Discusiones',
+            text: 'Discussions',
             link: 'https://github.com/vuejs/router/discussions',
           },
           {
-            text: 'Registro de Cambios',
+            text: 'Changelog',
             link: 'https://github.com/vuejs/router/blob/main/packages/router/CHANGELOG.md',
           },
           {
-            text: ' Certificación Vue.js',
+            text: 'Vue.js Certification',
             link: 'https://certificates.dev/vuejs/?friend=VUEROUTER&utm_source=router_vuejs&utm_medium=link&utm_campaign=router_vuejs_links&utm_content=navbar',
           },
         ],
@@ -56,80 +56,80 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
       // catch-all fallback
       '/': [
         {
-          text: 'Configuración',
+          text: 'Setup',
           items: [
             {
-              text: 'Introducción',
+              text: 'Introduction',
               link: '/introduction.html',
             },
             {
-              text: 'Instalación',
+              text: 'Installation',
               link: '/installation.html',
             },
           ],
         },
         {
-          text: 'Fundamentos',
+          text: 'Essentials',
           items: [
             {
-              text: 'Primeros Pasos',
+              text: 'Getting Started',
               link: '/guide/',
             },
             {
-              text: 'Concordancia Dinámica de Rutas',
+              text: 'Dynamic Route Matching',
               link: '/guide/essentials/dynamic-matching.html',
             },
             {
-              text: 'Sintaxis de Concordancia de Rutas',
+              text: "Routes' Matching Syntax",
               link: '/guide/essentials/route-matching-syntax.html',
             },
             {
-              text: 'Rutas con Nombre',
+              text: 'Named Routes',
               link: '/guide/essentials/named-routes.html',
             },
             {
-              text: 'Rutas Anidadas',
+              text: 'Nested Routes',
               link: '/guide/essentials/nested-routes.html',
             },
             {
-              text: 'Navegación Programática',
+              text: 'Programmatic Navigation',
               link: '/guide/essentials/navigation.html',
             },
             {
-              text: 'Vistas con Nombre',
+              text: 'Named Views',
               link: '/guide/essentials/named-views.html',
             },
             {
-              text: 'Redirección y Alias',
+              text: 'Redirect and Alias',
               link: '/guide/essentials/redirect-and-alias.html',
             },
             {
-              text: 'Pasando Props a Componentes de Ruta',
+              text: 'Passing Props to Route Components',
               link: '/guide/essentials/passing-props.html',
             },
             {
-              text: 'Enlaces Activos',
+              text: 'Active links',
               link: '/guide/essentials/active-links.html',
             },
             {
-              text: 'Diferentes Modos de Historial',
+              text: 'Different History modes',
               link: '/guide/essentials/history-mode.html',
             },
           ],
         },
         {
-          text: 'Avanzado',
+          text: 'Advanced',
           items: [
             {
-              text: 'Protectores de Navegación',
+              text: 'Navigation guards',
               link: '/guide/advanced/navigation-guards.html',
             },
             {
-              text: 'Metacampos de Ruta',
+              text: 'Route Meta Fields',
               link: '/guide/advanced/meta.html',
             },
             {
-              text: 'Obtención de Datos',
+              text: 'Data Fetching',
               link: '/guide/advanced/data-fetching.html',
             },
             {
@@ -137,35 +137,35 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/guide/advanced/composition-api.html',
             },
             {
-              text: 'Slot RouterView',
+              text: 'RouterView slot',
               link: '/guide/advanced/router-view-slot.html',
             },
             {
-              text: 'Transiciones',
+              text: 'Transitions',
               link: '/guide/advanced/transitions.html',
             },
             {
-              text: 'Comportamiento de Desplazamiento',
+              text: 'Scroll Behavior',
               link: '/guide/advanced/scroll-behavior.html',
             },
             {
-              text: 'Rutas de Carga Perezosa',
+              text: 'Lazy Loading Routes',
               link: '/guide/advanced/lazy-loading.html',
             },
             {
-              text: 'Rutas Tipadas',
+              text: 'Typed Routes',
               link: '/guide/advanced/typed-routes.html',
             },
             {
-              text: 'Ampliación de RouterLink',
+              text: 'Extending RouterLink',
               link: '/guide/advanced/extending-router-link.html',
             },
             {
-              text: 'Fallos de Navegación',
+              text: 'Navigation Failures',
               link: '/guide/advanced/navigation-failures.html',
             },
             {
-              text: 'Enrutamiento Dinámico',
+              text: 'Dynamic Routing',
               link: '/guide/advanced/dynamic-routing.html',
             },
           ],
@@ -173,7 +173,7 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         {
           items: [
             {
-              text: 'Migración desde Vue 2',
+              text: 'Migrating from Vue 2',
               link: '/guide/migration/index.html',
             },
           ],
