@@ -2,91 +2,93 @@
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/route-guards"
-  title="Learn how to add navigation guards"
+  title="Aprende cómo añadir protectores de navegación"
 />
 
-As the name suggests, the navigation guards provided by Vue router are primarily used to guard navigations either by redirecting it or canceling it. There are a number of ways to hook into the route navigation process: globally, per-route, or in-component.
+Como su nombre indica, los guardianes de navegación proporcionados por el enrutador Vue se utilizan principalmente para proteger las navegaciones, ya sea redirigiéndolas o cancelándolas. Hay varias maneras de engancharse al proceso de navegación de la ruta: globalmente, por ruta, o en el componente.
 
-## Global Antes de Protectores
+## Global Antes de los Protectores
 
-You can register global before guards using `router.beforeEach`:
+Puedes registrar global antes de los protectores usando `router.beforeEach`:
 
 ```js
 const router = createRouter({ ... })
 
 router.beforeEach((to, from) => {
   // ...
-  // explicitly return false to cancel the navigation
+  // retornar explícitamente false para cancelar la navegación
   return false
 })
 ```
 
-Global before guards are called in creation order, whenever a navigation is triggered. Guards may be resolved asynchronously, and the navigation is considered **pending** before all hooks have been resolved.
+Global antes de los protectores son llamados en orden de creación, cada vez que se activa una navegación. Los protectores pueden resolverse de forma asíncrona, y la navegación se considera **pendiente** antes de que se hayan resuelto todos los hooks.
 
-Every guard function receives two arguments:
+Cada función de protección recibe dos argumentos:
 
-- **`to`**: the target route location [in a normalized format](../../api/#RouteLocationNormalized) being navigated to.
-- **`from`**: the current route location [in a normalized format](../../api/#RouteLocationNormalized) being navigated away from.
+- **`to`**: la ubicación de la ruta de destino [en formato normalizado](../../api/#RouteLocationNormalized) hacia la que se navega.
 
-And can optionally return any of the following values:
+- **`from`**: la ubicación de la ruta actual [en formato normalizado](../../api/#RouteLocationNormalized) desde la que se navega.
 
-- `false`: cancel the current navigation. If the browser URL was changed (either manually by the user or via back button), it will be reset to that of the `from` route.
-- A [Route Location](../../api/#RouteLocationRaw): Redirect to a different location by passing a route location as if you were calling `router.push()`, which allows you to pass options like `replace: true` or `name: 'home'`. The current navigation is dropped and a new one is created with the same `from`.
+Y puede retornar opcionalmente cualquiera de los siguientes valores:
+
+- `false`: cancela la navegación actual. Si se ha cambiado la URL del navegador (ya sea manualmente por el usuario o a través del botón de retroceso), se restablecerá a la de la ruta `from`.
+
+- A [Ubicación de la Ruta](../../api/#RouteLocationRaw): Redirige a una ubicación diferente pasando una ubicación de ruta como si estuvieras llamando a `router.push()`, lo que te permite pasar opciones como `replace: true` o `name: 'home'`. Se abandona la navegación actual y se crea una nueva con el mismo `from`.
 
   ```js
   router.beforeEach(async (to, from) => {
     if (
-      // make sure the user is authenticated
+      // asegurarse que el usuario esté autenticado
       !isAuthenticated &&
-      // ❗️ Avoid an infinite redirect
+      // ❗️ Evitar una redirección infinita
       to.name !== 'Login'
     ) {
-      // redirect the user to the login page
+      // redirigir al usuarioa la página login
       return { name: 'Login' }
     }
   })
   ```
 
-It's also possible to throw an `Error` if an unexpected situation was met. This will also cancel the navigation and call any callback registered via [`router.onError()`](../../api/interfaces/Router.md#onError).
+También es posible lanzar un `Error` si se produce una situación inesperada. Esto también cancelará la navegación y llamará a cualquier callback registrado a través de [`router.onError()`](../../api/interfaces/Router.md#onError).
 
-If nothing, `undefined` or `true` is returned, **the navigation is validated**, and the next navigation guard is called.
+Si no se devuelve nada, `undefined` o `true`, **se valida la navegación**, y se llama al siguiente protector de navegación.
 
-All of the things above **work the same way with `async` functions** and Promises:
+Todo lo anterior **funciona igual con funciones `async`** y Promises:
 
 ```js
 router.beforeEach(async (to, from) => {
-  // canUserAccess() returns `true` or `false`
+  // canUserAccess() retorna `true` o `false`
   const canAccess = await canUserAccess(to)
   if (!canAccess) return '/login'
 })
 ```
 
-### Optional third argument `next`
+### Tercer argumento `next` opcional
 
-In previous versions of Vue Router, it was also possible to use a _third argument_ `next`, this was a common source of mistakes and went through an [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0037-router-return-guards.md#motivation) to remove it. However, it is still supported, meaning you can pass a third argument to any navigation guard. In that case, **you must call `next` exactly once** in any given pass through a navigation guard. It can appear more than once, but only if the logical paths have no overlap, otherwise the hook will never be resolved or produce errors. Here is **a bad example** of redirecting the user to `/login` if they are not authenticated:
+En versiones anteriores de Vue Router, también era posible utilizar un _tercer argumento_ `next`, esto era una fuente común de errores y pasó por un [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0037-router-return-guards.md#motivation) para eliminarlo. Sin embargo, todavía está soportado, lo que significa que puedes pasar un tercer argumento a cualquier protector de navegación. En ese caso, **debes llamar a `next` exactamente una vez** en cada pasada a través de un protector de navegación. Puede aparecer más de una vez, pero sólo si las rutas lógicas no se superponen, de lo contrario el hook nunca se resolverá o producirá errores. He aquí **un mal ejemplo** de redireccionamiento del usuario a `/login` si no está autenticado:
 
 ```js
-// BAD
+// MAL
 router.beforeEach((to, from, next) => {
   if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-  // if the user is not authenticated, `next` is called twice
+  // si el usuario no está autenticado, `next` es llamado dos veces
   next()
 })
 ```
 
-Here is the correct version:
+Aquí está la versión correcta:
 
 ```js
-// GOOD
+// BIEN
 router.beforeEach((to, from, next) => {
   if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
   else next()
 })
 ```
 
-## Global Resolve Guards
+## Resolver Protecciones Globales
 
-You can register a global guard with `router.beforeResolve`. This is similar to `router.beforeEach` because it triggers on **every navigation**, but resolve guards are called right before the navigation is confirmed, **after all in-component guards and async route components are resolved**. Here is an example that ensures the user has given access to the Camera for routes that [have defined a custom meta](./meta.md) property `requiresCamera`:
+Puedes registrar una protección global con `router.beforeResolve`. Esto es similar a `router.beforeEach` porque se dispara en **cada navegación**, pero las protecciones de resolución son llamadas justo antes de que la navegación sea confirmada, **después de que todas las protecciones dentro de los componentes y todas las protecciones de las rutas asíncronas de los componentes se hayan resuelto**. He aquí un ejemplo que asegura que el usuario ha dado acceso a la Cámara en rutas que [han definido una propiedad meta personalizada](./meta.md) `requiresCamera`:
 
 ```js
 router.beforeResolve(async to => {
@@ -95,10 +97,10 @@ router.beforeResolve(async to => {
       await askForCameraPermission()
     } catch (error) {
       if (error instanceof NotAllowedError) {
-        // ... handle the error and then cancel the navigation
+        // ... manejar el error y luego cancelar la navegación
         return false
       } else {
-        // unexpected error, cancel the navigation and pass the error to the global handler
+        // error inesperado, cancelar la navegación y pasar el error al manejador global
         throw error
       }
     }
@@ -106,13 +108,13 @@ router.beforeResolve(async to => {
 })
 ```
 
-`router.beforeResolve` is the ideal spot to fetch data or do any other operation that you want to avoid doing if the user cannot enter a page.
+`router.beforeResolve` es el lugar ideal para obtener datos o hacer cualquier otra operación que quieras evitar hacer si el usuario no puede entrar en una página.
 
 <!-- TODO: how to combine with [`meta` fields](./meta.md) to create a [generic fetching mechanism](#TODO). -->
 
-## Global After Hooks
+## Global después de los Hooks
 
-You can also register global after hooks, however unlike guards, these hooks do not get a `next` function and cannot affect the navigation:
+También puedes registrar hooks después de globales, sin embargo a diferencia de los protectores, estos hooks no tienen una función `next` y no pueden afectar a la navegación:
 
 ```js
 router.afterEach((to, from) => {
@@ -122,9 +124,9 @@ router.afterEach((to, from) => {
 
 <!-- TODO: maybe add links to examples -->
 
-They are useful for analytics, changing the title of the page, accessibility features like announcing the page and many other things.
+Éstos son útiles para las analíticas, cambiar el título de la página, características de accesibilidad como anunciar la página y muchas otras cosas.
 
-They also reflect [navigation failures](./navigation-failures.md) as the third argument:
+También reflejan [fallos de navegación](./navigation-failures.md) como tercer argumento:
 
 ```js
 router.afterEach((to, from, failure) => {
@@ -132,29 +134,29 @@ router.afterEach((to, from, failure) => {
 })
 ```
 
-Learn more about navigation failures on [its guide](./navigation-failures.md).
+Aprende más sobre fallos de navegación en [su guía](./navigation-failures.md).
 
-## Global injections within guards
+## Inyecciones globales dentro de los protectores
 
-Since Vue 3.3, it is possible to use `inject()` within navigation guards. This is useful for injecting global properties like the [pinia stores](https://pinia.vuejs.org). Anything that is provided with `app.provide()` is also accessible within `router.beforeEach()`, `router.beforeResolve()`, `router.afterEach()`:
+Desde Vue 3.3, es posible usar `inject()` dentro de los protectores de navegación. Esto es útil para inyectar propiedades globales como las [stores de pinia](https://pinia.vuejs.org). Cualquier cosa que se provea con `app.provide()` también es accesible dentro de `router.beforeEach()`, `router.beforeResolve()`, `router.afterEach()`:
 
 ```ts
 // main.ts
 const app = createApp(App)
-app.provide('global', 'hello injections')
+app.provide('global', 'hola inyecciones')
 
-// router.ts or main.ts
+// router.ts o main.ts
 router.beforeEach((to, from) => {
-  const global = inject('global') // 'hello injections'
-  // a pinia store
+  const global = inject('global') // 'hola inyecciones'
+  // una store de pinia
   const userStore = useAuthStore()
   // ...
 })
 ```
 
-## Per-Route Guard
+## Protección por Ruta
 
-You can define `beforeEnter` guards directly on a route's configuration object:
+Puedes definir protecciones `beforeEnter` directamente en el objeto de configuración de una ruta:
 
 ```js
 const routes = [
@@ -162,16 +164,16 @@ const routes = [
     path: '/users/:id',
     component: UserDetails,
     beforeEnter: (to, from) => {
-      // reject the navigation
+      // rechazar la navegación
       return false
     },
   },
 ]
 ```
 
-`beforeEnter` guards **only trigger when entering the route**, they don't trigger when the `params`, `query` or `hash` change e.g. going from `/users/2` to `/users/3` or going from `/users/2#info` to `/users/2#projects`. They are only triggered when navigating **from a different** route.
+Las protecciones `beforeEnter` **sólo se activan al entrar en la ruta**, no se activan cuando cambian los `params`, `query` o `hash` por ejemplo al pasar de `/users/2` a `/users/3` o al pasar de `/users/2#info` a `/users/2#projects`. Sólo se activan cuando se navega **desde una ruta** diferente.
 
-You can also pass an array of functions to `beforeEnter`, this is useful when reusing guards for different routes:
+También puedes pasar un array de funciones a `beforeEnter`, esto es útil cuando se reutilizan protectores para diferentes rutas:
 
 ```js
 function removeQueryParams(to) {
@@ -197,7 +199,7 @@ const routes = [
 ]
 ```
 
-When working with [nested routes](../essentials/nested-routes), both parent and child routes can use `beforeEnter`. When placed on a parent route, it won't be triggered when moving between children with that same parent. For example:
+Cuando se trabaja con [rutas anidadas](../essentials/nested-routes), tanto las rutas padre como las hijas pueden utilizar `beforeEnter`. Cuando se coloca en una ruta padre, no se ejecutará al pasar de una ruta hija a otra con el mismo padre. Por ejemplo:
 
 ```js
 const routes = [
@@ -214,19 +216,19 @@ const routes = [
 ]
 ```
 
-The `beforeEnter` in the example above won't be called when moving between `/user/list` and `/user/details`, as they share the same parent. If we put the `beforeEnter` guard directly on the `details` route instead, that would be called when moving between those two routes.
+El `beforeEnter` del ejemplo anterior no se disparará al moverse entre `/user/list` y `/user/details`, ya que comparten el mismo padre. Si en cambio pusiéramos la protección `beforeEnter` directamente en la ruta `details`, ésta sería invocada al moverse entre esas dos rutas.
 
 ::: tip
-It is possible to achieve similar behavior to per-route guards by using [route meta fields](./meta) and global navigation guards.
+Es posible conseguir un comportamiento similar al de las protecciones por ruta utilizando [metacampos de ruta](./meta) y protecciones de navegación globales.
 :::
 
-## In-Component Guards
+## Protectores dentro del componente
 
-Finally, you can directly define route navigation guards inside route components (the ones passed to the router configuration)
+Por último, puedes definir protectores de navegación de ruta directamente dentro de los componentes de ruta (los que se pasan a la configuración del enrutador)
 
-### Using the Options API
+### Usando la Options API
 
-You can add the following options to route components:
+Puede añadir las siguientes opciones a los componentes de ruta:
 
 - `beforeRouteEnter`
 - `beforeRouteUpdate`
@@ -236,69 +238,69 @@ You can add the following options to route components:
 <script>
 export default {
   beforeRouteEnter(to, from) {
-    // called before the route that renders this component is confirmed.
-    // does NOT have access to `this` component instance,
-    // because it has not been created yet when this guard is called!
+    // llamada antes de que se confirme la ruta que renderiza este componente.
+    // NO tiene acceso a la instancia `this` del componente,
+    // porque aún no se ha creado cuando se llama a esta protección.
   },
   beforeRouteUpdate(to, from) {
-    // called when the route that renders this component has changed, but this component is reused in the new route.
-    // For example, given a route with params `/users/:id`, when we navigate between `/users/1` and `/users/2`,
-    // the same `UserDetails` component instance will be reused, and this hook will be called when that happens.
-    // Because the component is mounted while this happens, the navigation guard has access to `this` component instance.
+    // se llama cuando la ruta que renderiza este componente ha cambiado, pero este componente se reutiliza en la nueva ruta.
+    // Por ejemplo, dada una ruta con los parámetros `/users/:id`, cuando navegamos entre `/users/1` y `/users/2`,
+    // la misma instancia `UserDetails` del componente será reutilizada, y este hook será llamado cuando esto ocurra.
+    // Debido a que el componente está montado mientras esto sucede, el protector de navegación tiene acceso a la instancia `this` del componente.
   },
   beforeRouteLeave(to, from) {
-    // called when the route that renders this component is about to be navigated away from.
-    // As with `beforeRouteUpdate`, it has access to `this` component instance.
+    // Llamado cuando la ruta que renderiza este componente está a punto de ser navegada.
+    // Al igual que `beforeRouteUpdate`, tiene acceso a la instancia `this` del componente.
   },
 }
 </script>
 ```
 
-The `beforeRouteEnter` guard does **NOT** have access to `this`, because the guard is called before the navigation is confirmed, thus the new entering component has not even been created yet.
+La protección `beforeRouteEnter` **NO** tiene acceso a `this`, porque la protección es llamada antes de que se confirme la navegación, por lo que el nuevo componente entrante aún no ha sido creado.
 
-However, you can access the instance by passing a callback to `next`. The callback will be called when the navigation is confirmed, and the component instance will be passed to the callback as the argument:
+Sin embargo, puedes acceder a la instancia pasando una llamada de retorno a `next`. El callback será llamado cuando la navegación sea confirmada, y la instancia del componente será pasada al callback como argumento:
 
 ```js
 beforeRouteEnter (to, from, next) {
   next(vm => {
-    // access to component public instance via `vm`
+    // acceso a la instancia pública del componente a través de `vm`.
   })
 }
 ```
 
-Note that `beforeRouteEnter` is the only guard that supports passing a callback to `next`. For `beforeRouteUpdate` and `beforeRouteLeave`, `this` is already available, so passing a callback is unnecessary and therefore _not supported_:
+Ten en cuenta que `beforeRouteEnter` es la única protección que permite pasar un callback a `next`. Para `beforeRouteUpdate` y `beforeRouteLeave`, `this` ya está disponible, por lo que es innecesario pasar un callback y por lo tanto _no es soportado_:
 
 ```js
 beforeRouteUpdate (to, from) {
-  // just use `this`
+  // sólo usa `this`
   this.name = to.params.name
 }
 ```
 
-The **leave guard** is usually used to prevent the user from accidentally leaving the route with unsaved edits. The navigation can be canceled by returning `false`.
+El **protector de salida** se utiliza normalmente para evitar que el usuario abandone accidentalmente la ruta con ediciones sin guardar. La navegación puede cancelarse devolviendo `false`.
 
 ```js
 beforeRouteLeave (to, from) {
-  const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
+  const answer = window.confirm('¿Realmente quieres salir? ¡tienes cambios sin guardar!')
   if (!answer) return false
 }
 ```
 
-### Using the Composition API
+### Usando la Composition API
 
-If you are writing your component using the Composition API, you can add update and leave guards through `onBeforeRouteUpdate` and `onBeforeRouteLeave` respectively. Please refer to the [Composition API section](./composition-api.md#navigation-guards) for more details.
+Si estás escribiendo tu componente utilizando la Composition API, puedes añadir protecciones de actualización y salida a través de `onBeforeRouteUpdate` y `onBeforeRouteLeave` respectivamente. Para más detalles, consulta la [sección Composition API](./composition-api.md#navigation-guards).
 
-## The Full Navigation Resolution Flow
+## El flujo de Resolución de la Navegación Completo
 
-1. Navigation triggered.
-2. Call `beforeRouteLeave` guards in deactivated components.
-3. Call global `beforeEach` guards.
-4. Call `beforeRouteUpdate` guards in reused components.
-5. Call `beforeEnter` in route configs.
-6. Resolve async route components.
-7. Call `beforeRouteEnter` in activated components.
-8. Call global `beforeResolve` guards.
-9. Navigation is confirmed.
-10. Call global `afterEach` hooks.
-11. DOM updates triggered.
-12. Call callbacks passed to `next` in `beforeRouteEnter` guards with instantiated instances.
+1. Disparo de la navegación.
+2. Llamada a las protecciones `beforeRouteLeave` en los componentes desactivados.
+3. Llamada a las protecciones `beforeEach` globales.
+4. Llamada a las protecciones `beforeRouteUpdate` en los componentes reutilizados.
+5. Llamada a `beforeEnter` en las configuraciones de la ruta.
+6. Resolución de los componentes de ruta asíncronos.
+7. Llamada a `beforeRouteEnter` en los componentes activados.
+8. Llamada a las protecciones `beforeResolve` globales.
+9. Confirmación de la navegación.
+10. Llamada a los hooks globales `afterEach`.
+11. Disparo de las actualizaciones del DOM.
+12. Llamada a los callbacks pasados a `next` en las protecciones `beforeRouteEnter` con instancias instanciadas.
