@@ -1,35 +1,31 @@
-# Passing Props to Route Components
+# Pasando Props a Componentes de Ruta
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/route-props"
-  title="Learn how to pass props to route components"
+  title="Aprende cómo pasar props a componentes de ruta"
 />
 
-Using `$route` or `useRoute()` in your component creates a tight coupling with the route which limits the flexibility of the component as it can only be used on certain URLs. While this is not necessarily a bad thing, we can decouple this behavior with a `props` option.
+Usar `$route` o `useRoute()` en tu componente crea un estrecho acoplamiento con la ruta que limita la flexibilidad del componente ya que sólo puede ser usado en ciertas URLs. Aunque esto no es algo necesariamente malo, podemos desacoplar este comportamiento con la opción `props`.
 
-Let's return to our earlier example:
+Volvamos a nuestro ejemplo previo:
 
 ```vue
 <!-- User.vue -->
 <template>
-  <div>
-    User {{ $route.params.id }}
-  </div>
+  <div>User {{ $route.params.id }}</div>
 </template>
 ```
 
-with:
+con:
 
 ```js
 import User from './User.vue'
 
-// these are passed to `createRouter`
-const routes = [
-  { path: '/users/:id', component: User },
-]
+// estas se pasan a `createRouter`.
+const routes = [{ path: '/users/:id', component: User }]
 ```
 
-We can remove the direct dependency on `$route` in `User.vue` by declaring a prop instead:
+Podemos eliminar la dependencia directa de `$route` en `User.vue` declarando una prop en su lugar:
 
 ::: code-group
 
@@ -37,14 +33,12 @@ We can remove the direct dependency on `$route` in `User.vue` by declaring a pro
 <!-- User.vue -->
 <script setup>
 defineProps({
-  id: String
+  id: String,
 })
 </script>
 
 <template>
-  <div>
-    User {{ id }}
-  </div>
+  <div>User {{ id }}</div>
 </template>
 ```
 
@@ -53,83 +47,79 @@ defineProps({
 <script>
 export default {
   props: {
-    id: String
-  }
+    id: String,
+  },
 }
 </script>
 
 <template>
-  <div>
-    User {{ id }}
-  </div>
+  <div>User {{ id }}</div>
 </template>
 ```
 
 :::
 
-We can then configure the route to pass the `id` param as a prop by setting `props: true`:
+Podemos entonces configurar la ruta para pasar el parámetro `id` como una prop estableciendo `props: true`:
 
 ```js
-const routes = [
-  { path: '/user/:id', component: User, props: true }
-]
+const routes = [{ path: '/user/:id', component: User, props: true }]
 ```
 
-This allows you to use the component anywhere, which makes the component easier to reuse and test.
+Esto te permite usar el componente en cualquier lugar, lo que hace que el componente sea más fácil de reutilizar y probar.
 
-## Boolean mode
+## Modo booleano
 
-When `props` is set to `true`, the `route.params` will be set as the component props.
+Cuando las `props` se establecen en `true`, los `route.params` se establecerán como las props del componente.
 
-## Named views
+## Vistas con nombre
 
-For routes with named views, you have to define the `props` option for each named view:
+Para rutas con vistas con nombre, tienes que definir la opción `props` para cada vista con nombre:
 
 ```js
 const routes = [
   {
     path: '/user/:id',
     components: { default: User, sidebar: Sidebar },
-    props: { default: true, sidebar: false }
-  }
+    props: { default: true, sidebar: false },
+  },
 ]
 ```
 
-## Object mode
+## Modo objeto
 
-When `props` is an object, this will be set as the component props as-is. Useful for when the props are static.
+Cuando las `props` son un objeto, se establecerán como las props propias del componente. Útil para cuando las props son estáticas.
 
 ```js
 const routes = [
   {
     path: '/promotion/from-newsletter',
     component: Promotion,
-    props: { newsletterPopup: false }
-  }
+    props: { newsletterPopup: false },
+  },
 ]
 ```
 
-## Function mode
+## Modo función
 
-You can create a function that returns props. This allows you to cast parameters into other types, combine static values with route-based values, etc.
+Puedes crear una función que retorne props. Esto te permite convertir parámetros en otros tipos, combinar valores estáticos con valores basados en rutas, etc.
 
 ```js
 const routes = [
   {
     path: '/search',
     component: SearchUser,
-    props: route => ({ query: route.query.q })
-  }
+    props: route => ({ query: route.query.q }),
+  },
 ]
 ```
 
-The URL `/search?q=vue` would pass `{query: 'vue'}` as props to the `SearchUser` component.
+La URL `/search?q=vue` pasaría `{query: vue'}` como props al componente `SearchUser`.
 
-Try to keep the `props` function stateless, as it's only evaluated on route changes. Use a wrapper component if you need state to define the props, that way Vue can react to state changes.
+Trata de mantener la función `props` como una función sin estado, ya que sólo se evalúa en los cambios de ruta. Usa un componente wrapper si necesitas estado para definir las props, de esta forma Vue puede reaccionar a los cambios de estado.
 
-## Via RouterView
+## Vía RouterView
 
-You can also pass any props via the [`<RouterView>` slot](../advanced/router-view-slot):
+También puedes pasar cualquier props a través del [slot `<RouterView>`](../advanced/router-view-slot):
 
 ```vue-html
 <RouterView v-slot="{ Component }">
@@ -141,5 +131,5 @@ You can also pass any props via the [`<RouterView>` slot](../advanced/router-vie
 ```
 
 ::: warning
-In this case, **all view components** will receive `view-prop`. This is usually not a good idea as  it means that all of the view components have declared a `view-prop` prop, which is not necessarily true. If possible, use any of the options above.
+En este caso, **todos los componentes de la vista** recibirán `view-prop`. Esto no suele ser una buena idea ya que significa que todos los componentes de la vista han declarado una prop `view-prop`, lo que no es necesariamente cierto. Si es posible, utiliza cualquiera de las opciones anteriores.
 :::

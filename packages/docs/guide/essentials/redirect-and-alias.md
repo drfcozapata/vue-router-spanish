@@ -1,25 +1,25 @@
-# Redirect and Alias
+# Redirección y Alias
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-redirect-and-alias"
-  title="Learn how to use redirect and alias"
+  title="Aprende cómo usar la redirección y el alias"
 />
 
-## Redirect
+## Redirección
 
-Redirecting is also done in the `routes` configuration. To redirect from `/home` to `/`:
+La redirección también se realiza en la configuración de `routes`. Para redirigir de `/home` a `/`:
 
 ```js
 const routes = [{ path: '/home', redirect: '/' }]
 ```
 
-The redirect can also be targeting a named route:
+La redirección también puede dirigirse a una ruta con nombre:
 
 ```js
 const routes = [{ path: '/home', redirect: { name: 'homepage' } }]
 ```
 
-Or even use a function for dynamic redirecting:
+O incluso utilizar una función para la redirección dinámica:
 
 ```js
 const routes = [
@@ -27,8 +27,8 @@ const routes = [
     // /search/screens -> /search?q=screens
     path: '/search/:searchText',
     redirect: to => {
-      // the function receives the target route as the argument
-      // we return a redirect path/location here.
+      // la función recibe la ruta destino como argumento
+      // devolvemos una ruta/ubicación de redirección aquí.
       return { path: '/search', query: { q: to.params.searchText } }
     },
   },
@@ -39,23 +39,23 @@ const routes = [
 ]
 ```
 
-Note that **[Navigation Guards](../advanced/navigation-guards.md) are not applied on the route that redirects, only on its target**. e.g. In the above example, adding a `beforeEnter` guard to the `/home` route would not have any effect.
+Observa que los **[Protectores de Navegación](../advanced/navigation-guards.md) no se aplican en la ruta que redirige, sólo en su destino**. Por ejemplo, en el ejemplo anterior, añadir un protector `beforeEnter` a la ruta `/home` no tendría ningún efecto.
 
-When writing a `redirect`, you can omit the `component` option because it is never directly reached so there is no component to render. The only exception are [nested routes](./nested-routes.md): if a route record has `children` and a `redirect` property, it should also have a `component` property.
+Cuando se escribe un `redirect`, se puede omitir la opción `component` porque nunca se llega a él directamente, por lo que no hay ningún componente que renderizar. La única excepción son las [rutas anidadas](./nested-routes.md): si un registro de ruta tiene `children` y una propiedad `redirect`, también debería tener una propiedad `component`.
 
-### Relative redirecting
+### Redireccionamiento relativo
 
-It's also possible to redirect to a relative location:
+También es posible redirigir a una ubicación relativa:
 
 ```js
 const routes = [
   {
-    // will always redirect /users/123/posts to /users/123/profile
+    // siempre redirigirá /users/123/posts a /users/123/profile
     path: '/users/:id/posts',
     redirect: to => {
-      // the function receives the target route as the argument
-      // a relative location doesn't start with `/`
-      // or { path: 'profile'}
+      // la función recibe la ruta de destino como argumento
+      // una ubicación relativa no empieza por `/`.
+      // o { path: 'profile'}
       return 'profile'
     },
   },
@@ -64,17 +64,17 @@ const routes = [
 
 ## Alias
 
-A redirect means when the user visits `/home`, the URL will be replaced by `/`, and then matched as `/`. But what is an alias?
+Una redirección significa que cuando el usuario visite `/home`, la URL será reemplazada por `/`, y luego emparejada como `/`. Pero, ¿qué es un alias?
 
-**An alias of `/` as `/home` means when the user visits `/home`, the URL remains `/home`, but it will be matched as if the user is visiting `/`.**
+**Un alias de `/` como `/home` significa que cuando el usuario visita `/home`, la URL sigue siendo `/home`, pero se buscará como si el usuario estuviera visitando `/`**.
 
-The above can be expressed in the route configuration as:
+Lo anterior puede expresarse en la configuración de rutas como:
 
 ```js
 const routes = [{ path: '/', component: Homepage, alias: '/home' }]
 ```
 
-An alias gives you the freedom to map a UI structure to an arbitrary URL, instead of being constrained by the configuration's nesting structure. Make the alias start with a `/` to make the path absolute in nested routes. You can even combine both and provide multiple aliases with an array:
+Un alias te da la libertad de asociar una estructura de interfaz de usuario a una URL arbitraria, en lugar de estar limitado por la estructura de anidamiento de la configuración. Haz que el alias empiece por `/` para que la ruta sea absoluta en las rutas anidadas. Puedes incluso combinar ambos y proporcionar múltiples alias con un array:
 
 ```js
 const routes = [
@@ -82,7 +82,7 @@ const routes = [
     path: '/users',
     component: UsersLayout,
     children: [
-      // this will render the UserList for these 3 URLs
+      // esto mostrará la UserList para estas 3 URLs
       // - /users
       // - /users/list
       // - /people
@@ -92,7 +92,7 @@ const routes = [
 ]
 ```
 
-If your route has parameters, make sure to include them in any absolute alias:
+Si tu ruta tiene parámetros, asegúrate de incluirlos en cualquier alias absoluto:
 
 ```js
 const routes = [
@@ -100,7 +100,7 @@ const routes = [
     path: '/users/:id',
     component: UsersByIdLayout,
     children: [
-      // this will render the UserDetails for these 3 URLs
+      // esto mostrará UserDetails para estas 3 URLs
       // - /users/24
       // - /users/24/profile
       // - /24
@@ -110,4 +110,4 @@ const routes = [
 ]
 ```
 
-**Note about SEO**: when using aliases, make sure to [define canonical links](https://support.google.com/webmasters/answer/139066?hl=en).
+**Nota sobre SEO**: cuando uses alias, asegúrate de [definir enlaces canónicos](https://support.google.com/webmasters/answer/139066?hl=en).

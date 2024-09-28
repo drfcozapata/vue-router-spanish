@@ -1,29 +1,29 @@
-# Active links
+# Enlaces activos
 
-It's common for applications to have a navigation component that renders a list of RouterLink components. Within that list, we might want to style links to the currently active route differently from the others.
+Es común que las aplicaciones tengan un componente de navegación que muestre una lista de componentes RouterLink. Dentro de esa lista, puede que queramos dar un estilo diferente a los enlaces de la ruta activa en ese momento.
 
-The RouterLink component adds two CSS classes to active links, `router-link-active` and `router-link-exact-active`. To understand the difference between them, we first need to consider how Vue Router decides that a link is _active_.
+El componente RouterLink añade dos clases CSS a los enlaces activos, `router-link-active` y `router-link-exact-active`. Para entender la diferencia entre ellas, primero tenemos que considerar cómo Vue Router decide que un enlace está _activo_.
 
-## When are links active?
+## ¿Cuándo están activos los enlaces?
 
-A RouterLink is considered to be **_active_** if:
+Un RouterLink se considera **_activo_** si:
 
-1. It matches the same route record (i.e. configured route) as the current location.
-2. It has the same values for the `params` as the current location.
+1. Coincide con el mismo registro de ruta (es decir, ruta configurada) que la ubicación actual.
+2. Tiene los mismos valores para los `parámetros` que la ubicación actual.
 
-If you're using [nested routes](./nested-routes), any links to ancestor routes will also be considered active if the relevant `params` match.
+Si estás usando [rutas anidadas](./nested-routes), cualquier enlace a rutas antecesoras también se considerará activo si los `parámetros` relevantes coinciden.
 
-Other route properties, such as the [`query`](../../api/interfaces/RouteLocationBase.html#query), are not taken into account.
+Otras propiedades de ruta, como la [`query`](../../api/interfaces/RouteLocationBase.html#query), no se tienen en cuenta.
 
-The path doesn't necessarily need to be a perfect match. For example, using an [`alias`](./redirect-and-alias#Alias) would still be considered a match, so long as it resolves to the same route record and `params`.
+La ruta no tiene que coincidir perfectamente. Por ejemplo, utilizar un [`alias`](./redirect-and-alias#Alias) se consideraría una coincidencia, siempre que resuelva al mismo registro de ruta y `params`.
 
-If a route has a [`redirect`](./redirect-and-alias#Redirect), it won't be followed when checking whether a link is active.
+Si una ruta tiene un [`redirect`](./redirect-and-alias#Redirect), no se seguirá al comprobar si un enlace está activo.
 
-## Exact active links
+## Enlaces activos exactos
 
-An **_exact_** match does not include ancestor routes.
+Una coincidencia **_exacta_** no incluye las rutas antecesoras.
 
-Let's imagine we have the following routes:
+Imaginemos que tenemos las siguientes rutas:
 
 ```js
 const routes = [
@@ -40,7 +40,7 @@ const routes = [
 ]
 ```
 
-Then consider these two links:
+Entonces, considera estos dos enlaces:
 
 ```vue-html
 <RouterLink to="/user/erina">
@@ -51,11 +51,11 @@ Then consider these two links:
 </RouterLink>
 ```
 
-If the current location path is `/user/erina/role/admin` then these would both be considered _active_, so the class `router-link-active` would be applied to both links. But only the second link would be considered _exact_, so only that second link would have the class `router-link-exact-active`.
+Si la ruta de ubicación actual es `/user/erina/role/admin` entonces ambos se considerarían _activos_, por lo que la clase `router-link-active` se aplicaría a ambos enlaces. Pero sólo el segundo enlace se consideraría _exact_, por lo que sólo ese segundo enlace tendría la clase `router-link-exact-active`.
 
-## Configuring the classes
+## Configurando las clases
 
-The RouterLink component has two props, `activeClass` and `exactActiveClass`, that can be used to change the names of the classes that are applied:
+El componente RouterLink tiene dos props, `activeClass` y `exactActiveClass`, que pueden usarse para cambiar los nombres de las clases que se aplican:
 
 ```vue-html
 <RouterLink
@@ -65,7 +65,7 @@ The RouterLink component has two props, `activeClass` and `exactActiveClass`, th
 >
 ```
 
-The default class names can also be changed globally by passing the `linkActiveClass` and `linkExactActiveClass` options to `createRouter()`:
+Los nombres de las clases por defecto también pueden cambiarse globalmente pasando las opciones `linkActiveClass` y `linkExactActiveClass` a `createRouter()`:
 
 ```js
 const router = createRouter({
@@ -75,4 +75,4 @@ const router = createRouter({
 })
 ```
 
-See [Extending RouterLink](../advanced/extending-router-link) for more advanced customization techniques using the `v-slot` API.
+Consulta [Ampliación de RouterLink](../advanced/extending-router-link) para técnicas de personalización más avanzadas usando la API `v-slot`.

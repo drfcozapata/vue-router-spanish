@@ -1,15 +1,15 @@
-# Different History modes
+# Diferentes Modos de Historial
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/history-mode"
-  title="Learn about the differences between Hash Mode and HTML5 Mode"
+  title="Aprende acerca de las diferencias entre Modo Hash y Modo HTML5"
 />
 
-The `history` option when creating the router instance allows us to choose among different history modes.
+La opción `history` al crear la instancia del enrutador nos permite elegir entre diferentes modos de historial.
 
-## Hash Mode
+## Modo Hash
 
-The hash history mode is created with `createWebHashHistory()`:
+El modo de historial hash se crea con `createWebHashHistory()`:
 
 ```js
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -22,11 +22,11 @@ const router = createRouter({
 })
 ```
 
-It uses a hash character (`#`) before the actual URL that is internally passed. Because this section of the URL is never sent to the server, it doesn't require any special treatment on the server level. **It does however have a bad impact in SEO**. If that's a concern for you, use the HTML5 history mode.
+Éste utiliza un carácter hash (`#`) antes de la URL real que se pasa internamente. Como esta sección de la URL nunca se envía al servidor, no requiere ningún tratamiento especial a nivel de servidor. **Sin embargo, tiene un impacto negativo en el SEO**. Si eso te preocupa, utiliza el modo de historial HTML5.
 
-## HTML5 Mode
+## Modo HTML5
 
-The HTML5 mode is created with `createWebHistory()` and is the recommended mode:
+El modo HTML5 se crea con `createWebHistory()` y es el modo recomendado:
 
 ```js
 import { createRouter, createWebHistory } from 'vue-router'
@@ -39,15 +39,15 @@ const router = createRouter({
 })
 ```
 
-When using `createWebHistory()`, the URL will look "normal," e.g. `https://example.com/user/id`. Beautiful!
+Cuando se usa `createWebHistory()`, la URL se verá «normal», por ejemplo `https://example.com/user/id`. ¡Precioso!
 
-Here comes a problem, though: Since our app is a single page client side app, without a proper server configuration, the users will get a 404 error if they access `https://example.com/user/id` directly in their browser. Now that's ugly.
+Sin embargo, aquí viene un problema: Dado que nuestra aplicación es una aplicación cliente de una sola página, sin una configuración adecuada del servidor, los usuarios obtendrán un error 404 si acceden a `https://example.com/user/id` directamente en su navegador. Eso sí que es desagradable.
 
-Not to worry: To fix the issue, all you need to do is add a simple catch-all fallback route to your server. If the URL doesn't match any static assets, it should serve the same `index.html` page that your app lives in. Beautiful, again!
+No te preocupes: Para solucionar el problema, todo lo que tienes que hacer es añadir una simple ruta de retorno a tu servidor. Si la URL no coincide con ningún activo estático, debería servir la misma página `index.html` en la que se encuentra tu aplicación. Precioso, ¡otra vez!
 
-## Memory mode
+## Modo memoria
 
-The memory history mode doesn't assume a browser environment and therefore doesn't interact with the URL **nor automatically triggers the initial navigation**. This makes it perfect for Node environment and SSR. It is created with `createMemoryHistory()` and **requires you to push the initial navigation** after calling `app.use(router)`.
+El modo de historial en memoria no asume un entorno de navegador y por lo tanto no interactúa con la URL **ni activa automáticamente la navegación inicial**. Esto lo hace perfecto para entornos Node y SSR. Se crea con `createMemoryHistory()` y **requiere que impulses la navegación inicial** después de llamar a `app.use(router)`.
 
 ```js
 import { createRouter, createMemoryHistory } from 'vue-router'
@@ -60,11 +60,11 @@ const router = createRouter({
 })
 ```
 
-While it's not recommended, you can use this mode inside Browser applications but note **there will be no history**, meaning you won't be able to go _back_ or _forward_.
+Aunque no se recomienda, puedes usar este modo dentro de las aplicaciones del Navegador, pero ten en cuenta que **no habrá historial**, lo que significa que no podrás volver _atrás_ o _adelante_.
 
-## Example Server Configurations
+## Ejemplo de configuración del servidor
 
-**Note**: The following examples assume you are serving your app from the root folder. If you deploy to a subfolder, you should use [the `publicPath` option of Vue CLI](https://cli.vuejs.org/config/#publicpath) and the related [`base` property of the router](../../api/interfaces/Router.md#createWebHistory). You also need to adjust the examples below to use the subfolder instead of the root folder (e.g. replacing `RewriteBase /` with `RewriteBase /name-of-your-subfolder/`).
+**Nota**: Los siguientes ejemplos asumen que estás sirviendo tu aplicación desde el directorio raíz. Si despliegas en un subdirectorio, debes usar [la opción `publicPath` de Vue CLI](https://cli.vuejs.org/config/#publicpath) y la [propiedad `base` del router](../../api/interfaces/Router.md#createWebHistory) relacionada. También es necesario ajustar los siguientes ejemplos para utilizar el subdirectorio en lugar del directorio raíz (por ejemplo, sustituyendo `RewriteBase /` por `RewriteBase /nombre-de-tu-subdirectorio/`).
 
 ### Apache
 
@@ -83,7 +83,7 @@ While it's not recommended, you can use this mode inside Browser applications bu
 </IfModule>
 ```
 
-Instead of `mod_rewrite`, you could also use [`FallbackResource`](https://httpd.apache.org/docs/2.4/mod/mod_dir.html#fallbackresource).
+En lugar de `mod_rewrite`, también podrías utilizar [`FallbackResource`](https://httpd.apache.org/docs/2.4/mod/mod_dir.html#fallbackresource).
 
 ### nginx
 
@@ -93,7 +93,7 @@ location / {
 }
 ```
 
-### Native Node.js
+### Node.js Nativo
 
 ```js
 const http = require('http')
@@ -104,7 +104,7 @@ http
   .createServer((req, res) => {
     fs.readFile('index.html', 'utf-8', (err, content) => {
       if (err) {
-        console.log('We cannot open "index.html" file.')
+        console.log('No podemos abrir el archivo "index.html".')
       }
 
       res.writeHead(200, {
@@ -115,18 +115,18 @@ http
     })
   })
   .listen(httpPort, () => {
-    console.log('Server listening on: http://localhost:%s', httpPort)
+    console.log('Servidor escuchando en: http://localhost:%s', httpPort)
   })
 ```
 
-### Express with Node.js
+### Express con Node.js
 
-For Node.js/Express, consider using [connect-history-api-fallback middleware](https://github.com/bripkens/connect-history-api-fallback).
+Para Node.js/Express, considera el uso del [middleware connect-history-api-fallback](https://github.com/bripkens/connect-history-api-fallback).
 
-### Internet Information Services (IIS)
+### Servicios de Información de Internet (IIS)
 
-1. Install [IIS UrlRewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
-2. Create a `web.config` file in the root directory of your site with the following:
+1. Instala [IIS UrlRewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
+2. Crea un archivo `web.config` en el directorio raíz de tu sitio con lo siguiente:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,7 +134,7 @@ For Node.js/Express, consider using [connect-history-api-fallback middleware](ht
   <system.webServer>
     <rewrite>
       <rules>
-        <rule name="Handle History Mode and custom 404/500" stopProcessing="true">
+        <rule name="Manejar Modo Historial y 404/500 personalizados" stopProcessing="true">
           <match url="(.*)" />
           <conditions logicalGrouping="MatchAll">
             <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
@@ -163,9 +163,9 @@ rewrite {
 }
 ```
 
-### Firebase hosting
+### Alojamiento en Firebase
 
-Add this to your `firebase.json`:
+Añade esto a tu `firebase.json`:
 
 ```json
 {
@@ -183,19 +183,19 @@ Add this to your `firebase.json`:
 
 ### Netlify
 
-Create a `_redirects` file that is included with your deployed files:
+Crear un archivo `_redirects` que se incluye con los archivos desplegados:
 
 ```
 /* /index.html 200
 ```
 
-In vue-cli, nuxt, and vite projects, this file usually goes under a folder named `static` or `public`.
+En los proyectos vue-cli, nuxt y vite, este archivo suele ir en un directorio llamado `static` o `public`.
 
-You can read more about the syntax on [Netlify documentation](https://docs.netlify.com/routing/redirects/rewrites-proxies/#history-pushstate-and-single-page-apps). You can also [create a `netlify.toml`](https://docs.netlify.com/configure-builds/file-based-configuration/) to combine _redirections_ with other Netlify features.
+Puedes leer más sobre la sintaxis en la [Documentación de Netlify](https://docs.netlify.com/routing/redirects/rewrites-proxies/#history-pushstate-and-single-page-apps). También puedes [crear un `netlify.toml`](https://docs.netlify.com/configure-builds/file-based-configuration/) para combinar _redirecciones_ con otras prestaciones de Netlify.
 
 ### Vercel
 
-Create a `vercel.json` file under the root directory of your project with the following:
+Crea un archivo `vercel.json` bajo el directorio raíz de tu proyecto con lo siguiente:
 
 ```json
 {
@@ -203,9 +203,9 @@ Create a `vercel.json` file under the root directory of your project with the fo
 }
 ```
 
-## Caveat
+## Advertencia
 
-There is a caveat to this: Your server will no longer report 404 errors as all not-found paths now serve up your `index.html` file. To get around the issue, you should implement a catch-all route within your Vue app to show a 404 page:
+Hay una advertencia para esto: Tu servidor ya no reportará errores 404 ya que todas las rutas no encontradas ahora servirán a tu archivo `index.html`. Para evitar este problema, debes implementar una ruta catch-all dentro de tu aplicación Vue para mostrar una página 404:
 
 ```js
 const router = createRouter({
@@ -214,4 +214,4 @@ const router = createRouter({
 })
 ```
 
-Alternatively, if you are using a Node.js server, you can implement the fallback by using the router on the server side to match the incoming URL and respond with 404 if no route is matched. Check out the [Vue server side rendering documentation](https://vuejs.org/guide/scaling-up/ssr.html) for more information.
+Alternativamente, si estás usando un servidor Node.js, puedes implementar el fallback usando el router en el lado del servidor para que coincida con la URL entrante y responda con 404 si no coincide ninguna ruta. Consulta la [Documentación de renderizado del lado del servidor de Vue](https://vuejs.org/guide/scaling-up/ssr.html) para obtener más información.

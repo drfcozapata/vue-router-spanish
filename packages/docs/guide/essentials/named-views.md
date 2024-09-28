@@ -1,11 +1,11 @@
-# Named Views
+# Vistas con Nombres
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-named-views"
-  title="Learn how to use named views"
+  title="Aprende cómo usar las vistas con nombres"
 />
 
-Sometimes you need to display multiple views at the same time instead of nesting them, e.g. creating a layout with a `sidebar` view and a `main` view. This is where named views come in handy. Instead of having one single outlet in your view, you can have multiple and give each of them a name. A `router-view` without a name will be given `default` as its name.
+A veces es necesario mostrar varias vistas al mismo tiempo en lugar de anidarlas, por ejemplo, creando un diseño con una vista `sidebar` y una vista `main`. Aquí es donde las vistas con nombre resultan útiles. En lugar de tener una única salida en tu vista, puedes tener varias y dar a cada una de ellas un nombre. Una vista `router` sin nombre tendrá como nombre `default`.
 
 ```vue-html
 <router-view class="view left-sidebar" name="LeftSidebar" />
@@ -13,9 +13,7 @@ Sometimes you need to display multiple views at the same time instead of nesting
 <router-view class="view right-sidebar" name="RightSidebar" />
 ```
 
-A view is rendered by using a component, therefore multiple views require
-multiple components for the same route. Make sure to use the `components` (with
-an **s**) option:
+Una vista se renderiza usando un componente, por lo tanto múltiples vistas requieren múltiples componentes para la misma ruta. Asegúrate de usar la opción `components` (con un **s**):
 
 ```js
 const router = createRouter({
@@ -25,9 +23,9 @@ const router = createRouter({
       path: '/',
       components: {
         default: Home,
-        // short for LeftSidebar: LeftSidebar
+        // abreviatura de LeftSidebar: LeftSidebar
         LeftSidebar,
-        // they match the `name` attribute on `<router-view>`
+        // coinciden con el atributo `name` de `<router-view>`.
         RightSidebar,
       },
     },
@@ -35,11 +33,11 @@ const router = createRouter({
 })
 ```
 
-A working demo of this example can be found [here](https://codesandbox.io/s/named-views-vue-router-4-examples-rd20l).
+Puedes encontrar una demo funcional de este ejemplo [aquí](https://codesandbox.io/s/named-views-vue-router-4-examples-rd20l).
 
-## Nested Named Views
+## Vistas con Nombre Anidadas
 
-It is possible to create complex layouts using named views with nested views. When doing so, you will also need to give nested `router-view` a name. Let's take a Settings panel example:
+Es posible crear diseños complejos utilizando vistas con nombre con vistas anidadas. Al hacerlo, también necesitarás dar un nombre a las vistas anidadas. Tomemos como ejemplo un panel de configuración:
 
 ```
 /settings/emails                                       /settings/profile
@@ -53,13 +51,13 @@ It is possible to create complex layouts using named views with nested views. Wh
 +-----------------------------------+                  +------------------------------+
 ```
 
-- `Nav` is just a regular component
-- `UserSettings` is the parent view component
-- `UserEmailsSubscriptions`, `UserProfile`, `UserProfilePreview` are nested view components
+- `Nav` es un componente normal
+- `UserSettings` es el componente padre de la vista.
+- `UserEmailsSubscriptions`, `UserProfile` y `UserProfilePreview` son componentes anidados.
 
-**Note**: _Let's forget about how the HTML/CSS should look like to represent such layout and focus on the components used._
+**Nota**: _Olvidémonos de cómo debería ser el HTML/CSS para representar este diseño y centrémonos en los componentes utilizados_.
 
-The `<template>` section for `UserSettings` component in the above layout would look something like this:
+La sección `<template>` para el componente `UserSettings` en el diseño anterior tendría este aspecto:
 
 ```vue-html
 <!-- UserSettings.vue -->
@@ -71,12 +69,12 @@ The `<template>` section for `UserSettings` component in the above layout would 
 </div>
 ```
 
-Then you can achieve the layout above with this route configuration:
+Entonces puedes lograr el layout de arriba con esta configuración de ruta:
 
 ```js
 {
   path: '/settings',
-  // You could also have named views at the top
+  // También podrías tener vistas con nombre en la parte superior
   component: UserSettings,
   children: [{
     path: 'emails',
@@ -91,4 +89,4 @@ Then you can achieve the layout above with this route configuration:
 }
 ```
 
-A working demo of this example can be found [here](https://codesandbox.io/s/nested-named-views-vue-router-4-examples-re9yl?&initialpath=%2Fsettings%2Femails).
+Puedes encontrar una demo funcional de este ejemplo [aquí](https://codesandbox.io/s/nested-named-views-vue-router-4-examples-re9yl?&initialpath=%2Fsettings%2Femails).
