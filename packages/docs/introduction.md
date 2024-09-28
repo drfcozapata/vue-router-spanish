@@ -2,7 +2,7 @@
 
 <VueSchoolLink
 href="https://vueschool.io/courses/vue-router-4-for-everyone"
-title="Aprende a crear potentes Aplicaciones de Página Única (SPA) con Vue Router en Vue School"> Ve un Curso de Vídeo Gratuito sobre Vue Router</VueSchoolLink>
+title="Aprende a crear potentes Aplicaciones de Página Única (SPA) con Vue Router en Vue School">Mira un Video Curso Gratuito sobre Vue Router</VueSchoolLink>
 
 Vue Router es el router oficial para [Vue.js](https://vuejs.org). Se integra profundamente con el núcleo de Vue.js para hacer la construcción de Aplicaciones de Página Única (SPA) con Vue.js una tarea fácil. Sus características incluyen:
 

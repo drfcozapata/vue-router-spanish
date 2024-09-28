@@ -2,35 +2,35 @@
 
 <VueSchoolLink
 href="https://vueschool.io/courses/vue-router-4-for-everyone"
-title="Learn how to build powerful Single Page Applications with the Vue Router on Vue School">Watch a Free Vue Router Video Course</VueSchoolLink>
+title="Aprende a crear potentes Aplicaciones de Página Única (SPA) con Vue Router en Vue School">Mira un Video Curso Gratuito sobre Vue Router</VueSchoolLink>
 
-Vue Router is the official client-side routing solution for Vue.
+Vue Router es la solución oficial de enrutamiento del lado del cliente para Vue.
 
-Client-side routing is used by single-page applications (SPAs) to tie the browser URL to the content seen by the user. As users navigate around the application, the URL updates accordingly, but the page doesn't need to be reloaded from the server.
+El enrutamiento del lado del cliente es utilizado por aplicaciones de una sola página (SPA) para vincular la URL del navegador al contenido visto por el usuario. A medida que los usuarios navegan por la aplicación, la URL se actualiza en consecuencia, pero la página no necesita ser recargada desde el servidor.
 
-Vue Router is built on Vue's component system. You configure **routes** to tell Vue Router which components to show for each URL path.
+Vue Router se basa en el sistema de componentes de Vue. Usted configura **routes** para decirle a Vue Router qué componentes mostrar para cada ruta URL.
 
-::: tip Prerequisites
-This guide will assume that you are already familiar with Vue itself. You don't need to be a Vue expert, but you may occasionally need to refer back to [the core Vue documentation](https://vuejs.org/) for more information about certain features.
+:::tip Requisitos previos
+Esta guía asume que usted ya está familiarizado con Vue. No necesitas ser un experto en Vue, pero puede que ocasionalmente necesites consultar [la documentación básica de Vue](https://vuejs.org/) para obtener más información sobre ciertas características.
 :::
 
 ## Un ejemplo
 
-To introduce some of the main ideas, we're going to consider this example:
+Para introducir algunas de las ideas principales, vamos a considerar este ejemplo:
 
 - [Vue Playground example](https://play.vuejs.org/#eNqFVVtv2zYU/itn6gArmC05btEHTXXTFcWyYZeiLfYy7UGWji02EsmRlOPA8H/fIambnaRD4Fg61++c7yN9DJqc8eirDpKANVIoA0coFOYG30kJJ9gq0cBs3+Is412AEq1B1Xmi2L+ObpvX+3IpI5+b8aFqSJ+rjANErcbQp/v3RrTchLMXlDa7CuZBl07YUoONrCl/bQPT6np9i3UtbLPv0phenVm6L3rQRgm+W79vlULeIQaZmypJ484HxyN87xzRtq3rj+SE08mViX2dlOf7vuAnh/I3xu/AiDdZEGfB+mdBz3ArGkzj0f9sRr4hy5D2zr49ykvjvmdqeTmv9RfDe4i7uM6dxsNiaF9+l0+y+Ts2Qj3cMm3oa94Zfd0py4uBzYFPO6Br3ZPaGzpme9rtQGdxg2WUgOC6Y0PDG/jbjnL0vMAsnhEsQcU4UZaMbU/z8zC3x/PYsbcN/ueilaJW03nDoy1Y+VUkT+0nvHI9PVB6PJE8M44HN2iJ27yt+9q09ek+rFR1oZg0RM5FgmvboKlEqRP/BrATX4SDH171JgBD4CIvThXJVldhP7Y7J9DtxP4nxZKk+470cnFQVuseHh2TlTduWmMEh5uiZsUdSXPAcKlOH/hIZmfEjhODRtPaozNKjyiiGcqn75Ej0Pl3lMyHp2fFeMHnEB/SRia+ict6ep/GXBWV1UGHyGtgh5O1K0KvuC8T/duieoi6tLdvYUYg+rXTmKH3jLmeKoW0owLDI7h8IrnvfAKrIargxfQ/lA0LHjmr8w3W3X3w2dVMIGWchoH9ohEl1pFRrCE2fccsgCY/1Mh3piLjaknc+pujr3TOqedk0eSSrg/BiVU3WtY5dBYMks2CkRtrzoLKGKmTOG65vNtFtON4jLh5Fb2MlnFJJ2tijVA3i40S99rdV1ngNmtr31BQXOLeCFHrRS7Zcy0eBd68jl5H13HNNjFVjxkv8eBq94unMY0mQWzZ7mJIKwtWo/pTGkaCORs2p9+Z+1+dzagWB6BFhcXdE/av+uAhf1RI0+1xMpzJFWnOuz98/gMP9Dw4icW2puhvOD+hFnVrMfqwn1peEuxJnEP7i+OM8d0X/eFgkOt+KAt0FLIj8v03Rh/hvoxeTbaozUONOiq0/aGhX6w5aY1xn7cRqkSVwEoegMCyEl4sl8sf3d1H5RhfbATdKk0C10t5cHaZlyWBHSzUJeNUFtaQww/08Tenz65xSzf+NLJaTTuP5UcARVFMACSwpL9VVyE4/QesCg/V)
 
-Let's start by looking at the root component, `App.vue`.
+Comencemos por el componente raíz, `App.vue`.
 
 ### App.vue
 
 ```vue
 <template>
-  <h1>Hello App!</h1>
-  <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
+  <h1>App ¡Hola!</h1>
+  <p><strong>Ruta actual:</strong> {{ $route.fullPath }}</p>
   <nav>
-    <RouterLink to="/">Go to Home</RouterLink>
-    <RouterLink to="/about">Go to About</RouterLink>
+    <RouterLink to="/">Ir a Inicio</RouterLink>
+    <RouterLink to="/about">Ir a Acerca de</RouterLink>
   </nav>
   <main>
     <RouterView />
@@ -38,19 +38,19 @@ Let's start by looking at the root component, `App.vue`.
 </template>
 ```
 
-This template is using two components provided by Vue Router, `RouterLink` and `RouterView`.
+Esta plantilla utiliza dos componentes proporcionados por Vue Router, `RouterLink` y `RouterView`.
 
-Instead of using regular `<a>` tags, we use the custom component `RouterLink` to create links. This allows Vue Router to change the URL without reloading the page, handle URL generation, encoding, and various other features. We'll go into more detail about `RouterLink` in later sections of the guide.
+En lugar de utilizar etiquetas regulares `<a>`, utilizamos el componente personalizado `RouterLink` para crear enlaces. Esto le permite a Vue Router cambiar la URL sin recargar la página, manejar la generación de URLs, la codificación, y varias otras características. Entraremos en más detalle sobre `RouterLink` en secciones posteriores de la guía.
 
-The `RouterView` component tells Vue Router where to render the current **route component**. That's the component that corresponds to the current URL path. It doesn't have to be in `App.vue`, you can put it anywhere to adapt it to your layout, but it does need to be included somewhere, otherwise Vue Router won't render anything.
+El componente `RouterView` le dice a Vue Router dónde mostrar el **componente de ruta** actual. Ese es el componente que corresponde a la ruta URL actual. No tiene que estar en `App.vue`, puedes ponerlo en cualquier sitio para adaptarlo a tu layout, pero sí necesita estar incluido en algún sitio, de lo contrario Vue Router no renderizará nada.
 
-The example above also uses <code v-pre>{{ $route.fullPath }}</code>. You can use `$route` in your component templates to access an object that represents the current route.
+El ejemplo anterior también utiliza <code v-pre>{{ $route.fullPath }}</code>. Puede utilizar `$route` en las plantillas de tus componentes para acceder a un objeto que representa la ruta actual.
 
 <VueMasteryLogoLink></VueMasteryLogoLink>
 
-### Creating the router instance
+### Creación de la instancia del enrutador
 
-The router instance is created by calling the function `createRouter()`:
+La instancia del enrutador se crea llamando a la función `createRouter()`:
 
 ```js
 import { createMemoryHistory, createRouter } from 'vue-router'
@@ -69,21 +69,21 @@ const router = createRouter({
 })
 ```
 
-The `routes` option defines the routes themselves, mapping URL paths to components. The component specified by the `component` option is the one that will be rendered by the `<RouterView>` in our earlier `App.vue`. These route components are sometimes referred to as _views_, though they are just normal Vue components.
+La opción `routes` define las propias rutas, asignando rutas URL a los componentes. El componente especificado por la opción `component` es el que será renderizado por el `<RouterView>` en nuestro `App.vue` previo. Estos componentes de ruta a veces se denominan _vistas_, aunque no son más que componentes normales de Vue.
 
-Routes support various other options that we'll see later in the guide, but for now we only need `path` and `component`.
+Las rutas admiten otras opciones que veremos más adelante en la guía, pero por ahora sólo necesitamos `path` y `component`.
 
-The `history` option controls how routes are mapped onto URLs and vice versa. For the Playground example we're using `createMemoryHistory()`, which ignores the browser URL entirely and uses its own internal URL instead. That works well for the Playground, but it's unlikely to be what you'd want in a real application. Typically, you'd want to use `createWebHistory()` instead, or perhaps `createWebHashHistory()`. We'll cover that topic in more detail in the guide to [History modes](./essentials/history-mode).
+La opción `history` controla cómo se mapean las rutas en las URLs y viceversa. Para el ejemplo del Playground usamos `createMemoryHistory()`, que ignora completamente la URL del navegador y usa su propia URL interna. Esto funciona bien para el Playground, pero es raro que sea lo que quieres en una aplicación real. Típicamente, querrás usar `createWebHistory()` en su lugar, o quizás `createWebHashHistory()`. Cubriremos este tema con más detalle en la guía de [Modos de historia](./essentials/history-mode).
 
-### Registering the router plugin
+### Registrando el plugin del enrutador
 
-Once we've created our router instance, we need to register it as a plugin by calling `use()` on our application:
+Una vez que hemos creado nuestra instancia del router, necesitamos registrarlo como plugin llamando a `use()` en nuestra aplicación:
 
 ```js
 createApp(App).use(router).mount('#app')
 ```
 
-Or, equivalently:
+O, lo que es lo mismo:
 
 ```js
 const app = createApp(App)
@@ -91,24 +91,24 @@ app.use(router)
 app.mount('#app')
 ```
 
-Like with most Vue plugins, the call to `use()` needs to happen before the call to `mount()`.
+Como con la mayoría de los plugins de Vue, la llamada a `use()` debe realizarse antes de la llamada a `mount()`.
 
-If you're curious about what this plugin does, some of its responsibilities include:
+Si tienes curiosidad sobre lo que hace este plugin, algunas de sus responsabilidades incluyen:
 
-1. [Globally registering](https://vuejs.org/guide/components/registration.html#global-registration) the `RouterView` and `RouterLink` components.
-2. Adding the global `$router` and `$route` properties.
-3. Enabling the `useRouter()` and `useRoute()` composables.
-4. Triggering the router to resolve the initial route.
+1. [Registro global](https://vuejs.org/guide/components/registration.html#global-registration) de los componentes `RouterView` y `RouterLink`.
+2. Añadir las propiedades globales `$router` y `$route`.
+3. Habilitar los componentes `useRouter()` y `useRoute()`.
+4. Activar el enrutador para resolver la ruta inicial.
 
-### Accessing the router and current route
+### Accediendo al enrutador y a la ruta actual
 
-You'll likely want to access the router from elsewhere in your application.
+Es probable que quieras acceder al enrutador desde cualquier otra parte de tu aplicación.
 
-If you're exporting the router instance from an ES module, you could import the router instance directly where you need it. In some cases this is the best approach, but we have other options if we're inside a component.
+Si estás exportando la instancia del enrutador desde un módulo ES, podrías importar la instancia del enrutador directamente donde lo necesites. En algunos casos este es el mejor enfoque, pero tenemos otras opciones si estamos dentro de un componente.
 
-In component templates, the router instance is exposed as `$router`. This is similar to the `$route` property we saw earlier, but note the extra `r` on the end.
+En las plantillas de los componentes, la instancia del enrutador se expone como `$router`. Esto es similar a la propiedad `$route` que vimos antes, pero fíjate en la `r` extra al final.
 
-If we're using the Options API, we can access these same two properties as `this.$router` and `this.$route` in our JavaScript code. The `HomeView.vue` component in the Playground example accesses the router that way:
+Si estamos utilizando la API de opciones, podemos acceder a estas dos propiedades como `this.$router` y `this.$route` en nuestro código JavaScript. El componente `HomeView.vue` del ejemplo de Playground accede al enrutador de esta forma:
 
 ```js
 export default {
@@ -120,9 +120,9 @@ export default {
 }
 ```
 
-This method is calling `push()`, which is used for [programmatic navigation](./essentials/navigation). We'll learn more about that later.
+Este método está llamando a `push()`, que se utiliza para la [navegación programática](./essentials/navigation). Aprenderemos más sobre esto más adelante.
 
-With the Composition API, we don't have access to the component instance via `this`, so Vue Router includes some composables that we can use instead. `AboutView.vue` in the Playground example is using that approach:
+Con la API de composición, no tenemos acceso a la instancia del componente a través de `this`, por lo que Vue Router incluye algunos composables que podemos utilizar en su lugar. `AboutView.vue` en el ejemplo del Playground utiliza este enfoque:
 
 ```vue
 <script setup>
@@ -143,11 +143,11 @@ const search = computed({
 </script>
 ```
 
-It's not necessary to understand all of that code right now. The key thing to notice is that the composables `useRouter()` and `useRoute()` are used to access the router instance and current route respectively.
+No es necesario entender todo ese código ahora mismo. La clave es que los composables `useRouter()` y `useRoute()` se usan para acceder a la instancia del router y a la ruta actual, respectivamente.
 
-### Next steps
+### Próximos pasos
 
-If you'd like to see a complete example using Vite, you can use the [create-vue](https://github.com/vuejs/create-vue) scaffolding tool, which has the option to include Vue Router in its example project:
+Si quieres ver un ejemplo completo usando Vite, puedes usar la herramienta de creación [create-vue](https://github.com/vuejs/create-vue), que tiene la opción de incluir Vue Router en el proyecto de ejemplo:
 
 ::: code-group
 
@@ -165,37 +165,37 @@ pnpm create vue
 
 :::
 
-The example project created by create-vue uses similar features to the ones we've seen here. You may find that a useful starting point for exploring the features introduced in the next few pages of this guide.
+El proyecto de ejemplo creado por create-vue utiliza características similares a las que hemos visto aquí. Puedes considerarlo un punto de partida útil para explorar las características introducidas en las siguientes páginas de esta guía.
 
-## Conventions in this guide
+## Convenciones en esta guía
 
-### Single-File Components
+### Componentes de un solo archivo (SFC)
 
-Vue Router is most commonly used in applications built using a bundler (e.g. Vite) and [SFCs](https://vuejs.org/guide/introduction.html#single-file-components) (i.e. `.vue` files). Most of the examples in this guide will be written in that style, but Vue Router itself doesn't require you to use build tools or SFCs.
+Vue Router es más comúnmente usado en aplicaciones construidas usando un empaquetador (por ejemplo Vite) y [SFCs](https://vuejs.org/guide/introduction.html#single-file-components) (por ejemplo archivos `.vue`). La mayoría de los ejemplos de esta guía serán escritos en ese estilo, pero Vue Router en sí mismo no requiere que uses herramientas de compilación o SFCs.
 
-For example, if you're using the _global builds_ of [Vue](https://vuejs.org/guide/quick-start.html#using-vue-from-cdn) and [Vue Router](../installation#Direct-Download-CDN), the libraries are exposed via global objects, rather than imports:
+Por ejemplo, si estás usando las _construcciones globales_ de [Vue](https://vuejs.org/guide/quick-start.html#using-vue-from-cdn) y [Vue Router](../installation#Direct-Download-CDN), las librerías están expuestas a través de objetos globales, en lugar de importaciones:
 
 ```js
 const { createApp } = Vue
 const { createRouter, createWebHistory } = VueRouter
 ```
 
-### Component API style
+### Estilo de la API de componentes
 
-Vue Router can be used with both the Composition API and the Options API. Where relevant, the examples in this guide will show components written in both styles. Composition API examples will typically use `<script setup>`, rather than an explicit `setup` function.
+Vue Router puede ser usado tanto con la Composition API como con la Options API. Cuando sea relevante, los ejemplos de esta guía mostrarán componentes escritos en ambos estilos. Los ejemplos de la Composition API utilizarán normalmente `<script setup>`, en lugar de una función explícita `setup`.
 
-If you need a refresher about the two styles, see [Vue - API Styles](https://vuejs.org/guide/introduction.html#api-styles).
+Si necesitas un repaso sobre los dos estilos, consulta [Vue - Estilos de API](https://vuejs.org/guide/introduction.html#api-styles).
 
-### `router` and `route`
+### `router` y `route`
 
-Throughout the guide, we will often refer to the router instance as `router`. This is the object returned by `createRouter()`. How you access that object in your application will depend on the context. For example, in a component using the Composition API, it can be accessed by calling `useRouter()`. With the Options API, it can be accessed using `this.$router`.
+A lo largo de la guía, a menudo nos referiremos a la instancia del enrutador como `router`. Este es el objeto devuelto por `createRouter()`. La forma de acceder a ese objeto en tu aplicación dependerá del contexto. Por ejemplo, en un componente que utilice la Composition API, se puede acceder llamando a `useRouter()`. Con la Options API, se puede acceder utilizando `this.$router`.
 
-Similarly, the current route will be referred to as `route`. It can be accessed in components using `useRoute()` or `this.$route`, depending on which API the component is using.
+Del mismo modo, la ruta actual se denominará «ruta». Se puede acceder a ella en los componentes utilizando `useRoute()` o `this.$route`, dependiendo de la API que utilice el componente.
 
-### `RouterView` and `RouterLink`
+### `RouterView` y `RouterLink`.
 
-The components `RouterView` and `RouterLink` are both [registered globally](https://vuejs.org/guide/components/registration.html#global-registration), so they don't need to be imported before using them in component templates. However, if you prefer, you can import them locally, e.g. `import { RouterLink } from 'vue-router'`.
+Los componentes `RouterView` y `RouterLink` están ambos [registrados globalmente](https://vuejs.org/guide/components/registration.html#global-registration), por lo que no necesitan ser importados antes de usarlos en los templates de los componentes. Sin embargo, si lo prefieres, puedes importarlos localmente, por ejemplo `import { RouterLink } from 'vue-router'`.
 
-In templates, component names can be written in either PascalCase or kebab-case. Vue's template compiler supports either format, so `<RouterView>` and `<router-view>` are usually equivalent. You should follow whatever convention is used within your project.
+En los templates, los nombres de los componentes pueden escribirse en PascalCase o kebab-case. El compilador de templates de Vue soporta cualquiera de los dos formatos, por lo que `<RouterView>` y `<router-view>` son equivalentes. Deberías seguir cualquier convención que se use en tu proyecto.
 
-If you're using in-DOM templates then [the usual caveats](https://vuejs.org/guide/essentials/component-basics.html#in-dom-template-parsing-caveats) apply: component names must be written in kebab-case and self-closing tags are not supported. So rather than writing `<RouterView />`, you would need to use `<router-view></router-view>` instead.
+Si estás usando templates in-DOM entonces se aplican [las advertencias usuales](https://vuejs.org/guide/essentials/component-basics.html#in-dom-template-parsing-caveats): los nombres de los componentes deben ser escritos en kebab-case y las etiquetas de auto-cierre no son soportadas. Así que en lugar de escribir `<RouterView />`, tendrías que usar `<router-view></router-view>`.

@@ -2,112 +2,112 @@
 sidebarDepth: 0
 ---
 
-# Programmatic Navigation
+# Navegación Programática
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-programmatic-navigation"
-  title="Learn how to navigate programmatically"
+  title="Aprende cómo navegar programáticamente"
 />
 
-Aside from using `<router-link>` to create anchor tags for declarative navigation, we can do this programmatically using the router's instance methods.
+Aparte de usar `<router-link>` para crear etiquetas de anclaje para la navegación declarativa, podemos hacerlo programáticamente usando los métodos de instancia del router.
 
-## Navigate to a different location
+## Navegar a una ubicación diferente
 
-**Note: The examples below refer to the router instance as `router`. Inside a component, you can access the router using the `$router` property, e.g. `this.$router.push(...)`. If you're using the Composition API, the router is accessible by calling [`useRouter()`](../advanced/composition-api).**
+**Nota: Los ejemplos siguientes se refieren a la instancia del enrutador como `router`. Dentro de un componente, puedes acceder al enrutador usando la propiedad `$router`, por ejemplo `this.$router.push(...)`. Si utilizas la Composition API, puedes acceder al enrutador llamando a [`useRouter()`](../advanced/composition-api).**.
 
-To navigate to a different URL, use `router.push`. This method pushes a new entry into the history stack, so when the user clicks the browser back button they will be taken to the previous URL.
+Para navegar a una URL diferente, utiliza `router.push`. Este método empuja una nueva entrada en la pila del historial, por lo que cuando el usuario hace clic en el botón de retroceso del navegador que se llevará a la URL previa.
 
-This is the method called internally when you click a `<router-link>`, so clicking `<router-link :to="...">` is the equivalent of calling `router.push(...)`.
+Este es el método al que se llama internamente cuando se pulsa un `<router-link>`, por lo que pulsar `<router-link :to=«...»>` es el equivalente a llamar a `router.push(...)`.
 
-| Declarative               | Programmatic       |
+| Declarativa               | Programática       |
 | ------------------------- | ------------------ |
 | `<router-link :to="...">` | `router.push(...)` |
 
-The argument can be a string path, or a location descriptor object. Examples:
+El argumento puede ser una ruta de cadena o un objeto descriptor de la localización. Ejemplos:
 
 ```js
-// literal string path
+// ruta de cadena literal
 router.push('/users/eduardo')
 
-// object with path
+// objeto con ruta
 router.push({ path: '/users/eduardo' })
 
-// named route with params to let the router build the url
+// ruta con nombre y parámetros para que el enrutador construya la url
 router.push({ name: 'user', params: { username: 'eduardo' } })
 
-// with query, resulting in /register?plan=private
+// con query, resultando en /register?plan=private
 router.push({ path: '/register', query: { plan: 'private' } })
 
-// with hash, resulting in /about#team
+// con hash, resultando en /about#team
 router.push({ path: '/about', hash: '#team' })
 ```
 
-**Note**: `params` are ignored if a `path` is provided, which is not the case for `query`, as shown in the example above. Instead, you need to provide the `name` of the route or manually specify the whole `path` with any parameter:
+**Nota**: `params` se ignora si se proporciona un `path`, que no es el caso de `query`, como se muestra en el ejemplo anterior. En su lugar, es necesario proporcionar el `name` de la ruta o especificar manualmente el `path` completo con cualquier parámetro:
 
 ```js
 const username = 'eduardo'
-// we can manually build the url but we will have to handle the encoding ourselves
+// podemos construir manualmente la url pero tendremos que manejar la codificación nosotros mismos
 router.push(`/user/${username}`) // -> /user/eduardo
-// same as
+// lo mismo que
 router.push({ path: `/user/${username}` }) // -> /user/eduardo
-// if possible use `name` and `params` to benefit from automatic URL encoding
+// si es posible usa `name` y `params` para beneficiarte de la codificación automática de la URL
 router.push({ name: 'user', params: { username } }) // -> /user/eduardo
-// `params` cannot be used alongside `path`
+// `params` no puede usarse junto con `path`.
 router.push({ path: '/user', params: { username } }) // -> /user
 ```
 
-When specifying `params`, make sure to either provide a `string` or `number` (or an array of these for [repeatable params](./route-matching-syntax.md#Repeatable-params)). **Any other type (like objects, booleans, etc) will be automatically stringified**. For [optional params](./route-matching-syntax.md#Optional-parameters), you can provide an empty string (`""`) or `null` as the value to remove it.
+Cuando especifiques `params`, asegúrate de proporcionar una `string` o un `number` (o un array de estos para [parámetros repetibles](./route-matching-syntax.md#Repeatable-params)). **Cualquier otro tipo (como objetos, booleanos, etc.) se codificará automáticamente**. Para [parámetros opcionales ](./route-matching-syntax.md#Optional-parameters), puedes proporcionar una cadena vacía (`""`) o `null` como valor para eliminarlo.
 
-Since the prop `to` accepts the same kind of object as `router.push`, the exact same rules apply to both of them.
+Dado que la proposición `to` acepta el mismo tipo de objeto que `router.push`, se aplican exactamente las mismas reglas a ambos.
 
-`router.push` and all the other navigation methods return a _Promise_ that allows us to wait till the navigation is finished and to know if it succeeded or failed. We will talk more about that in [Navigation Handling](../advanced/navigation-failures.md).
+`router.push` y todos los demás métodos de navegación devuelven un _Promise_ que nos permite esperar a que la navegación termine y saber si ha tenido éxito o ha fallado. Hablaremos más sobre esto en [Manejo de la navegación ](../advanced/navigation-failures.md).
 
-## Replace current location
+## Reemplazar la localización actual
 
-It acts like `router.push`, the only difference is that it navigates without pushing a new history entry, as its name suggests - it replaces the current entry.
+Actúa como `router.push`, la única diferencia es que navega sin empujar una nueva entrada del historial, como su nombre indica - reemplaza la entrada actual.
 
-| Declarative                       | Programmatic          |
+| Declarativa                       | Programática          |
 | --------------------------------- | --------------------- |
 | `<router-link :to="..." replace>` | `router.replace(...)` |
 
-It's also possible to directly add a property `replace: true` to the `to` argument that is passed to `router.push`:
+También es posible añadir directamente una propiedad `replace: true` al argumento `to` que se pasa a `router.push`:
 
 ```js
 router.push({ path: '/home', replace: true })
-// equivalent to
+// equivalente a
 router.replace({ path: '/home' })
 ```
 
-## Traverse history
+## Historial de navegación
 
 <VueSchoolLink
-  href="https://vueschool.io/lessons/go-back"
-  title="Learn how to use Vue Router to go back"
+href="https://vueschool.io/lessons/go-back"
+title="Aprende a usar Vue Router para volver atrás"
 />
 
-This method takes a single integer as parameter that indicates by how many steps to go forward or go backward in the history stack, similar to `window.history.go(n)`.
+Este método toma un único entero como parámetro que indica por cuántos pasos avanzar o retroceder en la pila del historial, similar a `window.history.go(n)`.
 
-Examples
+Ejemplos
 
 ```js
-// go forward by one record, the same as router.forward()
+// avanzar un registro, igual que router.forward()
 router.go(1)
 
-// go back by one record, the same as router.back()
+// retroceder un registro, igual que router.back()
 router.go(-1)
 
-// go forward by 3 records
+// avanzar 3 registros
 router.go(3)
 
-// fails silently if there aren't that many records
+// falla silenciosamente si no hay tantos registros
 router.go(-100)
 router.go(100)
 ```
 
-## History Manipulation
+## Manipulación del Historial
 
-You may have noticed that `router.push`, `router.replace` and `router.go` are counterparts of [`window.history.pushState`, `window.history.replaceState` and `window.history.go`](https://developer.mozilla.org/en-US/docs/Web/API/History), and they do imitate the `window.history` APIs.
+Te habrás dado cuenta de que `router.push`, `router.replace` y `router.go` son homólogos de [`window.history.pushState`, `window.history.replaceState` y `window.history.go`](https://developer.mozilla.org/en-US/docs/Web/API/History), e imitan las APIs de `window.history`.
 
-Therefore, if you are already familiar with [Browser History APIs](https://developer.mozilla.org/en-US/docs/Web/API/History_API), manipulating history will feel familiar when using Vue Router.
+Por lo tanto, si ya estás familiarizado con las [APIs del Historial del Navegador](https://developer.mozilla.org/en-US/docs/Web/API/History_API), manipular el historial te resultará familiar cuando utilices Vue Router.
 
-It is worth mentioning that Vue Router navigation methods (`push`, `replace`, `go`) work consistently no matter the `history` option passed when creating the router instance.
+Vale la pena mencionar que los métodos de navegación de Vue Router (`push`, `replace`, `go`) funcionan consistentemente sin importar la opción `history` pasada al crear la instancia del router.

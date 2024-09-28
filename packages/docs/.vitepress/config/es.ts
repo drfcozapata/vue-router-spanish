@@ -76,11 +76,11 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/guide/',
             },
             {
-              text: 'Concordancia Dinámica de Rutas',
+              text: 'Emparejamiento de Rutas Dinámicas',
               link: '/guide/essentials/dynamic-matching.html',
             },
             {
-              text: 'Sintaxis de Concordancia de Rutas',
+              text: 'Sintaxis del Emparejamiento de Rutas',
               link: '/guide/essentials/route-matching-syntax.html',
             },
             {

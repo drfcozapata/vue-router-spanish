@@ -1,10 +1,10 @@
-# Installation
+# Instalación
 
 <VueMasteryLogoLink></VueMasteryLogoLink>
 
-## Package managers
+## Manejadores de paquetes
 
-If you have an existing project that uses a JavaScript package manager, you can install Vue Router from the npm registry:
+Si tienes un proyecto existente que utiliza un gestor de paquetes JavaScript, puedes instalar Vue Router desde el repositorio de npm:
 
 ::: code-group
 
@@ -22,7 +22,7 @@ pnpm add vue-router@4
 
 :::
 
-If you're starting a new project, you might find it easier to use the [create-vue](https://github.com/vuejs/create-vue) scaffolding tool, which creates a Vite-based project with the option to include Vue Router:
+Si estás empezando un nuevo proyecto, podrías encontrar más fácil usar la herramienta de andamiaje [create-vue](https://github.com/vuejs/create-vue), la cual crea un proyecto basado en Vue con la opción de incluir Vue Router:
 
 ::: code-group
 
@@ -40,18 +40,18 @@ pnpm create vue
 
 :::
 
-You'll be prompted with some questions about the kind of project you want to create. If you choose to install Vue Router, the example application will also demonstrate some of Vue Router's core features.
+Se te harán algunas preguntas sobre el tipo de proyecto que quieres crear. Si eliges instalar Vue Router, la aplicación de ejemplo también demostrará algunas de las características principales de Vue Router.
 
-Projects using package managers will typically use ES modules to access Vue Router, e.g. `import { createRouter } from 'vue-router'`.
+Los proyectos que utilicen gestores de paquetes normalmente utilizarán módulos ES para acceder a Vue Router, por ejemplo `import { createRouter } from 'vue-router'`.
 
-## Direct Download / CDN
+## Descarga directa / CDN
 
 [https://unpkg.com/vue-router@4](https://unpkg.com/vue-router@4)
 
 <!--email_off-->
 
-[Unpkg.com](https://unpkg.com) provides npm-based CDN links. The above link will always point to the latest release on npm. You can also use a specific version/tag via URLs like `https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js`.
+[Unpkg.com](https://unpkg.com) proporciona enlaces CDN basados en npm. El enlace anterior siempre apuntará a la última versión en npm. También puedes usar una versión/etiqueta específica a través de URLs como `https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js`.
 
 <!--/email_off-->
 
-This will expose Vue Router via a global `VueRouter` object, e.g. `VueRouter.createRouter(...)`.
+Esto expondrá Vue Router a través de un objeto global `VueRouter`, por ejemplo `VueRouter.createRouter(...)`.

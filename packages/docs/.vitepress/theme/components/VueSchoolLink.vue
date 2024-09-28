@@ -19,7 +19,7 @@ const { site } = useData()
 const translations = {
   'en-US': 'Watch a free video lesson on Vue School',
   'zh-CN': '在 Vue School 上观看免费视频课程',
-  'es-ES': 'Ve una lección de video gratuita en Vue School',
+  'es-ES': 'Mira una lección de video gratuita en Vue School',
 }
 defineProps<{ href: string; title: string }>()
 </script>

@@ -1,14 +1,14 @@
-# Nested Routes
+# Rutas Anidadas
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/nested-routes"
-  title="Learn about nested routes"
+  title="Aprende acerca de rutas anidadas"
 />
 
-Some applications' UIs are composed of components that are nested multiple levels deep. In this case, it is very common that the segments of a URL correspond to a certain structure of nested components, for example:
+Las interfaces de usuario de algunas aplicaciones están constituidas por componentes anidados a varios niveles de profundidad. En este caso, es muy común que los segmentos de una URL correspondan a una determinada estructura de componentes anidados, por ejemplo:
 
 ```
-/user/johnny/profile                   /user/johnny/posts 
+/user/johnny/profile                   /user/johnny/posts
 ┌──────────────────┐                  ┌──────────────────┐
 │ User             │                  │ User             │
 │ ┌──────────────┐ │                  │ ┌──────────────┐ │
@@ -18,9 +18,9 @@ Some applications' UIs are composed of components that are nested multiple level
 └──────────────────┘                  └──────────────────┘
 ```
 
-With Vue Router, you can express this relationship using nested route configurations.
+Con Vue Router, puedes expresar esta relación utilizando las configuraciones de rutas anidadas.
 
-Given the app we created in the last chapter:
+Considerando la app que creamos en el capítulo anterior:
 
 ```vue
 <!-- App.vue -->
@@ -32,20 +32,18 @@ Given the app we created in the last chapter:
 ```vue
 <!-- User.vue -->
 <template>
-  <div>
-    User {{ $route.params.id }}
-  </div>
+  <div>User {{ $route.params.id }}</div>
 </template>
 ```
 
 ```js
 import User from './User.vue'
 
-// these are passed to `createRouter`
+// estas se pasan a `createRouter`.
 const routes = [{ path: '/user/:id', component: User }]
 ```
 
-The `<router-view>` here is a top-level `router-view`. It renders the component matched by a top level route. Similarly, a rendered component can also contain its own, nested `<router-view>`. For example, if we add one inside the `User` component's template:
+El `<router-view>` aquí es un `router-view` de nivel superior. Representa el componente correspondiente a una ruta de nivel superior. Del mismo modo, un componente renderizado también puede contener su propio `<router-view>` anidado. Por ejemplo, si añadimos uno dentro de la plantilla del componente `User`:
 
 ```vue
 <!-- User.vue -->
@@ -57,7 +55,7 @@ The `<router-view>` here is a top-level `router-view`. It renders the component 
 </template>
 ```
 
-To render components into this nested `router-view`, we need to use the `children` option in any of the routes:
+Para renderizar componentes en este `router-view` anidado, necesitamos usar la opción `children` en cualquiera de las rutas:
 
 ```js
 const routes = [
@@ -66,14 +64,14 @@ const routes = [
     component: User,
     children: [
       {
-        // UserProfile will be rendered inside User's <router-view>
-        // when /user/:id/profile is matched
+        // UserProfile será renderizado dentro del <router-view> de User
+        // cuando coincida /user/:id/profile
         path: 'profile',
         component: UserProfile,
       },
       {
-        // UserPosts will be rendered inside User's <router-view>
-        // when /user/:id/posts is matched
+        // UserPosts se mostrará dentro del <router-view> de User
+        // cuando coincida /user/:id/posts
         path: 'posts',
         component: UserPosts,
       },
@@ -82,11 +80,11 @@ const routes = [
 ]
 ```
 
-**Note that nested paths that start with `/` will be treated as root paths. This allows you to leverage the component nesting without having to use a nested URL.**
+**Observa que las rutas anidadas que empiecen por `/` se tratarán como rutas raíz. Esto permite aprovechar el anidamiento de componentes sin tener que utilizar una URL anidada.**
 
-As you can see, the `children` option is just another Array of routes like `routes` itself. Therefore, you can keep nesting views as much as you need.
+Como puedes ver, la opción `children` es simplemente otro Array de rutas como el propio `routes`. Por lo tanto, puedes seguir anidando vistas tanto como necesites.
 
-At this point, with the above configuration, when you visit `/user/eduardo`, nothing will be rendered inside `User`'s `router-view`, because no nested route is matched. Maybe you do want to render something there. In such case you can provide an empty nested path:
+En este punto, con la configuración anterior, cuando visites `/user/eduardo`, no se mostrará nada dentro del `router-view` de `User`, porque no hay ninguna ruta anidada. Tal vez quieras mostrar algo allí. En ese caso puedes proporcionar una ruta anidada vacía:
 
 ```js
 const routes = [
@@ -94,36 +92,36 @@ const routes = [
     path: '/user/:id',
     component: User,
     children: [
-      // UserHome will be rendered inside User's <router-view>
-      // when /user/:id is matched
+      // UserHome se mostrará dentro del <router-view> de User
+      // cuando coincida /user/:id
       { path: '', component: UserHome },
 
-      // ...other sub routes
+      // ...otras sub-rutas
     ],
   },
 ]
 ```
 
-A working demo of this example can be found [here](https://codesandbox.io/s/nested-views-vue-router-4-examples-hl326?initialpath=%2Fusers%2Feduardo).
+Puedes encontrar una demo de este ejemplo [aquí](https://codesandbox.io/s/nested-views-vue-router-4-examples-hl326?initialpath=%2Fusers%2Feduardo).
 
-## Nested Named Routes
+## Rutas Anidadas con Nombre
 
-When dealing with [Named Routes](./named-routes.md), you usually **name the children routes**:
+Cuando se trabaja con [Rutas con Nombre](./named-routes.md), normalmente se **nombran las rutas hijas**:
 
 ```js
 const routes = [
   {
     path: '/user/:id',
     component: User,
-    // notice how only the child route has a name
+    // observa que sólo la ruta hija tiene nombre
     children: [{ path: '', name: 'user', component: UserHome }],
   },
 ]
 ```
 
-This will ensure navigating to `/user/:id` will always display the nested route.
+Esto asegurará que al navegar a `/user/:id` siempre se muestre la ruta anidada.
 
-In some scenarios, you may want to navigate to a named route without navigating to the nested route. For example, if you want to navigate to `/user/:id` without displaying the nested route. In that case, you can **also** name the parent route but note **that reloading the page will always display the nested child** as it's considered a navigation to the path `/users/:id` instead of the named route:
+En algunos casos, es posible que quieras navegar a una ruta con nombre sin navegar a la ruta anidada. Por ejemplo, si quieres navegar a `/user/:id` sin mostrar la ruta anidada. En ese caso, puede **también** nombrar la ruta padre pero recuerda **que al recargar la página siempre se mostrará la ruta hija anidada** ya que se considera una navegación a la ruta `/users/:id` en lugar de a la ruta nombrada:
 
 ```js
 const routes = [
@@ -136,11 +134,11 @@ const routes = [
 ]
 ```
 
-## Omitting parent components <Badge text="4.1+" />
+## Omitiendo componentes padre <Badge text=«4.1+» />
 
-We can also take advantage of the parent-child relationship between routes without needing to nest route components. This can be useful for grouping together routes with a common path prefix, or when working with more advanced features, such as [per-route navigation guards](../advanced/navigation-guards#Per-Route-Guard) or [route meta fields](../advanced/meta).
+También podemos aprovechar la relación padre-hijo entre rutas sin necesidad de anidar componentes de ruta. Esto puede ser útil para agrupar rutas con un prefijo de ruta común, o cuando se trabaja con características más avanzadas, como [ protectores de navegación por ruta ](../advanced/navigation-guards#Per-Route-Guard) o [campos meta de ruta ](../advanced/meta).
 
-To achieve this, we omit the `component` and `components` options from the parent route:
+Para conseguirlo, omitimos las opciones `component` y `components` de la ruta padre:
 
 ```js
 const routes = [
@@ -150,9 +148,9 @@ const routes = [
       { path: '', component: AdminOverview },
       { path: 'users', component: AdminUserList },
       { path: 'users/:id', component: AdminUserDetails },
-    ], 
+    ],
   },
 ]
 ```
 
-As the parent doesn't specify a route component, the top-level `<router-view>` will skip over the parent and just use the component from the relevant child instead.
+Como el padre no especifica un componente de ruta, el nivel superior `<router-view>` omitirá al padre y utilizará el componente del hijo correspondiente.

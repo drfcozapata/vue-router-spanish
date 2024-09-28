@@ -1,126 +1,126 @@
-# Routes' Matching Syntax
+# Sintaxis del Emparejamiento de Rutas
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-advanced-routes-matching-syntax"
-  title="Learn how to use advanced route routes' matching syntax"
+  title="Aprende cómo usar la sintaxis avanzada del emparejamiento de rutas"
 />
 
-Most applications will use static routes like `/about` and dynamic routes like `/users/:userId` like we just saw in [Dynamic Route Matching](./dynamic-matching.md), but Vue Router has much more to offer!
+La mayoría de las aplicaciones utilizarán rutas estáticas como `/about` y rutas dinámicas como `/users/:userId`, como acabamos de ver en [Emparejamiento de Rutas Dinámicas](./dynamic-matching.md), pero Vue Router tiene mucho más para ofrecer.
 
 :::tip
-For the sake of simplicity, all route records **are omitting the `component` property** to focus on the `path` value.
+En haras de la simplicidad, todos los registros de ruta **omiten la propiedad `component`** para enfocarse en el valor `path`.
 :::
 
-## Custom regex in params
+## Expresiones regulares personalizadas en los parámetros
 
-When defining a param like `:userId`, we internally use the following regex `([^/]+)` (at least one character that isn't a slash `/`) to extract params from URLs. This works well unless you need to differentiate two routes based on the param content. Imagine two routes `/:orderId` and `/:productName`, both would match the exact same URLs, so we need a way to differentiate them. The easiest way would be to add a static section to the path that differentiates them:
+Cuando se define un parámetro como `:userId`, usamos internamente la siguiente expresión regular `([^/]+)` (al menos un carácter que no sea una barra `/`) para extraer los parámetros de las URL. Esto funciona bien a menos que sea necesario diferenciar dos rutas en función al contenido del parámetro. Imagine dos rutas `/:orderId` y `/:productName`, ambas coincidirían exactamente con las mismas URL, por lo que necesitamos una forma de diferenciarlas. La forma más fácil sería agregar una sección estática a la ruta que las diferencie:
 
 ```js
 const routes = [
-  // matches /o/3549
+  // se corresponde con /o/3549
   { path: '/o/:orderId' },
-  // matches /p/books
+  // se corresponde con /p/books
   { path: '/p/:productName' },
 ]
 ```
 
-But in some scenarios, we don't want to add that static section `/o` or `/p`. However, `orderId` is always a number while `productName` can be anything so we can specify a custom regex for a param in parentheses:
+Pero en algunos escenarios, no queremos añadir esa sección estática `/o` o `/p`. Sin embargo, `orderId` es siempre un número, mientras que `productName` puede ser cualquier cosa, así que podemos especificar un regex personalizado para un parámetro entre paréntesis:
 
 ```js
 const routes = [
-  // /:orderId -> matches only numbers
+  // /:orderId -> se corresponde sólo con números
   { path: '/:orderId(\\d+)' },
-  // /:productName -> matches anything else
+  // /:productName -> se corresponde con cualquier otra cosa
   { path: '/:productName' },
 ]
 ```
 
-Now, going to `/25` will match `/:orderId` while going to anything else will match `/:productName`. The order of the `routes` array doesn't even matter!
+Ahora, ir a `/25` coincidirá con `/:orderId` mientras que ir a cualquier otra cosa coincidirá con `/:productName`. ¡El orden del array `routes` ni siquiera importa!
 
 :::tip
-Make sure to **escape backslashes (`\`)** like we did with `\d` (becomes `\\d`) to actually pass the backslash character in a string in JavaScript.
+Asegúrate de **escapar las barras invertidas (`\`)** como hicimos con `\d` (se convierte en `\\d`) para pasar el carácter de barra invertida en una cadena en JavaScript.
 :::
 
-## Repeatable params
+## Parámetros repetibles
 
-If you need to match routes with multiple sections like `/first/second/third`, you should mark a param as repeatable with `*` (0 or more) and `+` (1 or more):
+Si necesitas hacer coincidir rutas con múltiples secciones como `/first/second/third`, debes marcar un parámetro como repetible con `*` (0 o más) y `+` (1 o más):
 
 ```js
 const routes = [
-  // /:chapters -> matches /one, /one/two, /one/two/three, etc
+  // /:chapters -> coincide con /one, /one/two, /one/two/three, etc
   { path: '/:chapters+' },
-  // /:chapters -> matches /, /one, /one/two, /one/two/three, etc
+  // /:chapters -> coincide con /, /uno, /uno/dos, /uno/dos/tres, etc.
   { path: '/:chapters*' },
 ]
 ```
 
-This will give you an array of params instead of a string and will also require you to pass an array when using named routes:
+Esto te dará un array de parámetros en lugar de una cadena y también requerirá que pases un array cuando uses rutas con nombre:
 
 ```js
-// given { path: '/:chapters*', name: 'chapters' },
+// dado { ruta: '/:chapters*', nombre: 'chapters' },
 router.resolve({ name: 'chapters', params: { chapters: [] } }).href
-// produces /
+// produce /
 router.resolve({ name: 'chapters', params: { chapters: ['a', 'b'] } }).href
-// produces /a/b
+// produce /a/b
 
-// given { path: '/:chapters+', name: 'chapters' },
+// dado { ruta: '/:chapters+', nombre: 'chapters' },
 router.resolve({ name: 'chapters', params: { chapters: [] } }).href
-// throws an Error because `chapters` is empty
+// arroja un Error porque `chapters` está vacío
 ```
 
-These can also be combined with a custom regex by adding them **after the closing parentheses**:
+También se pueden combinar con una expresión regular personalizada añadiéndola **después de los paréntesis de cierre**:
 
 ```js
 const routes = [
-  // only match numbers
-  // matches /1, /1/2, etc
+  // sólo coincide con números
+  // coincide con /1, /1/2, etc
   { path: '/:chapters(\\d+)+' },
-  // matches /, /1, /1/2, etc
+  // coincide con /, /1, /1/2, etc
   { path: '/:chapters(\\d+)*' },
 ]
 ```
 
-## Sensitive and strict route options
+## Opciones de ruta sensibles y estrictas
 
-By default, all routes are case-insensitive and match routes with or without a trailing slash. e.g. a route `/users` matches `/users`, `/users/`, and even `/Users/`. This behavior can be configured with the `strict` and `sensitive` options, they can be set both at a router and route level:
+Por defecto, todas las rutas son indiferentes a mayúsculas y minúsculas y coinciden con rutas con o sin barra al final. Por ejemplo, una ruta `/users` coincide con `/users`, `/users/`, e incluso `/Users/`. Este comportamiento puede configurarse con las opciones `strict` y `sensitive`, que pueden establecerse tanto a nivel de enrutador como de la ruta:
 
 ```js
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // will match /users/posva but not:
-    // - /users/posva/ because of strict: true
-    // - /Users/posva because of sensitive: true
+    // coincidirá con /users/posva pero no:
+    // - /users/posva/ debido a strict: true
+    // - /Users/posva debido a sensitive: true
     { path: '/users/:id', sensitive: true },
-    // will match /users, /Users, and /users/42 but not /users/ or /users/42/
+    // coincidirá con /users, /Users, y /users/42 pero no con /users/ o /users/42/
     { path: '/users/:id?' },
   ],
-  strict: true, // applies to all routes
+  strict: true, // se aplica a todas las rutas
 })
 ```
 
-## Optional parameters
+## Parámetros opcionales
 
-You can also mark a parameter as optional by using the `?` modifier (0 or 1):
+También puede marcar un parámetro como opcional utilizando el modificador `?` (0 ó 1):
 
 ```js
 const routes = [
-  // will match /users and /users/posva
+  // coincidirá con /users y /users/posva
   { path: '/users/:userId?' },
-  // will match /users and /users/42
+  // coincidirá con /users y /users/42
   { path: '/users/:userId(\\d+)?' },
 ]
 ```
 
-Note that `*` technically also marks a parameter as optional but `?` parameters cannot be repeated.
+Ten en cuenta que técnicamente `*` también marca un parámetro como opcional, pero los parámetros `?` no pueden repetirse.
 
-If the route segment contains more than **just an optional parameter**, it won't match a path **without the trailing slash**. For example:
+Si el segmento de ruta contiene más de **sólo un parámetro opcional**, no coincidirá con una ruta **sin la barra al final**. Por ejemplo:
 
-- `/users/:uid?-:name?` won't match `/users`, only `/users/-` or even `/users/-/`
-- `/users/:uid(\\d+)?:name?` won't match `/users`, only `/users/`, `/users/2`, `/users/2/`, etc
+- `/users/:uid?-:name?` no coincidirá con `/users`, sólo con `/users/-` o incluso con `/users/-/`.
+- `/users/:uid(\\d+)?:name?` no coincidirá con `/users`, sólo con `/users/`, `/users/2`, `/users/2/`, etc.
 
-You can play around with the matching syntax [in the playground](https://paths.esm.dev/?p=AAMsIPQg4AoKzidgQFoEXAmw-IEBBRYYOE0SkABTASiz1qgBpgQA1QTsFjAb3h2onsmlAmGIFsCXjXh4AIA.&t=/users/2/#)
+Puede jugar con la sintaxis de emparejamiento [en el playground](https://paths.esm.dev/?p=AAMsIPQg4AoKzidgQFoEXAmw-IEBBRYYOE0SkABTASiz1qgBpgQA1QTsFjAb3h2onsmlAmGIFsCXjXh4AIA.&t=/users/2/#)
 
-## Debugging
+## Depurando
 
-If you need to dig how your routes are transformed into a regex to understand why a route isn't being matched or, to report a bug, you can use the [path ranker tool](https://paths.esm.dev/?p=AAMeJSyAwR4UbFDAFxAcAGAIJXMAAA..#). It supports sharing your routes through the URL.
+Si necesitas averiguar cómo se transforman tus rutas en una expresión regular para entender por qué una ruta no coincide o para informar de un error, puedes utilizar la herramienta [path ranker tool](https://paths.esm.dev/?p=AAMeJSyAwR4UbFDAFxAcAGAIJXMAAA..#). Ésta permite compartir tus rutas a través de la URL.
