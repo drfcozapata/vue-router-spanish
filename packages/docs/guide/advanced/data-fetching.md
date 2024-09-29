@@ -1,18 +1,18 @@
-# Data Fetching
+# Obtención de Datos
 
-Sometimes you need to fetch data from the server when a route is activated. For example, before rendering a user profile, you need to fetch the user's data from the server. We can achieve this in two different ways:
+A veces es necesario obtener datos del servidor cuando se activa una ruta. Por ejemplo, antes de mostrar un perfil de usuario, necesitas obtener los datos del usuario desde el servidor. Podemos conseguir esto de dos maneras diferentes:
 
-- **Fetching After Navigation**: perform the navigation first, and fetch data in the incoming component's lifecycle hook. Display a loading state while data is being fetched.
+- **Obtención después de la navegación**: realizar primero la navegación y obtener los datos en el hook del ciclo de vida del componente entrante. Mostrar un estado de carga mientras se obtienen los datos.
 
-- **Fetching Before Navigation**: Fetch data before navigation in the route enter guard, and perform the navigation after data has been fetched.
+- **Obtención antes de la navegación**: Obtener los datos antes de la navegación en la protección de entrada de la ruta y realizar la navegación después de obtener los datos.
 
-Technically, both are valid choices - it ultimately depends on the user experience you are aiming for.
+Técnicamente, ambas opciones son válidas. En última instancia, depende de la experiencia de usuario que se busque.
 
-## Fetching After Navigation
+## Obtención Después de la Navegación
 
-When using this approach, we navigate and render the incoming component immediately, and fetch data in the component itself. It gives us the opportunity to display a loading state while the data is being fetched over the network, and we can also handle loading differently for each view.
+Cuando se utiliza este enfoque, navegamos y renderizamos el componente entrante inmediatamente, y obtenemos los datos en el propio componente. Esto nos da la oportunidad de mostrar un estado de carga mientras los datos se obtienen a través de la red, y también podemos manejar la carga de forma diferente para cada vista.
 
-Let's assume we have a `Post` component that needs to fetch the data for a post based on `route.params.id`:
+Supongamos que tenemos un componente `Post` que necesita obtener los datos de una entrada basándose en `route.params.id`:
 
 ::: code-group
 
@@ -41,16 +41,16 @@ const loading = ref(false)
 const post = ref(null)
 const error = ref(null)
 
-// watch the params of the route to fetch the data again
+// mira los params de la ruta para obtener los datos de nuevo
 watch(() => route.params.id, fetchData, { immediate: true })
 
 async function fetchData(id) {
   error.value = post.value = null
   loading.value = true
-  
+
   try {
-    // replace `getPost` with your data fetching util / API wrapper
-    post.value = await getPost(id)  
+    // sustituye `getPost` por tu utilidad de obtención de datos / API wrapper
+    post.value = await getPost(id)
   } catch (err) {
     error.value = err.toString()
   } finally {
@@ -86,12 +86,12 @@ export default {
     }
   },
   created() {
-    // watch the params of the route to fetch the data again
+    // observa los parámetros de la ruta para obtener los datos de nuevo
     this.$watch(
       () => this.$route.params.id,
       this.fetchData,
-      // fetch the data when the view is created and the data is
-      // already being observed
+      // obtén los datos cuando la vista sea creada y los datos estén
+      // ya están siendo observados
       { immediate: true }
     )
   },
@@ -101,7 +101,7 @@ export default {
       this.loading = true
 
       try {
-        // replace `getPost` with your data fetching util / API wrapper
+        // reemplaza `getPost` con tu utilidad de obtención de datos / API wrapper
         this.post = await getPost(id)
       } catch (err) {
         this.error = err.toString()
@@ -116,9 +116,9 @@ export default {
 
 :::
 
-## Fetching Before Navigation
+## Obtención Antes de la Navegación
 
-With this approach we fetch the data before actually navigating to the new route. We can perform the data fetching in the `beforeRouteEnter` guard in the incoming component, and only call `next` when the fetch is complete. The callback passed to `next` will be called **after the component is mounted**:
+Con este enfoque obtenemos los datos antes de navegar a la nueva ruta. Podemos realizar la obtención de datos en la protección `beforeRouteEnter` del componente entrante, y sólo llamar a `next` cuando la obtención se haya completado. El callback pasado a `next` será llamado **después de que el componente sea montado**:
 
 ```js
 export default {
@@ -131,15 +131,15 @@ export default {
   async beforeRouteEnter(to, from, next) {
     try {
       const post = await getPost(to.params.id)
-      // `setPost` is a method defined below
+      // `setPost` es un método definido debajo
       next(vm => vm.setPost(post))
     } catch (err) {
-      // `setError` is a method defined below
+      // `setError` es un método definido debajo
       next(vm => vm.setError(err))
     }
   },
-  // when route changes and this component is already rendered,
-  // the logic will be slightly different.
+  // cuando la ruta cambia y este componente ya está montado,
+  // la lógica será ligeramente diferente.
   beforeRouteUpdate(to, from) {
     this.post = null
     getPost(to.params.id).then(this.setPost).catch(this.setError)
@@ -150,12 +150,12 @@ export default {
     },
     setError(err) {
       this.error = err.toString()
-    }
-  }
+    },
+  },
 }
 ```
 
-The user will stay on the previous view while the resource is being fetched for the incoming view. It is therefore recommended to display a progress bar or some kind of indicator while the data is being fetched. If the data fetch fails, it's also necessary to display some kind of global warning message.
+El usuario permanecerá en la vista anterior mientras se obtiene el recurso para la vista entrante. Por lo tanto, se recomienda mostrar una barra de progreso o algún tipo de indicador mientras se obtienen los datos. Si la obtención de datos falla, también es necesario mostrar algún tipo de mensaje de advertencia global.
 
 <!-- ### Using Composition API -->
 

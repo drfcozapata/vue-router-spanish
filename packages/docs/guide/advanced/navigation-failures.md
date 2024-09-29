@@ -2,7 +2,7 @@
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-detecting-navigation-failures"
-  title="Learn how to detect navigation failures"
+  title="Aprende cómo detect navigation failures"
 />
 
 When using `router-link`, Vue Router calls `router.push` to trigger a navigation. While the expected behavior for most links is to navigate a user to a new page, there are a few situations where users will remain on the same page:

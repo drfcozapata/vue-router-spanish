@@ -1,15 +1,15 @@
-# Vue Router and the Composition API
+# Vue Router y la Composition API
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/router-and-the-composition-api"
-  title="Learn how to use Vue Router with the Composition API"
+  title="Aprende cómo usar Vue Router con la Composition API"
 />
 
-The introduction of Vue's [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html) opened up new possibilities, but to be able to get the full potential out of Vue Router, we will need to use a few new functions to replace access to `this` and in-component navigation guards.
+La introducción de la [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html) de Vue introdujo nuevas posibilidades, pero para poder sacar todo el potencial de Vue Router, necesitaremos usar unas cuantas funciones nuevas para reemplazar el acceso a `this` y a los protectores de navegación dentro del componente.
 
-## Accessing the Router and current Route inside `setup`
+## Accediendo al Router y a la Ruta actual dentro del `setup`.
 
-Because we don't have access to `this` inside of `setup`, we cannot directly access `this.$router` or `this.$route`. Instead, we use the `useRouter` and `useRoute` composables:
+Como no tenemos acceso a `this` dentro del `setup`, no podemos acceder directamente a `this.$router` o `this.$route`. En su lugar, utilizamos los composables `useRouter` y `useRoute`:
 
 ```vue
 <script setup>
@@ -30,7 +30,7 @@ function pushWithQuery(query) {
 </script>
 ```
 
-The `route` object is a reactive object. In most scenarios, you should **avoid watching the whole `route`** object. Instead, you can directly watch the properties you are expecting to change:
+El objeto `route` es un objeto reactivo. En la mayoría de los escenarios, deberías **evitar vigilar todo el objeto `route`**. En su lugar, puedes observar directamente las propiedades que esperas cambiar:
 
 ```vue
 <script setup>
@@ -40,7 +40,7 @@ import { ref, watch } from 'vue'
 const route = useRoute()
 const userData = ref()
 
-// fetch the user information when params change
+// Obtener la información del usuario cuando cambien los parámetros
 watch(
   () => route.params.id,
   async newId => {
@@ -50,31 +50,31 @@ watch(
 </script>
 ```
 
-Note we still have access to `$router` and `$route` in templates, so there's no need to use `useRouter` or `useRoute` if we only need those objects in the template.
+Observa que aún tenemos acceso a `$router` y `$route` en los templates, así que no hay necesidad de usar `useRouter` o `useRoute` si sólo necesitamos esos objetos en el template.
 
-## Navigation Guards
+## Protectores de Navegación
 
-Vue Router exposes update and leave guards as Composition API functions:
+Vue Router expone las protecciones de actualización y salida como funciones de la Composition API:
 
 ```vue
 <script setup>
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
 import { ref } from 'vue'
 
-// same as beforeRouteLeave option but with no access to `this`
+// igual que la opción beforeRouteLeave pero sin acceso a `this`
 onBeforeRouteLeave((to, from) => {
   const answer = window.confirm(
     'Do you really want to leave? you have unsaved changes!'
   )
-  // cancel the navigation and stay on the same page
+  // cancelar la navegación y permanecer en la misma página
   if (!answer) return false
 })
 
 const userData = ref()
 
-// same as beforeRouteUpdate option but with no access to `this`
+// igual que la opción beforeRouteUpdate pero sin acceso a `this`
 onBeforeRouteUpdate(async (to, from) => {
-  // only fetch the user if the id changed as maybe only the query or the hash changed
+  // sólo buscar al usuario si el id ha cambiado ya que puede que sólo haya cambiado la consulta o el hash
   if (to.params.id !== from.params.id) {
     userData.value = await fetchUser(to.params.id)
   }
@@ -82,11 +82,11 @@ onBeforeRouteUpdate(async (to, from) => {
 </script>
 ```
 
-Composition API guards can also be used in any component rendered by `<router-view>`, they don't have to be used directly on the route component like in-component guards.
+Los protectores de la Composition API también pueden usarse en cualquier componente renderizado por `<router-view>`, y no tienen que usarse directamente en el componente de la ruta como los protectores dentro del componente.
 
 ## `useLink`
 
-Vue Router exposes the internal behavior of RouterLink as a composable. It accepts a reactive object like the props of `RouterLink` and exposes low-level properties to build your own `RouterLink` component or generate custom links:
+Vue Router expone el comportamiento interno de RouterLink como un composable. Éste acepta un objeto reactivo como las props de `RouterLink` y expone propiedades de bajo nivel para construir tu propio componente `RouterLink` o generar enlaces personalizados:
 
 ```vue
 <script setup>
@@ -94,22 +94,22 @@ import { RouterLink, useLink } from 'vue-router'
 import { computed } from 'vue'
 
 const props = defineProps({
-  // add @ts-ignore if using TypeScript
+  // añade @ts-ignore si usas TypeScript
   ...RouterLink.props,
   inactiveClass: String,
 })
 
 const {
-  // the resolved route object
+  // el objeto de ruta resuelto
   route,
-  // the href to use in a link
+  // el href a utilizar en un enlace
   href,
-  // boolean ref indicating if the link is active
+  // la ref booleana que indica si el enlace está activo
   isActive,
-  // boolean ref indicating if the link is exactly active
+  // la ref booleana que indica si el enlace está exactamente activo
   isExactActive,
-  // function to navigate to the link
-  navigate
+  // la función para navegar al enlace
+  navigate,
 } = useLink(props)
 
 const isExternalLink = computed(
@@ -118,4 +118,4 @@ const isExternalLink = computed(
 </script>
 ```
 
-Note that the RouterLink's `v-slot` gives access to the same properties as the `useLink` composable.
+Observa que el `v-slot` del RouterLink da acceso a las mismas propiedades que el composable `useLink`.

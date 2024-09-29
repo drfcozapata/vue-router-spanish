@@ -1,6 +1,6 @@
-# RouterView slot
+# Slot RouterView
 
-The RouterView component exposes a slot that can be used to render the route component:
+El componente RouterView expone un slot que puede ser usado para renderizar el componente de la ruta:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -8,11 +8,11 @@ The RouterView component exposes a slot that can be used to render the route com
 </router-view>
 ```
 
-The code above is equivalent to using `<router-view />` without the slot, but the slot provides extra flexibility when we want to work with other features.
+El código anterior es equivalente a usar `<router-view />` sin el slot, pero el slot proporciona flexibilidad extra cuando queremos trabajar con otras funcionalidades.
 
-## KeepAlive & Transition
+## KeepAlive y Transición
 
-When working with the [KeepAlive](https://vuejs.org/guide/built-ins/keep-alive.html) component, we would usually want it to keep the route components alive, not the RouterView itself. We can achieve that by putting the KeepAlive inside the slot:
+Cuando trabajamos con el componente [KeepAlive](https://vuejs.org/guide/built-ins/keep-alive.html), normalmente queremos que mantenga vivos los componentes de la ruta, no el propio RouterView. Podemos conseguirlo poniendo el KeepAlive dentro del slot:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -22,7 +22,7 @@ When working with the [KeepAlive](https://vuejs.org/guide/built-ins/keep-alive.h
 </router-view>
 ```
 
-Similarly, the slot allows us to use a [Transition](https://vuejs.org/guide/built-ins/transition.html) component to transition between route components:
+Del mismo modo, el slot nos permite utilizar un componente [Transition](https://vuejs.org/guide/built-ins/transition.html) para la transición entre componentes de ruta:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -32,7 +32,7 @@ Similarly, the slot allows us to use a [Transition](https://vuejs.org/guide/buil
 </router-view>
 ```
 
-We can also use KeepAlive inside a Transition:
+También podemos utilizar KeepAlive dentro de un componente Transition:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -44,11 +44,11 @@ We can also use KeepAlive inside a Transition:
 </router-view>
 ```
 
-For more information about using RouterView with the Transition component, see the [Transitions](./transitions) guide.
+Para más información sobre el uso de RouterView con el componente Transition, consulta la guía [Transitions](./transitions).
 
-## Passing props and slots
+## Pasando props y slots
 
-We can use the slot to pass props or slots to the route component:
+Podemos usar el slot para pasar props o slots al componente de ruta:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -58,11 +58,11 @@ We can use the slot to pass props or slots to the route component:
 </router-view>
 ```
 
-In practice, this usually isn't something you would want to do, as the route components would **all need to use the same props and slots**. See [Passing Props to Route Components](../essentials/passing-props) for other ways to pass props.
+En la práctica, esto usualmente no es algo que quieras hacer, ya que los componentes de ruta **todos necesitarían usar los mismos props y slots**. Consulta [Pasando Props a Componentes de Ruta](../essentials/passing-props) para otras formas de pasar props.
 
 ## Template refs
 
-Using the slot allows us to put a [template ref](https://vuejs.org/guide/essentials/template-refs.html) directly on the route component:
+Usar el slot nos permite poner un [template ref](https://vuejs.org/guide/essentials/template-refs.html) directamente en el componente de ruta:
 
 ```vue-html
 <router-view v-slot="{ Component }">
@@ -70,4 +70,4 @@ Using the slot allows us to put a [template ref](https://vuejs.org/guide/essenti
 </router-view>
 ```
 
-If we put the ref on the `<router-view>` instead then the ref would be populated with the RouterView instance, rather than the route component.
+Si por el contrario pusiéramos el ref en `<router-view>` entonces el ref se poblaría con la instancia RouterView, en lugar de con el componente de ruta.

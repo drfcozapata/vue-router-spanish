@@ -2,7 +2,7 @@
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-dynamic-routing"
-  title="Learn how to add routes at runtime"
+  title="Aprende cómo add routes at runtime"
 />
 
 Adding routes to your router is usually done via the `routes` option but in some situations, you might want to add or remove routes while the application is already running. Applications with extensible interfaces like [Vue CLI UI](https://cli.vuejs.org/dev-guide/ui-api.html) can use this to make the application grow.
@@ -75,6 +75,7 @@ There are few different ways to remove existing routes:
   ```
 
   This is useful when the routes do not have a name
+
 - By using `router.removeRoute()` to remove a route by its name:
 
   ```js
