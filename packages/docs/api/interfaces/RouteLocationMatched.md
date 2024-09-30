@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationMatched
+[Documentación de la API](../index.md) / RouteLocationMatched
 
 # Interface: RouteLocationMatched
 
@@ -27,7 +27,7 @@ Defines if this record is the alias of another one. This property is
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[aliasOf](RouteRecordNormalized.md#aliasOf)
 
-___
+---
 
 ### beforeEnter
 
@@ -39,7 +39,7 @@ Registered beforeEnter guards
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[beforeEnter](RouteRecordNormalized.md#beforeEnter)
 
-___
+---
 
 ### children
 
@@ -51,11 +51,11 @@ Nested route records.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[children](RouteRecordNormalized.md#children)
 
-___
+---
 
 ### components
 
-• **components**: `undefined` \| ``null`` \| `Record`\<`string`, [`RouteComponent`](../index.md#RouteComponent)\>
+• **components**: `undefined` \| `null` \| `Record`\<`string`, [`RouteComponent`](../index.md#RouteComponent)\>
 
 Components to display when the URL matches this route. Allow using named views.
 
@@ -63,7 +63,7 @@ Components to display when the URL matches this route. Allow using named views.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[components](RouteRecordNormalized.md#components)
 
-___
+---
 
 ### enterCallbacks
 
@@ -75,11 +75,11 @@ Registered beforeRouteEnter callbacks passed to `next` or returned in guards
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[enterCallbacks](RouteRecordNormalized.md#enterCallbacks)
 
-___
+---
 
 ### instances
 
-• **instances**: `Record`\<`string`, `undefined` \| ``null`` \| `ComponentPublicInstance`\>
+• **instances**: `Record`\<`string`, `undefined` \| `null` \| `ComponentPublicInstance`\>
 
 Mounted route component instances
 Having the instances on the record mean beforeRouteUpdate and
@@ -93,7 +93,7 @@ views.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[instances](RouteRecordNormalized.md#instances)
 
-___
+---
 
 ### leaveGuards
 
@@ -105,7 +105,7 @@ Registered leave guards
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[leaveGuards](RouteRecordNormalized.md#leaveGuards)
 
-___
+---
 
 ### meta
 
@@ -117,7 +117,7 @@ Arbitrary data attached to the record.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[meta](RouteRecordNormalized.md#meta)
 
-___
+---
 
 ### mods
 
@@ -129,7 +129,7 @@ Contains the original modules for lazy loaded components.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[mods](RouteRecordNormalized.md#mods)
 
-___
+---
 
 ### name
 
@@ -141,7 +141,7 @@ Name for the route record. Must be unique.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[name](RouteRecordNormalized.md#name)
 
-___
+---
 
 ### path
 
@@ -154,7 +154,7 @@ another record.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[path](RouteRecordNormalized.md#path)
 
-___
+---
 
 ### props
 
@@ -168,7 +168,7 @@ boolean to be applied to every component.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[props](RouteRecordNormalized.md#props)
 
-___
+---
 
 ### redirect
 
@@ -182,7 +182,7 @@ target location.
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[redirect](RouteRecordNormalized.md#redirect)
 
-___
+---
 
 ### updateGuards
 

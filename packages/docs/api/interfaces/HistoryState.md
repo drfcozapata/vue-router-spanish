@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / HistoryState
+[Documentación de la API](../index.md) / HistoryState
 
 # Interface: HistoryState
 

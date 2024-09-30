@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouterMatcher
+[Documentación de la API](../index.md) / RouterMatcher
 
 # Interface: RouterMatcher
 
@@ -20,10 +20,10 @@ Internal RouterMatcher
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `record` | [`RouteRecordRaw`](../index.md#RouteRecordRaw) |
-| `parent?` | `RouteRecordMatcher` |
+| Name      | Type                                           |
+| :-------- | :--------------------------------------------- |
+| `record`  | [`RouteRecordRaw`](../index.md#RouteRecordRaw) |
+| `parent?` | `RouteRecordMatcher`                           |
 
 ##### Returns
 
@@ -35,7 +35,7 @@ Internal RouterMatcher
 
 `void`
 
-___
+---
 
 ### clearRoutes
 
@@ -49,7 +49,7 @@ ___
 
 `void`
 
-___
+---
 
 ### getRecordMatcher
 
@@ -61,15 +61,15 @@ ___
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                                            |
+| :----- | :------------------------------------------------------------------------------ |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> |
 
 ##### Returns
 
 `undefined` \| `RouteRecordMatcher`
 
-___
+---
 
 ### getRoutes
 
@@ -83,7 +83,7 @@ ___
 
 `RouteRecordMatcher`[]
 
-___
+---
 
 ### resolve
 
@@ -107,9 +107,9 @@ Resolves a location. Gives access to the route record that corresponds to the ac
 
 ##### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `location` | `MatcherLocationRaw` | MatcherLocationRaw to resolve to a url |
+| Name              | Type                                    | Description                             |
+| :---------------- | :-------------------------------------- | :-------------------------------------- |
+| `location`        | `MatcherLocationRaw`                    | MatcherLocationRaw to resolve to a url  |
 | `currentLocation` | [`MatcherLocation`](MatcherLocation.md) | MatcherLocation of the current location |
 
 ##### Returns
@@ -124,8 +124,8 @@ Resolves a location. Gives access to the route record that corresponds to the ac
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                 |
+| :-------- | :------------------- |
 | `matcher` | `RouteRecordMatcher` |
 
 #### Returns
@@ -136,8 +136,8 @@ Resolves a location. Gives access to the route record that corresponds to the ac
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                                            |
+| :----- | :------------------------------------------------------------------------------ |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> |
 
 #### Returns

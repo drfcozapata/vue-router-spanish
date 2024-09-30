@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / \_RouterLinkI
+[Documentación de la API](../index.md) / \_RouterLinkI
 
 # Interface: \_RouterLinkI
 
@@ -13,17 +13,17 @@ automatically for JSX.
 
 ### constructor
 
-• **new _RouterLinkI**(): `Object`
+• **new \_RouterLinkI**(): `Object`
 
 #### Returns
 
 `Object`
 
-| Name | Type |
-| :------ | :------ |
-| `$props` | `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterLinkProps`](RouterLinkProps.md) |
-| `$slots` | \{ `default?`: (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\>  }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\>[]  } |
-| `$slots.default?` | (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\>  }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\>[] |
+| Name              | Type                                                                                                                                                                                                                                                                                                                                                                                     |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$props`          | `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterLinkProps`](RouterLinkProps.md)                                                                                                                                                                                                                                                                                |
+| `$slots`          | \{ `default?`: (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\> }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[] } |
+| `$slots.default?` | (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\> }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[]                  |
 
 ## Properties
 
@@ -39,16 +39,16 @@ Access to `useLink()` without depending on using vue-router
 
 Access to `useLink()` without depending on using vue-router
 
-##### Type parameters
+##### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                |
+| :----- | :-------------------------------------------------- |
 | `Name` | extends `string` \| `symbol` = `string` \| `symbol` |
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type                                            |
+| :------ | :---------------------------------------------- |
 | `props` | [`UseLinkOptions`](UseLinkOptions.md)\<`Name`\> |
 
 ##### Returns

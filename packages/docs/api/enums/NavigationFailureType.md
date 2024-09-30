@@ -2,36 +2,32 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationFailureType
+[Documentación de la API](../index.md) / NavigationFailureType
 
-# Enumeration: NavigationFailureType
+# Enumeración: NavigationFailureType
 
-Enumeration with all possible types for navigation failures. Can be passed to
-[isNavigationFailure](../index.md#isNavigationFailure) to check for specific failures.
+.Enumeración con todos los tipos posibles de fallos de navegación. Puede pasarse a [isNavigationFailure](../index.md#isNavigationFailure) para comprobar fallos específicos.
 
-## Enumeration Members
+## Miembros de Enumeración
 
 ### aborted
 
-• **aborted** = ``4``
+• **aborted** = `4`
 
-An aborted navigation is a navigation that failed because a navigation
-guard returned `false` or called `next(false)`
+Una navegación abortada es una navegación que ha fallado porque un protector de navegación ha devuelto `false` o ha llamado a `next(false)`.
 
-___
+---
 
 ### cancelled
 
-• **cancelled** = ``8``
+• **cancelled** = `8`
 
-A cancelled navigation is a navigation that failed because a more recent
-navigation finished started (not necessarily finished).
+Una navegación cancelada es una navegación que falló porque una navegación más reciente terminó de iniciarse (no necesariamente finalizada).
 
-___
+---
 
 ### duplicated
 
-• **duplicated** = ``16``
+• **duplicated** = `16`
 
-A duplicated navigation is a navigation that failed because it was
-initiated while already being at the exact same location.
+Una navegación duplicada es una navegación que falló porque se inició estando ya en la misma ubicación exacta.

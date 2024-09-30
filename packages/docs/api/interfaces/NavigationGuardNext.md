@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationGuardNext
+[Documentación de la API](../index.md) / NavigationGuardNext
 
 # Interface: NavigationGuardNext
 
@@ -24,7 +24,7 @@ editLink: false
 
 #### Parameters
 
-| Name | Type |
+| Name    | Type    |
 | :------ | :------ |
 | `error` | `Error` |
 
@@ -38,8 +38,8 @@ editLink: false
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                                                                                                               |
+| :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `location` | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) |
 
 #### Returns
@@ -52,8 +52,8 @@ editLink: false
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type                     |
+| :------ | :----------------------- |
 | `valid` | `undefined` \| `boolean` |
 
 #### Returns
@@ -66,8 +66,8 @@ editLink: false
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type                                                                     |
+| :--- | :----------------------------------------------------------------------- |
 | `cb` | [`NavigationGuardNextCallback`](../index.md#NavigationGuardNextCallback) |
 
 #### Returns

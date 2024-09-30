@@ -2,16 +2,16 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / UseLinkReturn
+[Documentación de la API](../index.md) / UseLinkReturn
 
 # Interface: UseLinkReturn\<Name\>
 
 Return type of [useLink](../index.md#useLink).
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                                                        |
+| :----- | :------------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](../index.md#RouteMap) = keyof [`RouteMap`](../index.md#RouteMap) |
 
 ## Properties
@@ -20,19 +20,19 @@ Return type of [useLink](../index.md#useLink).
 
 • **href**: `ComputedRef`\<`string`\>
 
-___
+---
 
 ### isActive
 
 • **isActive**: `ComputedRef`\<`boolean`\>
 
-___
+---
 
 ### isExactActive
 
 • **isExactActive**: `ComputedRef`\<`boolean`\>
 
-___
+---
 
 ### route
 
@@ -46,8 +46,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name | Type         |
+| :--- | :----------- |
 | `e?` | `MouseEvent` |
 
 #### Returns

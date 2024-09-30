@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouterHistory
+[Documentación de la API](../index.md) / RouterHistory
 
 # Interface: RouterHistory
 
@@ -19,7 +19,7 @@ Base path that is prepended to every url. This allows hosting an SPA at a
 sub-folder of a domain like `example.com/sub-folder` by having a `base` of
 `/sub-folder`
 
-___
+---
 
 ### location
 
@@ -27,7 +27,7 @@ ___
 
 Current History location
 
-___
+---
 
 ### state
 
@@ -45,15 +45,15 @@ Generates the corresponding href to be used in an anchor tag.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                                 |
+| :--------- | :------- | :------------------------------------------ |
 | `location` | `string` | history location that should create an href |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### destroy
 
@@ -65,7 +65,7 @@ Clears any event listener attached by the history implementation.
 
 `void`
 
-___
+---
 
 ### go
 
@@ -75,10 +75,10 @@ Traverses history in a given direction.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `delta` | `number` | distance to travel. If delta is \< 0, it will go back, if it's \> 0, it will go forward by that amount of entries. |
-| `triggerListeners?` | `boolean` | whether this should trigger listeners attached to the history |
+| Name                | Type      | Description                                                                                                        |
+| :------------------ | :-------- | :----------------------------------------------------------------------------------------------------------------- |
+| `delta`             | `number`  | distance to travel. If delta is \< 0, it will go back, if it's \> 0, it will go forward by that amount of entries. |
+| `triggerListeners?` | `boolean` | whether this should trigger listeners attached to the history                                                      |
 
 #### Returns
 
@@ -91,7 +91,7 @@ myHistory.go(-1) // equivalent to window.history.back()
 myHistory.go(1) // equivalent to window.history.forward()
 ```
 
-___
+---
 
 ### listen
 
@@ -104,8 +104,8 @@ RouterHistory.forward
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                 | Description        |
+| :--------- | :------------------- | :----------------- |
 | `callback` | `NavigationCallback` | listener to attach |
 
 #### Returns
@@ -120,7 +120,7 @@ a callback to remove the listener
 
 `void`
 
-___
+---
 
 ### push
 
@@ -131,16 +131,16 @@ this will call `history.pushState` to effectively change the URL.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `to` | `string` | location to push |
+| Name    | Type                              | Description                                                                         |
+| :------ | :-------------------------------- | :---------------------------------------------------------------------------------- |
+| `to`    | `string`                          | location to push                                                                    |
 | `data?` | [`HistoryState`](HistoryState.md) | optional [HistoryState](HistoryState.md) to be associated with the navigation entry |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### replace
 
@@ -151,9 +151,9 @@ instead of `history.pushState`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `to` | `string` | location to set |
+| Name    | Type                              | Description                                                                         |
+| :------ | :-------------------------------- | :---------------------------------------------------------------------------------- |
+| `to`    | `string`                          | location to set                                                                     |
 | `data?` | [`HistoryState`](HistoryState.md) | optional [HistoryState](HistoryState.md) to be associated with the navigation entry |
 
 #### Returns

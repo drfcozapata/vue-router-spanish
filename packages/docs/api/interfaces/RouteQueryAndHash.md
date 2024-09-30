@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteQueryAndHash
+[Documentación de la API](../index.md) / RouteQueryAndHash
 
 # Interface: RouteQueryAndHash
 
@@ -24,7 +24,7 @@ editLink: false
 
 • `Optional` **hash**: `string`
 
-___
+---
 
 ### query
 

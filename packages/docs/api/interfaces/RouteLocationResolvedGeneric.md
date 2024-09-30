@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationResolvedGeneric
+[Documentación de la API](../index.md) / RouteLocationResolvedGeneric
 
 # Interface: RouteLocationResolvedGeneric
 
@@ -27,7 +27,7 @@ percentage encoded.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[fullPath](RouteLocationGeneric.md#fullPath)
 
-___
+---
 
 ### hash
 
@@ -39,7 +39,7 @@ Hash of the current location. If present, starts with a `#`.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[hash](RouteLocationGeneric.md#hash)
 
-___
+---
 
 ### href
 
@@ -47,7 +47,7 @@ ___
 
 Resolved `href` for the route location that will be set on the `<a href="...">`.
 
-___
+---
 
 ### matched
 
@@ -61,7 +61,7 @@ can't be used directly. **This property is non-enumerable**.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[matched](RouteLocationGeneric.md#matched)
 
-___
+---
 
 ### meta
 
@@ -73,11 +73,11 @@ Merged `meta` properties from all the matched route records.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[meta](RouteLocationGeneric.md#meta)
 
-___
+---
 
 ### name
 
-• **name**: ``null`` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
@@ -85,7 +85,7 @@ Name of the matched record
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[name](RouteLocationGeneric.md#name)
 
-___
+---
 
 ### params
 
@@ -97,7 +97,7 @@ Object of decoded params extracted from the `path`.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[params](RouteLocationGeneric.md#params)
 
-___
+---
 
 ### path
 
@@ -109,7 +109,7 @@ Percentage encoded pathname section of the URL.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[path](RouteLocationGeneric.md#path)
 
-___
+---
 
 ### query
 
@@ -121,7 +121,7 @@ Object representation of the `search` property of the current location.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[query](RouteLocationGeneric.md#query)
 
-___
+---
 
 ### redirectedFrom
 

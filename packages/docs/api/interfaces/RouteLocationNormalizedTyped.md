@@ -2,18 +2,18 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationNormalizedTyped
+[Documentación de la API](../index.md) / RouteLocationNormalizedTyped
 
 # Interface: RouteLocationNormalizedTyped\<RouteMap, Name\>
 
 Helper to generate a type safe version of the [RouteLocationNormalized](../index.md#RouteLocationNormalized) type.
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                                                                        |
+| :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` = keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
 ## Hierarchy
 
@@ -34,7 +34,7 @@ percentage encoded.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[fullPath](RouteLocationNormalizedGeneric.md#fullPath)
 
-___
+---
 
 ### hash
 
@@ -46,7 +46,7 @@ Hash of the current location. If present, starts with a `#`.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[hash](RouteLocationNormalizedGeneric.md#hash)
 
-___
+---
 
 ### matched
 
@@ -58,7 +58,7 @@ Array of [RouteRecordNormalized](RouteRecordNormalized.md)
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[matched](RouteLocationNormalizedGeneric.md#matched)
 
-___
+---
 
 ### meta
 
@@ -70,7 +70,7 @@ Merged `meta` properties from all the matched route records.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[meta](RouteLocationNormalizedGeneric.md#meta)
 
-___
+---
 
 ### name
 
@@ -82,7 +82,7 @@ Name of the matched record
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[name](RouteLocationNormalizedGeneric.md#name)
 
-___
+---
 
 ### params
 
@@ -94,7 +94,7 @@ Object of decoded params extracted from the `path`.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[params](RouteLocationNormalizedGeneric.md#params)
 
-___
+---
 
 ### path
 
@@ -106,7 +106,7 @@ Percentage encoded pathname section of the URL.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[path](RouteLocationNormalizedGeneric.md#path)
 
-___
+---
 
 ### query
 
@@ -118,7 +118,7 @@ Object representation of the `search` property of the current location.
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[query](RouteLocationNormalizedGeneric.md#query)
 
-___
+---
 
 ### redirectedFrom
 

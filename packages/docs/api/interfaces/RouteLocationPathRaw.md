@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationPathRaw
+[Documentación de la API](../index.md) / RouteLocationPathRaw
 
 # Interface: RouteLocationPathRaw
 
@@ -32,7 +32,7 @@ is passed.
 
 [RouteLocationOptions](RouteLocationOptions.md).[force](RouteLocationOptions.md#force)
 
-___
+---
 
 ### hash
 
@@ -42,7 +42,7 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[hash](RouteQueryAndHash.md#hash)
 
-___
+---
 
 ### path
 
@@ -52,7 +52,7 @@ ___
 
 [MatcherLocationAsPath](MatcherLocationAsPath.md).[path](MatcherLocationAsPath.md#path)
 
-___
+---
 
 ### query
 
@@ -62,7 +62,7 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[query](RouteQueryAndHash.md#query)
 
-___
+---
 
 ### replace
 
@@ -74,7 +74,7 @@ Replace the entry in the history instead of pushing a new entry
 
 [RouteLocationOptions](RouteLocationOptions.md).[replace](RouteLocationOptions.md#replace)
 
-___
+---
 
 ### state
 

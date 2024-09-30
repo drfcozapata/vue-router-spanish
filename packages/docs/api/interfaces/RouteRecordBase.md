@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / \_RouteRecordBase
+[Documentación de la API](../index.md) / \_RouteRecordBase
 
 # Interface: \_RouteRecordBase
 
@@ -34,7 +34,7 @@ Aliases for the record. Allows defining extra paths that will behave like a
 copy of the record. Allows having paths shorthands like `/users/:id` and
 `/u/:id`. All `alias` and `path` values must share the same params.
 
-___
+---
 
 ### beforeEnter
 
@@ -43,7 +43,7 @@ ___
 Before Enter guard specific to this record. Note `beforeEnter` has no
 effect if the record has a `redirect` property.
 
-___
+---
 
 ### children
 
@@ -51,7 +51,7 @@ ___
 
 Array of nested routes.
 
-___
+---
 
 ### end
 
@@ -67,7 +67,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 PathParserOptions.end
 
-___
+---
 
 ### meta
 
@@ -75,7 +75,7 @@ ___
 
 Arbitrary data attached to the record.
 
-___
+---
 
 ### name
 
@@ -83,7 +83,7 @@ ___
 
 Name for the route record. Must be unique.
 
-___
+---
 
 ### path
 
@@ -98,7 +98,7 @@ another record.
 `/users/:id` matches `/users/1` as well as `/users/posva`.
 ```
 
-___
+---
 
 ### props
 
@@ -106,7 +106,7 @@ ___
 
 Allow passing down params as props to the component rendered by `router-view`.
 
-___
+---
 
 ### redirect
 
@@ -116,7 +116,7 @@ Where to redirect if the route is directly matched. The redirection happens
 before any navigation guard and triggers a new navigation with the new
 target location.
 
-___
+---
 
 ### sensitive
 
@@ -132,7 +132,7 @@ Makes the RegExp case-sensitive.
 
 PathParserOptions.sensitive
 
-___
+---
 
 ### strict
 

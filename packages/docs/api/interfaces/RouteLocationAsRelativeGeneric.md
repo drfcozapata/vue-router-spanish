@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationAsRelativeGeneric
+[Documentación de la API](../index.md) / RouteLocationAsRelativeGeneric
 
 # Interface: RouteLocationAsRelativeGeneric
 
@@ -32,7 +32,7 @@ is passed.
 
 [RouteLocationOptions](RouteLocationOptions.md).[force](RouteLocationOptions.md#force)
 
-___
+---
 
 ### hash
 
@@ -42,19 +42,19 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[hash](RouteQueryAndHash.md#hash)
 
-___
+---
 
 ### name
 
 • `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
-___
+---
 
 ### params
 
 • `Optional` **params**: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
 
-___
+---
 
 ### path
 
@@ -62,7 +62,7 @@ ___
 
 A relative path to the current location. This property should be removed
 
-___
+---
 
 ### query
 
@@ -72,7 +72,7 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[query](RouteQueryAndHash.md#query)
 
-___
+---
 
 ### replace
 
@@ -84,7 +84,7 @@ Replace the entry in the history instead of pushing a new entry
 
 [RouteLocationOptions](RouteLocationOptions.md).[replace](RouteLocationOptions.md#replace)
 
-___
+---
 
 ### state
 

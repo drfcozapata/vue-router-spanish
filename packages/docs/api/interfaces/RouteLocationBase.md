@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / \_RouteLocationBase
+[Documentación de la API](../index.md) / \_RouteLocationBase
 
 # Interface: \_RouteLocationBase
 
@@ -10,7 +10,7 @@ Base properties for a normalized route location.
 
 ## Hierarchy
 
-- `Pick`\<[`MatcherLocation`](MatcherLocation.md), ``"name"`` \| ``"path"`` \| ``"params"`` \| ``"meta"``\>
+- `Pick`\<[`MatcherLocation`](MatcherLocation.md), `"name"` \| `"path"` \| `"params"` \| `"meta"`\>
 
   ↳ **`_RouteLocationBase`**
 
@@ -27,7 +27,7 @@ Base properties for a normalized route location.
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-___
+---
 
 ### hash
 
@@ -35,7 +35,7 @@ ___
 
 Hash of the current location. If present, starts with a `#`.
 
-___
+---
 
 ### meta
 
@@ -47,11 +47,11 @@ Merged `meta` properties from all the matched route records.
 
 Pick.meta
 
-___
+---
 
 ### name
 
-• **name**: ``null`` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
@@ -59,7 +59,7 @@ Name of the matched record
 
 Pick.name
 
-___
+---
 
 ### params
 
@@ -71,7 +71,7 @@ Object of decoded params extracted from the `path`.
 
 Pick.params
 
-___
+---
 
 ### path
 
@@ -83,7 +83,7 @@ Percentage encoded pathname section of the URL.
 
 Pick.path
 
-___
+---
 
 ### query
 
@@ -91,7 +91,7 @@ ___
 
 Object representation of the `search` property of the current location.
 
-___
+---
 
 ### redirectedFrom
 

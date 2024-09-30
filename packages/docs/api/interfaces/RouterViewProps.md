@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouterViewProps
+[Documentación de la API](../index.md) / RouterViewProps
 
 # Interface: RouterViewProps
 
@@ -12,7 +12,7 @@ editLink: false
 
 • `Optional` **name**: `string`
 
-___
+---
 
 ### route
 

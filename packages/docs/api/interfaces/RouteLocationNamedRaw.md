@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationNamedRaw
+[Documentación de la API](../index.md) / RouteLocationNamedRaw
 
 # Interface: RouteLocationNamedRaw
 
@@ -32,7 +32,7 @@ is passed.
 
 [RouteLocationOptions](RouteLocationOptions.md).[force](RouteLocationOptions.md#force)
 
-___
+---
 
 ### hash
 
@@ -42,7 +42,7 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[hash](RouteQueryAndHash.md#hash)
 
-___
+---
 
 ### name
 
@@ -52,7 +52,7 @@ ___
 
 [LocationAsRelativeRaw](LocationAsRelativeRaw.md).[name](LocationAsRelativeRaw.md#name)
 
-___
+---
 
 ### params
 
@@ -62,7 +62,7 @@ ___
 
 [LocationAsRelativeRaw](LocationAsRelativeRaw.md).[params](LocationAsRelativeRaw.md#params)
 
-___
+---
 
 ### path
 
@@ -74,7 +74,7 @@ Ignored path property since we are dealing with a relative location. Only `undef
 
 [LocationAsRelativeRaw](LocationAsRelativeRaw.md).[path](LocationAsRelativeRaw.md#path)
 
-___
+---
 
 ### query
 
@@ -84,7 +84,7 @@ ___
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[query](RouteQueryAndHash.md#query)
 
-___
+---
 
 ### replace
 
@@ -96,7 +96,7 @@ Replace the entry in the history instead of pushing a new entry
 
 [RouteLocationOptions](RouteLocationOptions.md).[replace](RouteLocationOptions.md#replace)
 
-___
+---
 
 ### state
 

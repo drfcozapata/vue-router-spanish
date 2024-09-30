@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / LocationAsRelativeRaw
+[Documentación de la API](../index.md) / LocationAsRelativeRaw
 
 # Interface: LocationAsRelativeRaw
 
@@ -18,13 +18,13 @@ editLink: false
 
 • `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
-___
+---
 
 ### params
 
 • `Optional` **params**: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
 
-___
+---
 
 ### path
 

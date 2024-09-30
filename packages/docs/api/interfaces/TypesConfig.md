@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / TypesConfig
+[Documentación de la API](../index.md) / TypesConfig
 
 # Interface: TypesConfig
 

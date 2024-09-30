@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationGeneric
+[Documentación de la API](../index.md) / RouteLocationGeneric
 
 # Interface: RouteLocationGeneric
 
@@ -29,9 +29,9 @@ percentage encoded.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[fullPath](RouteLocationBase.md#fullPath)
+[\_RouteLocationBase](RouteLocationBase.md).[fullPath](RouteLocationBase.md#fullPath)
 
-___
+---
 
 ### hash
 
@@ -41,9 +41,9 @@ Hash of the current location. If present, starts with a `#`.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[hash](RouteLocationBase.md#hash)
+[\_RouteLocationBase](RouteLocationBase.md).[hash](RouteLocationBase.md#hash)
 
-___
+---
 
 ### matched
 
@@ -53,7 +53,7 @@ Array of [RouteRecord](../index.md#RouteRecord) containing components as they we
 passed when adding records. It can also contain redirect records. This
 can't be used directly. **This property is non-enumerable**.
 
-___
+---
 
 ### meta
 
@@ -63,21 +63,21 @@ Merged `meta` properties from all the matched route records.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[meta](RouteLocationBase.md#meta)
+[\_RouteLocationBase](RouteLocationBase.md).[meta](RouteLocationBase.md#meta)
 
-___
+---
 
 ### name
 
-• **name**: ``null`` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[name](RouteLocationBase.md#name)
+[\_RouteLocationBase](RouteLocationBase.md).[name](RouteLocationBase.md#name)
 
-___
+---
 
 ### params
 
@@ -87,9 +87,9 @@ Object of decoded params extracted from the `path`.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[params](RouteLocationBase.md#params)
+[\_RouteLocationBase](RouteLocationBase.md).[params](RouteLocationBase.md#params)
 
-___
+---
 
 ### path
 
@@ -99,9 +99,9 @@ Percentage encoded pathname section of the URL.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[path](RouteLocationBase.md#path)
+[\_RouteLocationBase](RouteLocationBase.md).[path](RouteLocationBase.md#path)
 
-___
+---
 
 ### query
 
@@ -111,9 +111,9 @@ Object representation of the `search` property of the current location.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[query](RouteLocationBase.md#query)
+[\_RouteLocationBase](RouteLocationBase.md).[query](RouteLocationBase.md#query)
 
-___
+---
 
 ### redirectedFrom
 
@@ -124,4 +124,4 @@ on the current location.
 
 #### Inherited from
 
-[_RouteLocationBase](RouteLocationBase.md).[redirectedFrom](RouteLocationBase.md#redirectedFrom)
+[\_RouteLocationBase](RouteLocationBase.md).[redirectedFrom](RouteLocationBase.md#redirectedFrom)

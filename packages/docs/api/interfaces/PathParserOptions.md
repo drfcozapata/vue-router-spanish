@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / \_PathParserOptions
+[Documentación de la API](../index.md) / \_PathParserOptions
 
 # Interface: \_PathParserOptions
 
@@ -18,7 +18,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 `true`
 
-___
+---
 
 ### sensitive
 
@@ -30,7 +30,7 @@ Makes the RegExp case-sensitive.
 
 `false`
 
-___
+---
 
 ### start
 
@@ -42,7 +42,7 @@ Should the RegExp match from the beginning by prepending a `^` to it.
 
 `true`
 
-___
+---
 
 ### strict
 

@@ -2,18 +2,18 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationAsRelativeTyped
+[Documentación de la API](../index.md) / RouteLocationAsRelativeTyped
 
 # Interface: RouteLocationAsRelativeTyped\<RouteMap, Name\>
 
 Helper to generate a type safe version of the [RouteLocationAsRelative](../index.md#RouteLocationAsRelative) type.
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                                                                        |
+| :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` = keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
 ## Hierarchy
 
@@ -35,7 +35,7 @@ is passed.
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[force](RouteLocationAsRelativeGeneric.md#force)
 
-___
+---
 
 ### hash
 
@@ -45,7 +45,7 @@ ___
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[hash](RouteLocationAsRelativeGeneric.md#hash)
 
-___
+---
 
 ### name
 
@@ -55,7 +55,7 @@ ___
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[name](RouteLocationAsRelativeGeneric.md#name)
 
-___
+---
 
 ### params
 
@@ -65,7 +65,7 @@ ___
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[params](RouteLocationAsRelativeGeneric.md#params)
 
-___
+---
 
 ### path
 
@@ -77,7 +77,7 @@ A relative path to the current location. This property should be removed
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[path](RouteLocationAsRelativeGeneric.md#path)
 
-___
+---
 
 ### query
 
@@ -87,7 +87,7 @@ ___
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[query](RouteLocationAsRelativeGeneric.md#query)
 
-___
+---
 
 ### replace
 
@@ -99,7 +99,7 @@ Replace the entry in the history instead of pushing a new entry
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[replace](RouteLocationAsRelativeGeneric.md#replace)
 
-___
+---
 
 ### state
 

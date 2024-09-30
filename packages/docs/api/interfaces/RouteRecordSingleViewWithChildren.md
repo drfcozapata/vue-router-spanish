@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteRecordSingleViewWithChildren
+[Documentación de la API](../index.md) / RouteRecordSingleViewWithChildren
 
 # Interface: RouteRecordSingleViewWithChildren
 
@@ -26,9 +26,9 @@ copy of the record. Allows having paths shorthands like `/users/:id` and
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[alias](RouteRecordBase.md#alias)
+[\_RouteRecordBase](RouteRecordBase.md).[alias](RouteRecordBase.md#alias)
 
-___
+---
 
 ### beforeEnter
 
@@ -39,9 +39,9 @@ effect if the record has a `redirect` property.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[beforeEnter](RouteRecordBase.md#beforeEnter)
+[\_RouteRecordBase](RouteRecordBase.md).[beforeEnter](RouteRecordBase.md#beforeEnter)
 
-___
+---
 
 ### children
 
@@ -51,23 +51,23 @@ Array of nested routes.
 
 #### Overrides
 
-[_RouteRecordBase](RouteRecordBase.md).[children](RouteRecordBase.md#children)
+[\_RouteRecordBase](RouteRecordBase.md).[children](RouteRecordBase.md#children)
 
-___
+---
 
 ### component
 
-• `Optional` **component**: ``null`` \| `RawRouteComponent`
+• `Optional` **component**: `null` \| `RawRouteComponent`
 
 Component to display when the URL matches this route.
 
-___
+---
 
 ### components
 
 • `Optional` **components**: `undefined`
 
-___
+---
 
 ### end
 
@@ -81,9 +81,9 @@ Should the RegExp match until the end by appending a `$` to it.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[end](RouteRecordBase.md#end)
+[\_RouteRecordBase](RouteRecordBase.md).[end](RouteRecordBase.md#end)
 
-___
+---
 
 ### meta
 
@@ -93,9 +93,9 @@ Arbitrary data attached to the record.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[meta](RouteRecordBase.md#meta)
+[\_RouteRecordBase](RouteRecordBase.md).[meta](RouteRecordBase.md#meta)
 
-___
+---
 
 ### name
 
@@ -105,9 +105,9 @@ Name for the route record. Must be unique.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[name](RouteRecordBase.md#name)
+[\_RouteRecordBase](RouteRecordBase.md).[name](RouteRecordBase.md#name)
 
-___
+---
 
 ### path
 
@@ -124,9 +124,9 @@ another record.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[path](RouteRecordBase.md#path)
+[\_RouteRecordBase](RouteRecordBase.md).[path](RouteRecordBase.md#path)
 
-___
+---
 
 ### props
 
@@ -136,9 +136,9 @@ Allow passing down params as props to the component rendered by `router-view`.
 
 #### Overrides
 
-[_RouteRecordBase](RouteRecordBase.md).[props](RouteRecordBase.md#props)
+[\_RouteRecordBase](RouteRecordBase.md).[props](RouteRecordBase.md#props)
 
-___
+---
 
 ### redirect
 
@@ -150,9 +150,9 @@ target location.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[redirect](RouteRecordBase.md#redirect)
+[\_RouteRecordBase](RouteRecordBase.md).[redirect](RouteRecordBase.md#redirect)
 
-___
+---
 
 ### sensitive
 
@@ -166,9 +166,9 @@ Makes the RegExp case-sensitive.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[sensitive](RouteRecordBase.md#sensitive)
+[\_RouteRecordBase](RouteRecordBase.md).[sensitive](RouteRecordBase.md#sensitive)
 
-___
+---
 
 ### strict
 
@@ -182,4 +182,4 @@ Whether to disallow a trailing slash or not.
 
 #### Inherited from
 
-[_RouteRecordBase](RouteRecordBase.md).[strict](RouteRecordBase.md#strict)
+[\_RouteRecordBase](RouteRecordBase.md).[strict](RouteRecordBase.md#strict)

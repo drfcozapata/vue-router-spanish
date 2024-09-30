@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / MatcherLocationAsPath
+[Documentación de la API](../index.md) / MatcherLocationAsPath
 
 # Interface: MatcherLocationAsPath
 

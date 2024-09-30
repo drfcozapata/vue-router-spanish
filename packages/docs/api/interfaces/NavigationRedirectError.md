@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationRedirectError
+[Documentación de la API](../index.md) / NavigationRedirectError
 
 # Interface: NavigationRedirectError
 
@@ -10,7 +10,7 @@ Internal error used to detect a redirection.
 
 ## Hierarchy
 
-- `Omit`\<[`NavigationFailure`](NavigationFailure.md), ``"to"`` \| ``"type"``\>
+- `Omit`\<[`NavigationFailure`](NavigationFailure.md), `"to"` \| `"type"`\>
 
   ↳ **`NavigationRedirectError`**
 
@@ -24,7 +24,7 @@ Internal error used to detect a redirection.
 
 Omit.cause
 
-___
+---
 
 ### from
 
@@ -36,7 +36,7 @@ Route location we were navigating from
 
 Omit.from
 
-___
+---
 
 ### message
 
@@ -46,7 +46,7 @@ ___
 
 Omit.message
 
-___
+---
 
 ### name
 
@@ -56,7 +56,7 @@ ___
 
 Omit.name
 
-___
+---
 
 ### stack
 
@@ -66,13 +66,13 @@ ___
 
 Omit.stack
 
-___
+---
 
 ### to
 
 • **to**: `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
-___
+---
 
 ### type
 

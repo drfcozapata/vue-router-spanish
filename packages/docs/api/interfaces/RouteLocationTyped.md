@@ -2,18 +2,18 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationTyped
+[Documentación de la API](../index.md) / RouteLocationTyped
 
 # Interface: RouteLocationTyped\<RouteMap, Name\>
 
 Helper to generate a type safe version of the [RouteLocation](../index.md#RouteLocation) type.
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                     |
+| :--------- | :------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap`                                 |
 
 ## Hierarchy
 
@@ -36,7 +36,7 @@ percentage encoded.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[fullPath](RouteLocationGeneric.md#fullPath)
 
-___
+---
 
 ### hash
 
@@ -48,7 +48,7 @@ Hash of the current location. If present, starts with a `#`.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[hash](RouteLocationGeneric.md#hash)
 
-___
+---
 
 ### matched
 
@@ -62,7 +62,7 @@ can't be used directly. **This property is non-enumerable**.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[matched](RouteLocationGeneric.md#matched)
 
-___
+---
 
 ### meta
 
@@ -74,7 +74,7 @@ Merged `meta` properties from all the matched route records.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[meta](RouteLocationGeneric.md#meta)
 
-___
+---
 
 ### name
 
@@ -86,7 +86,7 @@ Name of the matched record
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[name](RouteLocationGeneric.md#name)
 
-___
+---
 
 ### params
 
@@ -98,7 +98,7 @@ Object of decoded params extracted from the `path`.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[params](RouteLocationGeneric.md#params)
 
-___
+---
 
 ### path
 
@@ -110,7 +110,7 @@ Percentage encoded pathname section of the URL.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[path](RouteLocationGeneric.md#path)
 
-___
+---
 
 ### query
 
@@ -122,7 +122,7 @@ Object representation of the `search` property of the current location.
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[query](RouteLocationGeneric.md#query)
 
-___
+---
 
 ### redirectedFrom
 

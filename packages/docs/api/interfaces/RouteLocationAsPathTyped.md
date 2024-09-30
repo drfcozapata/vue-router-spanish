@@ -2,18 +2,18 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationAsPathTyped
+[Documentación de la API](../index.md) / RouteLocationAsPathTyped
 
 # Interface: RouteLocationAsPathTyped\<RouteMap, Name\>
 
 Helper to generate a type safe version of the [RouteLocationAsPath](../index.md#RouteLocationAsPath) type.
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                                                                        |
+| :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` = keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
 ## Hierarchy
 
@@ -35,7 +35,7 @@ is passed.
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[force](RouteLocationAsPathGeneric.md#force)
 
-___
+---
 
 ### hash
 
@@ -45,7 +45,7 @@ ___
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[hash](RouteLocationAsPathGeneric.md#hash)
 
-___
+---
 
 ### path
 
@@ -57,7 +57,7 @@ Percentage encoded pathname section of the URL.
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[path](RouteLocationAsPathGeneric.md#path)
 
-___
+---
 
 ### query
 
@@ -67,7 +67,7 @@ ___
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[query](RouteLocationAsPathGeneric.md#query)
 
-___
+---
 
 ### replace
 
@@ -79,7 +79,7 @@ Replace the entry in the history instead of pushing a new entry
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[replace](RouteLocationAsPathGeneric.md#replace)
 
-___
+---
 
 ### state
 

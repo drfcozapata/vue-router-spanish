@@ -2,11 +2,11 @@
 editLink: false
 ---
 
-API Documentation
+Documentación de la API
 
-# API Documentation
+# Documentación de la API
 
-## Enumerations
+## Enumeraciones
 
 - [ErrorTypes](enums/ErrorTypes.md)
 - [NavigationFailureType](enums/NavigationFailureType.md)
@@ -63,34 +63,31 @@ API Documentation
 - [\_RouteRecordBase](interfaces/RouteRecordBase.md)
 - [\_RouterLinkI](interfaces/RouterLinkI.md)
 
-## Type Aliases
+## Alias de Tipo
 
 ### LocationQuery
 
 Ƭ **LocationQuery**: `Record`\<`string`, [`LocationQueryValue`](index.md#LocationQueryValue) \| [`LocationQueryValue`](index.md#LocationQueryValue)[]\>
 
-Normalized query object that appears in [RouteLocationNormalized](index.md#RouteLocationNormalized)
+Objeto de query normalizado que aparece en [RouteLocationNormalized](index.md#RouteLocationNormalized)
 
-___
+---
 
 ### LocationQueryRaw
 
 Ƭ **LocationQueryRaw**: `Record`\<`string` \| `number`, [`LocationQueryValueRaw`](index.md#LocationQueryValueRaw) \| [`LocationQueryValueRaw`](index.md#LocationQueryValueRaw)[]\>
 
-Loose [LocationQuery](index.md#LocationQuery) object that can be passed to functions like
-[Router.push](interfaces/Router.md#push) and [Router.replace](interfaces/Router.md#replace) or anywhere when creating a
-[RouteLocationRaw](index.md#RouteLocationRaw)
+Objeto [LocationQuery](index.md#LocationQuery) suelto que se puede pasar a funciones como [Router.push](interfaces/Router.md#push) y [Router.replace](interfaces/Router.md#replace) o en cualquier lugar al crear una [RouteLocationRaw](index.md#RouteLocationRaw)
 
-___
+---
 
 ### LocationQueryValue
 
-Ƭ **LocationQueryValue**: `string` \| ``null``
+Ƭ **LocationQueryValue**: `string` \| `null`
 
-Possible values in normalized [LocationQuery](index.md#LocationQuery). `null` renders the query
-param but without an `=`.
+Valores posibles en [LocationQuery](index.md#LocationQuery) normalizada. `null` muestra el parámetro de consulta pero sin `=`.
 
-**`Example`**
+**`Ejemplo`**
 
 ```
 ?isNull&isEmpty=&other=other
@@ -98,484 +95,482 @@ gives
 `{ isNull: null, isEmpty: '', other: 'other' }`.
 ```
 
-___
+---
 
 ### LocationQueryValueRaw
 
 Ƭ **LocationQueryValueRaw**: [`LocationQueryValue`](index.md#LocationQueryValue) \| `number` \| `undefined`
 
-Possible values when defining a query.
+Valores posibles al definir una query.
 
-___
+---
 
 ### NavigationGuardNextCallback
 
 Ƭ **NavigationGuardNextCallback**: (`vm`: `ComponentPublicInstance`) => `unknown`
 
-Callback that can be passed to `next()` in `beforeRouteEnter()` guards.
+Callback que puede ser pasado a `next()` en los protectores `beforeRouteEnter()`.
 
-#### Type declaration
+#### Declaración tipo
 
 ▸ (`vm`): `unknown`
 
-##### Parameters
+##### Parámetros
 
-| Name | Type |
-| :------ | :------ |
-| `vm` | `ComponentPublicInstance` |
+| Nombre | Tipo                      |
+| :----- | :------------------------ |
+| `vm`   | `ComponentPublicInstance` |
 
-##### Returns
+##### Retorna
 
 `unknown`
 
-___
+---
 
 ### NavigationGuardReturn
 
 Ƭ **NavigationGuardReturn**: `void` \| `Error` \| `boolean` \| [`RouteLocationRaw`](index.md#RouteLocationRaw)
 
-Return types for a Navigation Guard. Based on `TypesConfig`
+Tipos de retorno para un protector de Navegación. Basado en `TypesConfig`
 
-**`See`**
+**`Mira`**
 
 [TypesConfig](interfaces/TypesConfig.md)
 
-___
+---
 
 ### ParamValue
 
-Ƭ **ParamValue**\<`isRaw`\>: ``true`` extends `isRaw` ? `string` \| `number` : `string`
+Ƭ **ParamValue**\<`isRaw`\>: `true` extends `isRaw` ? `string` \| `number` : `string`
 
-Utility type for raw and non raw params like :id
+Tipo de utilidad para parámetros sin formato y con formato como :id
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre  | Tipo              |
+| :------ | :---------------- |
 | `isRaw` | extends `boolean` |
 
-___
+---
 
 ### ParamValueOneOrMore
 
 Ƭ **ParamValueOneOrMore**\<`isRaw`\>: [[`ParamValue`](index.md#ParamValue)\<`isRaw`\>, ...ParamValue\<isRaw\>[]]
 
-Utility type for raw and non raw params like :id+
+Tipo de utilidad para parámetros sin formato y con formato como :id+
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre  | Tipo              |
+| :------ | :---------------- |
 | `isRaw` | extends `boolean` |
 
-___
+---
 
 ### ParamValueZeroOrMore
 
-Ƭ **ParamValueZeroOrMore**\<`isRaw`\>: ``true`` extends `isRaw` ? [`ParamValue`](index.md#ParamValue)\<`isRaw`\>[] \| `undefined` \| ``null`` : [`ParamValue`](index.md#ParamValue)\<`isRaw`\>[] \| `undefined`
+Ƭ **ParamValueZeroOrMore**\<`isRaw`\>: `true` extends `isRaw` ? [`ParamValue`](index.md#ParamValue)\<`isRaw`\>[] \| `undefined` \| `null` : [`ParamValue`](index.md#ParamValue)\<`isRaw`\>[] \| `undefined`
 
-Utility type for raw and non raw params like :id*
+Tipo de utilidad para parámetros sin formato y con formato como :id\*
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre  | Tipo              |
+| :------ | :---------------- |
 | `isRaw` | extends `boolean` |
 
-___
+---
 
 ### ParamValueZeroOrOne
 
-Ƭ **ParamValueZeroOrOne**\<`isRaw`\>: ``true`` extends `isRaw` ? `string` \| `number` \| ``null`` \| `undefined` : `string`
+Ƭ **ParamValueZeroOrOne**\<`isRaw`\>: `true` extends `isRaw` ? `string` \| `number` \| `null` \| `undefined` : `string`
 
-Utility type for raw and non raw params like :id?
+Tipo de utilidad para parámetros sin formato y con formato como :id?
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre  | Tipo              |
+| :------ | :---------------- |
 | `isRaw` | extends `boolean` |
 
-___
+---
 
 ### PathParserOptions
 
-Ƭ **PathParserOptions**: `Pick`\<[`_PathParserOptions`](interfaces/PathParserOptions.md), ``"end"`` \| ``"sensitive"`` \| ``"strict"``\>
+Ƭ **PathParserOptions**: `Pick`\<[`_PathParserOptions`](interfaces/PathParserOptions.md), `"end"` \| `"sensitive"` \| `"strict"`\>
 
-___
+---
 
 ### RouteComponent
 
 Ƭ **RouteComponent**: `Component` \| `DefineComponent`
 
-Allowed Component in [RouteLocationMatched](interfaces/RouteLocationMatched.md)
+Componente permitido en [RouteLocationMatched](interfaces/RouteLocationMatched.md)
 
-___
+---
 
 ### RouteLocation
 
 Ƭ **RouteLocation**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationGeneric`](interfaces/RouteLocationGeneric.md) : [`RouteLocationTypedList`](index.md#RouteLocationTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-[RouteLocationRaw](index.md#RouteLocationRaw) resolved using the matcher
+[RouteLocationRaw](index.md#RouteLocationRaw) resuelto mediante el comparador
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationAsPath
 
 Ƭ **RouteLocationAsPath**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationAsPathGeneric`](interfaces/RouteLocationAsPathGeneric.md) : [`RouteLocationAsPathTypedList`](index.md#RouteLocationAsPathTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Route location as an object with a `path` property.
+Ubicación de la ruta como un objeto con una propiedad `path`.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationAsPathTypedList
 
 Ƭ **RouteLocationAsPathTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationAsPathTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationAsPath](index.md#RouteLocationAsPath) indexed by the route name.
+Lista de todas las posibles [RouteLocationAsPath](index.md#RouteLocationAsPath) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationAsRelative
 
 Ƭ **RouteLocationAsRelative**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationAsRelativeGeneric`](interfaces/RouteLocationAsRelativeGeneric.md) : [`RouteLocationAsRelativeTypedList`](index.md#RouteLocationAsRelativeTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Route location relative to the current location. It accepts other properties than `path` like `params`, `query` and
-`hash` to conveniently change them.
+Ubicación de la ruta relativa a la ubicación actual. Acepta otras propiedades además de `path` como `params`, `query` y `hash` para cambiarlas convenientemente.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationAsRelativeTypedList
 
 Ƭ **RouteLocationAsRelativeTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationAsRelativeTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationAsRelative](index.md#RouteLocationAsRelative) indexed by the route name.
+Lista de todas las posibles [RouteLocationAsRelative](index.md#RouteLocationAsRelative) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationAsString
 
 Ƭ **RouteLocationAsString**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? `string` : `_LiteralUnion`\<[`RouteLocationAsStringTypedList`](index.md#RouteLocationAsStringTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`], `string`\>
 
-Same as [RouteLocationAsPath](index.md#RouteLocationAsPath) but as a string literal.
+Igual que [RouteLocationAsPath](index.md#RouteLocationAsPath) pero como una cadena literal.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationAsStringTyped
 
 Ƭ **RouteLocationAsStringTyped**\<`RouteMap`, `Name`\>: `RouteMap`[`Name`][``"path"``]
 
-Helper to generate a type safe version of the [RouteLocationAsString](index.md#RouteLocationAsString) type.
+Ayudante para generar una versión segura del tipo [RouteLocationAsString](index.md#RouteLocationAsString).
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` = keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                           |
 
-___
+---
 
 ### RouteLocationAsStringTypedList
 
 Ƭ **RouteLocationAsStringTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationAsStringTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationAsString](index.md#RouteLocationAsString) indexed by the route name.
+Lista de todas las posibles [RouteLocationAsString](index.md#RouteLocationAsString) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationNormalized
 
 Ƭ **RouteLocationNormalized**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationNormalizedGeneric`](interfaces/RouteLocationNormalizedGeneric.md) : [`RouteLocationNormalizedTypedList`](index.md#RouteLocationNormalizedTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Similar to [RouteLocation](index.md#RouteLocation) but its
-[`matched` property](interfaces/RouteLocationNormalizedTyped.md#matched) cannot contain redirect records
+Similar a [RouteLocation](index.md#RouteLocation) pero su propiedad [`matched`](interfaces/RouteLocationNormalizedTyped.md#matched) no puede contener registros de redirección.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationNormalizedLoaded
 
 Ƭ **RouteLocationNormalizedLoaded**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md) : [`RouteLocationNormalizedLoadedTypedList`](index.md#RouteLocationNormalizedLoadedTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Similar to [RouteLocationNormalized](index.md#RouteLocationNormalized) but its `components` do not contain any function to lazy load components.
-In other words, it's ready to be rendered by `<RouterView>`.
+Similar a [RouteLocationNormalized](index.md#RouteLocationNormalized) pero sus `components` no contienen ninguna función para cargar componentes perezosamente.
+En otras palabras, está preparado para ser renderizado por `<RouterView>`.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationNormalizedLoadedTypedList
 
 Ƭ **RouteLocationNormalizedLoadedTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationNormalizedLoadedTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationNormalizedLoaded](index.md#RouteLocationNormalizedLoaded) indexed by the route name.
+Lista de todas las posibles [RouteLocationNormalizedLoaded](index.md#RouteLocationNormalizedLoaded) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationNormalizedTypedList
 
 Ƭ **RouteLocationNormalizedTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationNormalizedTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationNormalized](index.md#RouteLocationNormalized) indexed by the route name.
+Lista de todas las posibles [RouteLocationNormalized](index.md#RouteLocationNormalized) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationRaw
 
 Ƭ **RouteLocationRaw**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationAsString`](index.md#RouteLocationAsString) \| [`RouteLocationAsRelativeGeneric`](interfaces/RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](interfaces/RouteLocationAsPathGeneric.md) : `_LiteralUnion`\<[`RouteLocationAsStringTypedList`](index.md#RouteLocationAsStringTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`], `string`\> \| [`RouteLocationAsRelativeTypedList`](index.md#RouteLocationAsRelativeTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`] \| [`RouteLocationAsPathTypedList`](index.md#RouteLocationAsPathTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Route location that can be passed to `router.push()` and other user-facing APIs.
+Ubicación de la ruta que puede pasarse a `router.push()` y otras API orientadas al usuario.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationResolved
 
 Ƭ **RouteLocationResolved**\<`Name`\>: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteLocationResolvedGeneric`](interfaces/RouteLocationResolvedGeneric.md) : [`RouteLocationResolvedTypedList`](index.md#RouteLocationResolvedTypedList)\<[`RouteMap`](index.md#RouteMap)\>[`Name`]
 
-Route location resolved with [`router.resolve()`](interfaces/Router.md).
+Ubicación de ruta resuelta con [`router.resolve()`](interfaces/Router.md).
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteLocationResolvedTypedList
 
 Ƭ **RouteLocationResolvedTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationResolvedTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocationResolved](index.md#RouteLocationResolved) indexed by the route name.
+Lista de todas las posibles [RouteLocationResolved](index.md#RouteLocationResolved) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteLocationTypedList
 
 Ƭ **RouteLocationTypedList**\<`RouteMap`\>: \{ [N in keyof RouteMap]: RouteLocationTyped\<RouteMap, N\> }
 
-List of all possible [RouteLocation](index.md#RouteLocation) indexed by the route name.
+Lista de todas las posibles [RouteLocation](index.md#RouteLocation) indexadas por el nombre de la ruta.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre     | Tipo                                                                                                  |
+| :--------- | :---------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](index.md#RouteMapGeneric) = [`RouteMapGeneric`](index.md#RouteMapGeneric) |
 
-___
+---
 
 ### RouteMap
 
-Ƭ **RouteMap**: [`TypesConfig`](interfaces/TypesConfig.md) extends `Record`\<``"RouteNamedMap"``, infer RouteNamedMap\> ? `RouteNamedMap` : [`RouteMapGeneric`](index.md#RouteMapGeneric)
+Ƭ **RouteMap**: [`TypesConfig`](interfaces/TypesConfig.md) extends `Record`\<`"RouteNamedMap"`, infer RouteNamedMap\> ? `RouteNamedMap` : [`RouteMapGeneric`](index.md#RouteMapGeneric)
 
-Convenience type to get the typed RouteMap or a generic one if not provided. It is extracted from the [TypesConfig](interfaces/TypesConfig.md) if it exists, it becomes [RouteMapGeneric](index.md#RouteMapGeneric) otherwise.
+Tipo de conveniencia para obtener el RouteMap tipado o uno genérico si no se proporciona. Se extrae de [TypesConfig](interfaces/TypesConfig.md) si existe, se convierte en [RouteMapGeneric](index.md#RouteMapGeneric) en caso contrario.
 
-___
+---
 
 ### RouteMapGeneric
 
 Ƭ **RouteMapGeneric**: `Record`\<`string` \| `symbol`, [`RouteRecordInfo`](interfaces/RouteRecordInfo.md)\>
 
-Generic version of the `RouteMap`.
+Versión genérica del `RouteMap`.
 
-___
+---
 
 ### RouteParamValue
 
 Ƭ **RouteParamValue**: `string`
 
-___
+---
 
 ### RouteParamValueRaw
 
-Ƭ **RouteParamValueRaw**: [`RouteParamValue`](index.md#RouteParamValue) \| `number` \| ``null`` \| `undefined`
+Ƭ **RouteParamValueRaw**: [`RouteParamValue`](index.md#RouteParamValue) \| `number` \| `null` \| `undefined`
 
-___
+---
 
 ### RouteParams
 
 Ƭ **RouteParams**\<`Name`\>: [`RouteMap`](index.md#RouteMap)[`Name`][``"params"``]
 
-Generate a type safe params for a route location. Requires the name of the route to be passed as a generic.
+Genera un parámetro de tipo seguro para una ubicación de ruta. Requiere que el nombre de la ruta se pase como genérico.
 
-**`See`**
+**`Mira`**
 
 [RouteParamsGeneric](index.md#RouteParamsGeneric)
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteParamsGeneric
 
 Ƭ **RouteParamsGeneric**: `Record`\<`string`, [`RouteParamValue`](index.md#RouteParamValue) \| [`RouteParamValue`](index.md#RouteParamValue)[]\>
 
-___
+---
 
 ### RouteParamsRaw
 
 Ƭ **RouteParamsRaw**\<`Name`\>: [`RouteMap`](index.md#RouteMap)[`Name`][``"paramsRaw"``]
 
-Generate a type safe raw params for a route location. Requires the name of the route to be passed as a generic.
+Generar un parámetro sin formato de tipo seguro para una ubicación de ruta. Requiere que el nombre de la ruta se pase como genérico.
 
-**`See`**
+**`Mira`**
 
 [RouteParamsRaw](index.md#RouteParamsRaw)
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
-___
+---
 
 ### RouteParamsRawGeneric
 
-Ƭ **RouteParamsRawGeneric**: `Record`\<`string`, [`RouteParamValueRaw`](index.md#RouteParamValueRaw) \| `Exclude`\<[`RouteParamValueRaw`](index.md#RouteParamValueRaw), ``null`` \| `undefined`\>[]\>
+Ƭ **RouteParamsRawGeneric**: `Record`\<`string`, [`RouteParamValueRaw`](index.md#RouteParamValueRaw) \| `Exclude`\<[`RouteParamValueRaw`](index.md#RouteParamValueRaw), `null` \| `undefined`\>[]\>
 
-___
+---
 
 ### RouteRecord
 
 Ƭ **RouteRecord**: [`RouteRecordNormalized`](interfaces/RouteRecordNormalized.md)
 
-Normalized version of a [route record](index.md#RouteRecord).
+Versión normalizada de un [registro de ruta](index.md#RouteRecord).
 
-___
+---
 
 ### RouteRecordName
 
 Ƭ **RouteRecordName**: [`RouteMapGeneric`](index.md#RouteMapGeneric) extends [`RouteMap`](index.md#RouteMap) ? [`RouteRecordNameGeneric`](index.md#RouteRecordNameGeneric) : keyof [`RouteMap`](index.md#RouteMap)
 
-Possible values for a route record **after normalization**
+Valores posibles para un registro de ruta **después de la normalización**.
 
-NOTE: since `RouteRecordName` is a type, it evaluates too early and it's often the generic version [RouteRecordNameGeneric](index.md#RouteRecordNameGeneric). If you need a typed version of all of the names of routes, use [`keyof RouteMap`](index.md#RouteMap)
+NOTA: como `RouteRecordName` es un tipo, se evalúa demasiado pronto y suele ser la versión genérica [RouteRecordNameGeneric](index.md#RouteRecordNameGeneric). Si necesita una versión tipada de todos los nombres de rutas, utilice [`keyof RouteMap`](index.md#RouteMap)
 
-___
+---
 
 ### RouteRecordNameGeneric
 
 Ƭ **RouteRecordNameGeneric**: `string` \| `symbol` \| `undefined`
 
-Generic version of [RouteRecordName](index.md#RouteRecordName).
+Versión genérica de [RouteRecordName](index.md#RouteRecordName).
 
-___
+---
 
 ### RouteRecordRaw
 
 Ƭ **RouteRecordRaw**: [`RouteRecordSingleView`](interfaces/RouteRecordSingleView.md) \| [`RouteRecordSingleViewWithChildren`](interfaces/RouteRecordSingleViewWithChildren.md) \| [`RouteRecordMultipleViews`](interfaces/RouteRecordMultipleViews.md) \| [`RouteRecordMultipleViewsWithChildren`](interfaces/RouteRecordMultipleViewsWithChildren.md) \| [`RouteRecordRedirect`](interfaces/RouteRecordRedirect.md)
 
-___
+---
 
 ### RouteRecordRedirectOption
 
 Ƭ **RouteRecordRedirectOption**: [`RouteLocationRaw`](index.md#RouteLocationRaw) \| (`to`: [`RouteLocation`](index.md#RouteLocation)) => [`RouteLocationRaw`](index.md#RouteLocationRaw)
 
-___
+---
 
 ### \_Awaitable
 
 Ƭ **\_Awaitable**\<`T`\>: `T` \| `PromiseLike`\<`T`\>
 
-Maybe a promise maybe not
+Tal vez una promesa, tal vez no
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name |
-| :------ |
-| `T` |
+| Nombre |
+| :----- |
+| `T`    |
 
-___
+---
 
 ### \_RouteRecordProps
 
 Ƭ **\_RouteRecordProps**\<`Name`\>: `boolean` \| `Record`\<`string`, `any`\> \| (`to`: [`RouteLocationNormalized`](index.md#RouteLocationNormalized)\<`Name`\>) => `Record`\<`string`, `any`\>
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                                                  |
+| :----- | :------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](index.md#RouteMap) = keyof [`RouteMap`](index.md#RouteMap) |
 
 ## Variables
@@ -584,245 +579,241 @@ ___
 
 • `Const` **RouterLink**: [`_RouterLinkI`](interfaces/RouterLinkI.md)
 
-Component to render a link that triggers a navigation on click.
+Componente para mostrar un enlace que activa la navegación al hacer clic.
 
-___
+---
 
 ### RouterView
 
-• `Const` **RouterView**: () => \{ `$props`: `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterViewProps`](interfaces/RouterViewProps.md) ; `$slots`: \{ `default?`: (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md)  }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\>[]  }  }
+• `Const` **RouterView**: () => \{ `$props`: `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterViewProps`](interfaces/RouterViewProps.md) ; `$slots`: \{ `default?`: (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md) }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[] } }
 
-Component to display the current route the user is at.
+Componente para mostrar la ruta actual en la que se encuentra el usuario.
 
-#### Type declaration
+#### Declaración de tipo
 
 • **new RouterView**(): `Object`
 
-Component to display the current route the user is at.
+Componente para mostrar la ruta actual en la que se encuentra el usuario.
 
-##### Returns
+##### Retorna
 
 `Object`
 
-| Name | Type |
-| :------ | :------ |
-| `$props` | `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterViewProps`](interfaces/RouterViewProps.md) |
-| `$slots` | \{ `default?`: (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md)  }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\>[]  } |
-| `$slots.default?` | (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md)  }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`;  }\>[] |
+| Nombre            | Tipo                                                                                                                                                                                                                                                                                                                         |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$props`          | `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterViewProps`](interfaces/RouterViewProps.md)                                                                                                                                                                                                         |
+| `$slots`          | \{ `default?`: (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md) }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[] } |
+| `$slots.default?` | (`__namedParameters`: \{ `Component`: `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\> ; `route`: [`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md) }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[]                  |
 
-___
+---
 
-### START\_LOCATION
+### START_LOCATION
 
-• `Const` **START\_LOCATION**: [`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)
+• `Const` **START_LOCATION**: [`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)
 
-Initial route location where the router is. Can be used in navigation guards
-to differentiate the initial navigation.
+Ubicación de la ruta inicial donde se encuentra el router. Se puede utilizar en los protectores de navegación para diferenciar la navegación inicial.
 
-**`Example`**
+**`Ejemplo`**
 
 ```js
 import { START_LOCATION } from 'vue-router'
 
 router.beforeEach((to, from) => {
   if (from === START_LOCATION) {
-    // initial navigation
+    // navegación inicial
   }
 })
 ```
 
-___
+---
 
 ### matchedRouteKey
 
 • `Const` **matchedRouteKey**: `InjectionKey`\<`ComputedRef`\<`undefined` \| [`RouteRecordNormalized`](interfaces/RouteRecordNormalized.md)\>\>
 
-RouteRecord being rendered by the closest ancestor Router View. Used for
-`onBeforeRouteUpdate` and `onBeforeRouteLeave`. rvlm stands for Router View
-Location Matched
+RouteRecord siendo renderizado por el ancestro Router View más cercano. Se utiliza para `onBeforeRouteUpdate` y `onBeforeRouteLeave`. rvlm significa Router View Location Matched (coincidencia de ubicación de la vista del router).
 
-___
+---
 
 ### routeLocationKey
 
 • `Const` **routeLocationKey**: `InjectionKey`\<[`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md)\>
 
-Allows overriding the current route returned by `useRoute` in tests. rl
-stands for route location
+Permite sobrescribir la ruta actual devuelta por `useRoute` en las pruebas. rl significa ubicación de la ruta
 
-___
+---
 
 ### routerKey
 
 • `Const` **routerKey**: `InjectionKey`\<[`Router`](interfaces/Router.md)\>
 
-Allows overriding the router instance returned by `useRouter` in tests. r
-stands for router
+Permite sobrescribir la instancia de enrutador devuelta por `useRouter` en las pruebas. r significa router
 
-___
+---
 
 ### routerViewLocationKey
 
 • `Const` **routerViewLocationKey**: `InjectionKey`\<`Ref`\<[`RouteLocationNormalizedLoadedGeneric`](interfaces/RouteLocationNormalizedLoadedGeneric.md)\>\>
 
-Allows overriding the current route used by router-view. Internally this is
-used when the `route` prop is passed.
+Permite sobreescribir la ruta actual utilizada por router-view. Internamente se utiliza cuando se pasa la propiedad `route`.
 
-___
+---
 
 ### viewDepthKey
 
 • `Const` **viewDepthKey**: `InjectionKey`\<`number` \| `Ref`\<`number`\>\>
 
-Allows overriding the router view depth to control which component in
-`matched` is rendered. rvd stands for Router View Depth
+Permite sobreescribir la profundidad de la vista del router para controlar qué componente de `matched` se renderiza. rvd significa Profundidad de la vista del router.
 
-## Functions
+## Funciones
 
 ### createMemoryHistory
 
 ▸ **createMemoryHistory**(`base?`): [`RouterHistory`](interfaces/RouterHistory.md)
 
-Creates an in-memory based history. The main purpose of this history is to handle SSR. It starts in a special location that is nowhere.
-It's up to the user to replace that location with the starter location by either calling `router.push` or `router.replace`.
+Crea un historial basado en memoria. El propósito principal de este historial es manejar SSR. Comienza en una ubicación especial que no está en ninguna parte. Depende del usuario reemplazar esa ubicación con la ubicación inicial llamando a `router.push` o `router.replace`.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `base` | `string` | `''` | Base applied to all urls, defaults to '/' |
+| Nombre | Tipo     | Default value | Descripción                                     |
+| :----- | :------- | :------------ | :---------------------------------------------- |
+| `base` | `string` | `''`          | Base aplicada a todas las urls, por defecto '/' |
 
-#### Returns
+#### Retorna
 
 [`RouterHistory`](interfaces/RouterHistory.md)
 
-a history object that can be passed to the router constructor
+un objeto histórico que puede pasarse al constructor del router.
 
-___
+---
 
 ### createRouter
 
 ▸ **createRouter**(`options`): [`Router`](interfaces/Router.md)
 
-Creates a Router instance that can be used by a Vue app.
+Crea una instancia de Router que puede ser utilizada por una aplicación Vue.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Nombre    | Tipo                                           | Descripción                                  |
+| :-------- | :--------------------------------------------- | :------------------------------------------- |
 | `options` | [`RouterOptions`](interfaces/RouterOptions.md) | [RouterOptions](interfaces/RouterOptions.md) |
 
-#### Returns
+#### Retorna
 
 [`Router`](interfaces/Router.md)
 
-___
+---
 
 ### createRouterMatcher
 
 ▸ **createRouterMatcher**(`routes`, `globalOptions`): [`RouterMatcher`](interfaces/RouterMatcher.md)
 
-Creates a Router Matcher.
+Crea un Emparejador de Router.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `routes` | readonly [`RouteRecordRaw`](index.md#RouteRecordRaw)[] | array of initial routes |
-| `globalOptions` | [`PathParserOptions`](index.md#PathParserOptions) | global route options |
+| Nombre          | Tipo                                                   | Descripción               |
+| :-------------- | :----------------------------------------------------- | :------------------------ |
+| `routes`        | readonly [`RouteRecordRaw`](index.md#RouteRecordRaw)[] | array de rutas iniciales  |
+| `globalOptions` | [`PathParserOptions`](index.md#PathParserOptions)      | opciones de ruta globales |
 
-#### Returns
+#### Retorna
 
 [`RouterMatcher`](interfaces/RouterMatcher.md)
 
-___
+---
 
 ### createWebHashHistory
 
 ▸ **createWebHashHistory**(`base?`): [`RouterHistory`](interfaces/RouterHistory.md)
 
-Creates a hash history. Useful for web applications with no host (e.g. `file://`) or when configuring a server to
-handle any URL is not possible.
+Crea un historial hash. Útil para aplicaciones web sin host (por ejemplo `file://`) o cuando no es posible configurar un servidor para manejar cualquier URL.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `base?` | `string` | optional base to provide. Defaults to `location.pathname + location.search` If there is a `<base>` tag in the `head`, its value will be ignored in favor of this parameter **but note it affects all the history.pushState() calls**, meaning that if you use a `<base>` tag, it's `href` value **has to match this parameter** (ignoring anything after the `#`). |
+| Nombre  | Tipo     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base?` | `string` | base opcional a proporcionar. Por defecto es `location.pathname + location.search`. Si hay una etiqueta `<base>` en el `head`, su valor será ignorado en favor de este parámetro **pero tenga en cuenta que afecta a todas las llamadas a history.pushState()**, lo que significa que si usa una etiqueta `<base>`, su valor `href` **tiene que coincidir con este parámetro** (ignorando cualquier cosa después del `#`). |
 
-#### Returns
+#### Retorna
 
 [`RouterHistory`](interfaces/RouterHistory.md)
 
-**`Example`**
+**`Ejemplo`**
 
 ```js
-// at https://example.com/folder
-createWebHashHistory() // gives a url of `https://example.com/folder#`
-createWebHashHistory('/folder/') // gives a url of `https://example.com/folder/#`
-// if the `#` is provided in the base, it won't be added by `createWebHashHistory`
-createWebHashHistory('/folder/#/app/') // gives a url of `https://example.com/folder/#/app/`
-// you should avoid doing this because it changes the original url and breaks copying urls
-createWebHashHistory('/other-folder/') // gives a url of `https://example.com/other-folder/#`
+// en https://example.com/folder
+createWebHashHistory() // se obtiene una url de `https://example.com/folder#`
+createWebHashHistory('/folder/') // se obtiene una url de `https://example.com/folder/#`
+// si el `#` es proporcionado en la base, no será añadido por `createWebHashHistory`
+createWebHashHistory('/folder/#/app/') // se obtiene una url de `https://example.com/folder/#/app/`
+// debes evitar hacer esto porque cambia la url original y rompe la copia de urls
+createWebHashHistory('/other-folder/') // se obtiene una url de `https://example.com/other-folder/#`
 
-// at file:///usr/etc/folder/index.html
-// for locations with no `host`, the base is ignored
-createWebHashHistory('/iAmIgnored') // gives a url of `file:///usr/etc/folder/index.html#`
+// en file:///usr/etc/folder/index.html
+// para localizaciones sin `host`, se ignora la base
+createWebHashHistory('/iAmIgnored') // se obtiene una url de `file:///usr/etc/folder/index.html#`
 ```
 
-___
+---
 
 ### createWebHistory
 
 ▸ **createWebHistory**(`base?`): [`RouterHistory`](interfaces/RouterHistory.md)
 
-Creates an HTML5 history. Most common history for single page applications.
+Crea un historial HTML5. El historial más común para aplicaciones de una sola página.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type |
-| :------ | :------ |
+| Nombre  | Tipo     |
+| :------ | :------- |
 | `base?` | `string` |
 
-#### Returns
+#### Retorna
 
 [`RouterHistory`](interfaces/RouterHistory.md)
 
-___
+---
 
 ### isNavigationFailure
 
 ▸ **isNavigationFailure**(`error`, `type?`): error is NavigationRedirectError
 
-Check if an object is a [NavigationFailure](interfaces/NavigationFailure.md).
+Comprueba si un objeto es un [NavigationFailure](interfaces/NavigationFailure.md).
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `error` | `any` | possible [NavigationFailure](interfaces/NavigationFailure.md) |
-| `type?` | [`NAVIGATION_GUARD_REDIRECT`](enums/ErrorTypes.md#NAVIGATION_GUARD_REDIRECT) | optional types to check for |
+| Nombre  | Tipo                                                                         | Descripción                                                  |
+| :------ | :--------------------------------------------------------------------------- | :----------------------------------------------------------- |
+| `error` | `any`                                                                        | posible [NavigationFailure](interfaces/NavigationFailure.md) |
+| `type?` | [`NAVIGATION_GUARD_REDIRECT`](enums/ErrorTypes.md#NAVIGATION_GUARD_REDIRECT) | tipos opcionales a comprobar                                 |
 
-#### Returns
+#### Retorna
 
-error is NavigationRedirectError
+error es NavigationRedirectError
 
-**`Example`**
+**`Ejemplo`**
 
 ```js
 import { isNavigationFailure, NavigationFailureType } from 'vue-router'
 
 router.afterEach((to, from, failure) => {
-  // Any kind of navigation failure
+  // Cualquier tipo de fallo de navegación
   if (isNavigationFailure(failure)) {
     // ...
   }
-  // Only duplicated navigations
+  // Sólo navegaciones duplicadas
   if (isNavigationFailure(failure, NavigationFailureType.duplicated)) {
     // ...
   }
-  // Aborted or canceled navigations
-  if (isNavigationFailure(failure, NavigationFailureType.aborted | NavigationFailureType.canceled)) {
+  // Navegaciones abortadas o canceladas
+  if (
+    isNavigationFailure(
+      failure,
+      NavigationFailureType.aborted | NavigationFailureType.canceled
+    )
+  ) {
     // ...
   }
 })
@@ -830,175 +821,167 @@ router.afterEach((to, from, failure) => {
 
 ▸ **isNavigationFailure**(`error`, `type?`): error is NavigationFailure
 
-#### Parameters
+#### Parámetros
 
-| Name | Type |
-| :------ | :------ |
-| `error` | `any` |
+| Nombre  | Tipo                                                                                             |
+| :------ | :----------------------------------------------------------------------------------------------- |
+| `error` | `any`                                                                                            |
 | `type?` | [`ErrorTypes`](enums/ErrorTypes.md) \| [`NavigationFailureType`](enums/NavigationFailureType.md) |
 
-#### Returns
+#### Retorna
 
-error is NavigationFailure
+error es NavigationFailure
 
-___
+---
 
 ### loadRouteLocation
 
 ▸ **loadRouteLocation**(`route`): `Promise`\<[`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)\>
 
-Ensures a route is loaded, so it can be passed as o prop to `<RouterView>`.
+Asegura que se carga una ruta, para poder pasarla como prop a `<RouterView>`.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `route` | [`RouteLocationNormalizedGeneric`](interfaces/RouteLocationNormalizedGeneric.md) \| [`RouteLocationGeneric`](interfaces/RouteLocationGeneric.md) | resolved route to load |
+| Nombre  | Tipo                                                                                                                                             | Descripción               |
+| :------ | :----------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
+| `route` | [`RouteLocationNormalizedGeneric`](interfaces/RouteLocationNormalizedGeneric.md) \| [`RouteLocationGeneric`](interfaces/RouteLocationGeneric.md) | ruta resuelta para cargar |
 
-#### Returns
+#### Retorna
 
 `Promise`\<[`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)\>
 
-___
+---
 
 ### onBeforeRouteLeave
 
 ▸ **onBeforeRouteLeave**(`leaveGuard`): `void`
 
-Add a navigation guard that triggers whenever the component for the current
-location is about to be left. Similar to beforeRouteLeave but can be
-used in any component. The guard is removed when the component is unmounted.
+Añade un protector de navegación que se activa cuando el componente de la ubicación actual está a punto de ser abandonado. Similar a beforeRouteLeave pero puede ser en cualquier componente. La protección se elimina cuando se desmonta el componente.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Nombre       | Tipo                                               | Descripción                                      |
+| :----------- | :------------------------------------------------- | :----------------------------------------------- |
 | `leaveGuard` | [`NavigationGuard`](interfaces/NavigationGuard.md) | [NavigationGuard](interfaces/NavigationGuard.md) |
 
-#### Returns
+#### Retorna
 
 `void`
 
-___
+---
 
 ### onBeforeRouteUpdate
 
 ▸ **onBeforeRouteUpdate**(`updateGuard`): `void`
 
-Add a navigation guard that triggers whenever the current location is about
-to be updated. Similar to beforeRouteUpdate but can be used in any
-component. The guard is removed when the component is unmounted.
+Añade un protector de navegación que se activa cuando la ubicación actual está a punto de actualizarse. Es similar a beforeRouteUpdate pero puede utilizarse en cualquier componente. La protección se elimina cuando se desmonta el componente.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Nombre        | Tipo                                               | Descripción                                      |
+| :------------ | :------------------------------------------------- | :----------------------------------------------- |
 | `updateGuard` | [`NavigationGuard`](interfaces/NavigationGuard.md) | [NavigationGuard](interfaces/NavigationGuard.md) |
 
-#### Returns
+#### Retorna
 
 `void`
 
-___
+---
 
 ### parseQuery
 
 ▸ **parseQuery**(`search`): [`LocationQuery`](index.md#LocationQuery)
 
-Transforms a queryString into a [LocationQuery](index.md#LocationQuery) object. Accept both, a
-version with the leading `?` and without Should work as URLSearchParams
+Transforma una cadena de consulta en un objeto [LocationQuery](index.md#LocationQuery). Acepta ambas versiones, una con el prefijo `?` y otra sin él. Deben funcionar como URLSearchParams.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `search` | `string` | search string to parse |
+| Nombre   | Tipo     | Descripción                   |
+| :------- | :------- | :---------------------------- |
+| `search` | `string` | cadena de búsqueda a analizar |
 
-#### Returns
+#### Retorna
 
 [`LocationQuery`](index.md#LocationQuery)
 
-a query object
+un objeto query
 
-___
+---
 
 ### stringifyQuery
 
 ▸ **stringifyQuery**(`query`): `string`
 
-Stringifies a [LocationQueryRaw](index.md#LocationQueryRaw) object. Like `URLSearchParams`, it
-doesn't prepend a `?`
+Stringifica un objeto [LocationQueryRaw](index.md#LocationQueryRaw). Al igual que `URLSearchParams`, no antepone un `?`.
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `query` | [`LocationQueryRaw`](index.md#LocationQueryRaw) | query object to stringify |
+| Nombre  | Tipo                                            | Descripción                    |
+| :------ | :---------------------------------------------- | :----------------------------- |
+| `query` | [`LocationQueryRaw`](index.md#LocationQueryRaw) | objeto query para stringificar |
 
-#### Returns
+#### Retorna
 
 `string`
 
-string version of the query without the leading `?`
+versión en cadena de la consulta sin el prefijo `?`.
 
-___
+---
 
 ### useLink
 
 ▸ **useLink**\<`Name`\>(`props`): [`UseLinkReturn`](interfaces/UseLinkReturn.md)\<`Name`\>
 
-Returns the internal behavior of a [RouterLink](index.md#RouterLink) without the rendering part.
+Retorna el comportamiento interno de un [RouterLink](index.md#RouterLink) sin la parte de renderizado.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                |
+| :----- | :-------------------------------------------------- |
 | `Name` | extends `string` \| `symbol` = `string` \| `symbol` |
 
-#### Parameters
+#### Parámetros
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `props` | [`UseLinkOptions`](interfaces/UseLinkOptions.md)\<`Name`\> | a `to` location and an optional `replace` flag |
+| Nombre  | Tipo                                                       | Descripción                                         |
+| :------ | :--------------------------------------------------------- | :-------------------------------------------------- |
+| `props` | [`UseLinkOptions`](interfaces/UseLinkOptions.md)\<`Name`\> | una ubicación `to` y una bandera `replace` opcional |
 
-#### Returns
+#### Retorna
 
 [`UseLinkReturn`](interfaces/UseLinkReturn.md)\<`Name`\>
 
-___
+---
 
 ### useRoute
 
 ▸ **useRoute**\<`Name`\>(`_name?`): [`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)\<`Name`\>
 
-Returns the current route location. Equivalent to using `$route` inside
-templates.
+Retorna la localización actual de la ruta. Equivale a usar `$route` dentro de las plantillas.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Nombre | Tipo                                                |
+| :----- | :-------------------------------------------------- |
 | `Name` | extends `string` \| `symbol` = `string` \| `symbol` |
 
-#### Parameters
+#### Parámetros
 
-| Name | Type |
-| :------ | :------ |
+| Nombre   | Tipo   |
+| :------- | :----- |
 | `_name?` | `Name` |
 
-#### Returns
+#### Retorna
 
 [`RouteLocationNormalizedLoaded`](index.md#RouteLocationNormalizedLoaded)\<`Name`\>
 
-___
+---
 
 ### useRouter
 
 ▸ **useRouter**(): [`Router`](interfaces/Router.md)
 
-Returns the router instance. Equivalent to using `$router` inside
-templates.
+Retorna la instancia del router. Equivale al uso de `$router` dentro de las plantillas.
 
-#### Returns
+#### Retorna
 
 [`Router`](interfaces/Router.md)

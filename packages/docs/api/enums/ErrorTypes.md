@@ -2,39 +2,38 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / ErrorTypes
+[Documentación de la API](../index.md) / ErrorTypes
 
-# Enumeration: ErrorTypes
+# Enumeración: ErrorTypes
 
-Flags so we can combine them when checking for multiple errors. This is the internal version of
-[NavigationFailureType](NavigationFailureType.md).
+Banderas para que podamos combinarlas al comprobar varios errores. Esta es la versión interna de [NavigationFailureType](NavigationFailureType.md).
 
-## Enumeration Members
+## Miembros de Enumeración
 
-### MATCHER\_NOT\_FOUND
+### MATCHER_NOT_FOUND
 
-• **MATCHER\_NOT\_FOUND** = ``1``
+• **MATCHER_NOT_FOUND** = `1`
 
-___
+---
 
-### NAVIGATION\_ABORTED
+### NAVIGATION_ABORTED
 
-• **NAVIGATION\_ABORTED** = ``4``
+• **NAVIGATION_ABORTED** = `4`
 
-___
+---
 
-### NAVIGATION\_CANCELLED
+### NAVIGATION_CANCELLED
 
-• **NAVIGATION\_CANCELLED** = ``8``
+• **NAVIGATION_CANCELLED** = `8`
 
-___
+---
 
-### NAVIGATION\_DUPLICATED
+### NAVIGATION_DUPLICATED
 
-• **NAVIGATION\_DUPLICATED** = ``16``
+• **NAVIGATION_DUPLICATED** = `16`
 
-___
+---
 
-### NAVIGATION\_GUARD\_REDIRECT
+### NAVIGATION_GUARD_REDIRECT
 
-• **NAVIGATION\_GUARD\_REDIRECT** = ``2``
+• **NAVIGATION_GUARD_REDIRECT** = `2`

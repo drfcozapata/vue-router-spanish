@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationGuard
+[Documentación de la API](../index.md) / NavigationGuard
 
 # Interface: NavigationGuard
 
@@ -16,11 +16,11 @@ Navigation Guard.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `to` | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md) |
+| Name   | Type                                                                              |
+| :----- | :-------------------------------------------------------------------------------- |
+| `to`   | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
 | `from` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
-| `next` | [`NavigationGuardNext`](NavigationGuardNext.md) |
+| `next` | [`NavigationGuardNext`](NavigationGuardNext.md)                                   |
 
 #### Returns
 

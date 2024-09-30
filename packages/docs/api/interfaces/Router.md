@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / Router
+[Documentación de la API](../index.md) / Router
 
 # Interface: Router
 
@@ -16,7 +16,7 @@ Router instance.
 
 Current [RouteLocationNormalized](../index.md#RouteLocationNormalized)
 
-___
+---
 
 ### listening
 
@@ -24,7 +24,7 @@ ___
 
 Allows turning off the listening of history events. This is a low level api for micro-frontend.
 
-___
+---
 
 ### options
 
@@ -42,10 +42,10 @@ Add a new [route record](../index.md#RouteRecordRaw) as the child of an existing
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type                                                                            | Description                                             |
+| :----------- | :------------------------------------------------------------------------------ | :------------------------------------------------------ |
 | `parentName` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> | Parent Route Record where `route` should be appended at |
-| `route` | [`RouteRecordRaw`](../index.md#RouteRecordRaw) | Route Record to add |
+| `route`      | [`RouteRecordRaw`](../index.md#RouteRecordRaw)                                  | Route Record to add                                     |
 
 #### Returns
 
@@ -63,8 +63,8 @@ Add a new [route record](../index.md#RouteRecordRaw) to the router.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                                           | Description         |
+| :------ | :--------------------------------------------- | :------------------ |
 | `route` | [`RouteRecordRaw`](../index.md#RouteRecordRaw) | Route Record to add |
 
 #### Returns
@@ -77,7 +77,7 @@ Add a new [route record](../index.md#RouteRecordRaw) to the router.
 
 `void`
 
-___
+---
 
 ### afterEach
 
@@ -88,8 +88,8 @@ function that removes the registered hook.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                                            | Description            |
+| :------ | :---------------------------------------------- | :--------------------- |
 | `guard` | [`NavigationHookAfter`](NavigationHookAfter.md) | navigation hook to add |
 
 #### Returns
@@ -114,7 +114,7 @@ router.afterEach((to, from, failure) => {
 })
 ```
 
-___
+---
 
 ### back
 
@@ -127,7 +127,7 @@ Go back in history if possible by calling `history.back()`. Equivalent to
 
 `void`
 
-___
+---
 
 ### beforeEach
 
@@ -138,8 +138,8 @@ function that removes the registered guard.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                                                                   | Description             |
+| :------ | :--------------------------------------------------------------------- | :---------------------- |
 | `guard` | [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> | navigation guard to add |
 
 #### Returns
@@ -152,7 +152,7 @@ function that removes the registered guard.
 
 `void`
 
-___
+---
 
 ### beforeResolve
 
@@ -165,8 +165,8 @@ registered guard.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type                                                                   | Description             |
+| :------ | :--------------------------------------------------------------------- | :---------------------- |
 | `guard` | [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> | navigation guard to add |
 
 #### Returns
@@ -189,7 +189,7 @@ router.beforeResolve(to => {
 })
 ```
 
-___
+---
 
 ### clearRoutes
 
@@ -201,7 +201,7 @@ Delete all routes from the router matcher.
 
 `void`
 
-___
+---
 
 ### forward
 
@@ -214,7 +214,7 @@ Equivalent to `router.go(1)`.
 
 `void`
 
-___
+---
 
 ### getRoutes
 
@@ -226,7 +226,7 @@ Get a full list of all the [route records](../index.md#RouteRecord).
 
 [`RouteRecordNormalized`](RouteRecordNormalized.md)[]
 
-___
+---
 
 ### go
 
@@ -237,15 +237,15 @@ Allows you to move forward or backward through the history. Calls
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                                                                         |
+| :------ | :------- | :---------------------------------------------------------------------------------- |
 | `delta` | `number` | The position in the history to which you want to move, relative to the current page |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### hasRoute
 
@@ -255,15 +255,15 @@ Checks if a route with a given name exists
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                                            | Description                |
+| :----- | :------------------------------------------------------------------------------ | :------------------------- |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> | Name of the route to check |
 
 #### Returns
 
 `boolean`
 
-___
+---
 
 ### install
 
@@ -274,15 +274,15 @@ the user. This will trigger the initial navigation when on client side.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type           | Description                      |
+| :---- | :------------- | :------------------------------- |
 | `app` | `App`\<`any`\> | Application that uses the router |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### isReady
 
@@ -302,7 +302,7 @@ picks it up from the URL.
 
 `Promise`\<`void`\>
 
-___
+---
 
 ### onError
 
@@ -316,8 +316,8 @@ is required to render a route.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type             | Description               |
+| :-------- | :--------------- | :------------------------ |
 | `handler` | `_ErrorListener` | error handler to register |
 
 #### Returns
@@ -330,7 +330,7 @@ is required to render a route.
 
 `void`
 
-___
+---
 
 ### push
 
@@ -341,15 +341,15 @@ stack.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name | Type                                                                                                                                               | Description                   |
+| :--- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | `to` | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) | Route location to navigate to |
 
 #### Returns
 
 `Promise`\<`undefined` \| `void` \| [`NavigationFailure`](NavigationFailure.md)\>
 
-___
+---
 
 ### removeRoute
 
@@ -359,15 +359,15 @@ Remove an existing route by its name.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                                            | Description                 |
+| :----- | :------------------------------------------------------------------------------ | :-------------------------- |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> | Name of the route to remove |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### replace
 
@@ -378,15 +378,15 @@ the history stack.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name | Type                                                                                                                                               | Description                   |
+| :--- | :------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------- |
 | `to` | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) | Route location to navigate to |
 
 #### Returns
 
 `Promise`\<`undefined` \| `void` \| [`NavigationFailure`](NavigationFailure.md)\>
 
-___
+---
 
 ### resolve
 
@@ -397,18 +397,18 @@ Returns the [normalized version](../index.md#RouteLocation) of a
 that includes any existing `base`. By default, the `currentLocation` used is
 `router.currentRoute` and should only be overridden in advanced use cases.
 
-#### Type parameters
+#### Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                |
+| :----- | :-------------------------------------------------- |
 | `Name` | extends `string` \| `symbol` = `string` \| `symbol` |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `to` | [`RouteLocationAsRelativeTyped`](RouteLocationAsRelativeTyped.md)\<[`RouteMapGeneric`](../index.md#RouteMapGeneric), `Name`\> | Raw route location to resolve |
-| `currentLocation?` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) | Optional current location to resolve against |
+| Name               | Type                                                                                                                          | Description                                  |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------- |
+| `to`               | [`RouteLocationAsRelativeTyped`](RouteLocationAsRelativeTyped.md)\<[`RouteMapGeneric`](../index.md#RouteMapGeneric), `Name`\> | Raw route location to resolve                |
+| `currentLocation?` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md)                                             | Optional current location to resolve against |
 
 #### Returns
 
@@ -418,10 +418,10 @@ that includes any existing `base`. By default, the `currentLocation` used is
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `to` | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) |
-| `currentLocation?` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
+| Name               | Type                                                                                                                                               |
+| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `to`               | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) |
+| `currentLocation?` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md)                                                                  |
 
 #### Returns
 

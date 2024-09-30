@@ -2,18 +2,18 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationResolvedTyped
+[Documentación de la API](../index.md) / RouteLocationResolvedTyped
 
 # Interface: RouteLocationResolvedTyped\<RouteMap, Name\>
 
 Helper to generate a type safe version of the [RouteLocationResolved](../index.md#RouteLocationResolved) type.
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type                                                     |
+| :--------- | :------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
-| `Name` | extends keyof `RouteMap` |
+| `Name`     | extends keyof `RouteMap`                                 |
 
 ## Hierarchy
 
@@ -34,7 +34,7 @@ percentage encoded.
 
 [RouteLocationTyped](RouteLocationTyped.md).[fullPath](RouteLocationTyped.md#fullPath)
 
-___
+---
 
 ### hash
 
@@ -46,7 +46,7 @@ Hash of the current location. If present, starts with a `#`.
 
 [RouteLocationTyped](RouteLocationTyped.md).[hash](RouteLocationTyped.md#hash)
 
-___
+---
 
 ### href
 
@@ -54,7 +54,7 @@ ___
 
 Resolved `href` for the route location that will be set on the `<a href="...">`.
 
-___
+---
 
 ### matched
 
@@ -68,7 +68,7 @@ can't be used directly. **This property is non-enumerable**.
 
 [RouteLocationTyped](RouteLocationTyped.md).[matched](RouteLocationTyped.md#matched)
 
-___
+---
 
 ### meta
 
@@ -80,7 +80,7 @@ Merged `meta` properties from all the matched route records.
 
 [RouteLocationTyped](RouteLocationTyped.md).[meta](RouteLocationTyped.md#meta)
 
-___
+---
 
 ### name
 
@@ -92,7 +92,7 @@ Name of the matched record
 
 [RouteLocationTyped](RouteLocationTyped.md).[name](RouteLocationTyped.md#name)
 
-___
+---
 
 ### params
 
@@ -104,7 +104,7 @@ Object of decoded params extracted from the `path`.
 
 [RouteLocationTyped](RouteLocationTyped.md).[params](RouteLocationTyped.md#params)
 
-___
+---
 
 ### path
 
@@ -116,7 +116,7 @@ Percentage encoded pathname section of the URL.
 
 [RouteLocationTyped](RouteLocationTyped.md).[path](RouteLocationTyped.md#path)
 
-___
+---
 
 ### query
 
@@ -128,7 +128,7 @@ Object representation of the `search` property of the current location.
 
 [RouteLocationTyped](RouteLocationTyped.md).[query](RouteLocationTyped.md#query)
 
-___
+---
 
 ### redirectedFrom
 

@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / MatcherLocation
+[Documentación de la API](../index.md) / MatcherLocation
 
 # Interface: MatcherLocation
 
@@ -18,7 +18,7 @@ Array of [RouteRecord](../index.md#RouteRecord) containing components as they we
 passed when adding records. It can also contain redirect records. This
 can't be used directly
 
-___
+---
 
 ### meta
 
@@ -26,15 +26,15 @@ ___
 
 Merged `meta` properties from all the matched route records.
 
-___
+---
 
 ### name
 
-• **name**: ``null`` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
-___
+---
 
 ### params
 
@@ -42,7 +42,7 @@ ___
 
 Object of decoded params extracted from the `path`.
 
-___
+---
 
 ### path
 

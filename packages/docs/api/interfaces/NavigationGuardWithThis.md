@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationGuardWithThis
+[Documentación de la API](../index.md) / NavigationGuardWithThis
 
 # Interface: NavigationGuardWithThis\<T\>
 
@@ -12,11 +12,11 @@ Navigation Guard with a type parameter for `this`.
 
 [TypesConfig](TypesConfig.md)
 
-## Type parameters
+## Parámetros de tipo
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 ## Callable
 
@@ -26,12 +26,12 @@ Navigation Guard with a type parameter for `this`.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `this` | `T` |
-| `to` | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md) |
+| Name   | Type                                                                              |
+| :----- | :-------------------------------------------------------------------------------- |
+| `this` | `T`                                                                               |
+| `to`   | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
 | `from` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
-| `next` | [`NavigationGuardNext`](NavigationGuardNext.md) |
+| `next` | [`NavigationGuardNext`](NavigationGuardNext.md)                                   |
 
 #### Returns
 

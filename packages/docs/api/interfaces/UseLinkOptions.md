@@ -2,16 +2,16 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / UseLinkOptions
+[Documentación de la API](../index.md) / UseLinkOptions
 
 # Interface: UseLinkOptions\<Name\>
 
 Options passed to [useLink](../index.md#useLink).
 
-## Type parameters
+## Parámetros de tipo
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                                                        |
+| :----- | :------------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](../index.md#RouteMap) = keyof [`RouteMap`](../index.md#RouteMap) |
 
 ## Properties
@@ -20,7 +20,7 @@ Options passed to [useLink](../index.md#useLink).
 
 • `Optional` **replace**: `MaybeRef`\<`undefined` \| `boolean`\>
 
-___
+---
 
 ### to
 

@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouterOptions
+[Documentación de la API](../index.md) / RouterOptions
 
 # Interface: RouterOptions
 
@@ -30,7 +30,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 PathParserOptions.end
 
-___
+---
 
 ### history
 
@@ -51,7 +51,7 @@ createRouter({
 })
 ```
 
-___
+---
 
 ### linkActiveClass
 
@@ -60,7 +60,7 @@ ___
 Default class applied to active [RouterLink](../index.md#RouterLink). If none is provided,
 `router-link-active` will be applied.
 
-___
+---
 
 ### linkExactActiveClass
 
@@ -69,7 +69,7 @@ ___
 Default class applied to exact active [RouterLink](../index.md#RouterLink). If none is provided,
 `router-link-exact-active` will be applied.
 
-___
+---
 
 ### parseQuery
 
@@ -82,6 +82,7 @@ Custom implementation to parse a query. See its counterpart,
 
 Let's say you want to use the [qs package](https://github.com/ljharb/qs)
 to parse queries, you can provide both `parseQuery` and `stringifyQuery`:
+
 ```js
 import qs from 'qs'
 
@@ -101,8 +102,8 @@ Custom implementation to parse a query. See its counterpart,
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type     |
+| :------- | :------- |
 | `search` | `string` |
 
 ##### Returns
@@ -113,6 +114,7 @@ Custom implementation to parse a query. See its counterpart,
 
 Let's say you want to use the [qs package](https://github.com/ljharb/qs)
 to parse queries, you can provide both `parseQuery` and `stringifyQuery`:
+
 ```js
 import qs from 'qs'
 
@@ -123,7 +125,7 @@ createRouter({
 })
 ```
 
-___
+---
 
 ### routes
 
@@ -131,7 +133,7 @@ ___
 
 Initial list of routes that should be added to the router.
 
-___
+---
 
 ### scrollBehavior
 
@@ -149,7 +151,7 @@ function scrollBehavior(to, from, savedPosition) {
 }
 ```
 
-___
+---
 
 ### sensitive
 
@@ -165,7 +167,7 @@ Makes the RegExp case-sensitive.
 
 PathParserOptions.sensitive
 
-___
+---
 
 ### strict
 
@@ -181,7 +183,7 @@ Whether to disallow a trailing slash or not.
 
 PathParserOptions.strict
 
-___
+---
 
 ### stringifyQuery
 
@@ -199,8 +201,8 @@ Custom implementation to stringify a query object. Should not prepend a leading 
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type                                               |
+| :------ | :------------------------------------------------- |
 | `query` | [`LocationQueryRaw`](../index.md#LocationQueryRaw) |
 
 ##### Returns

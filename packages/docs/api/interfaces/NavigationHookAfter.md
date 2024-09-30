@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationHookAfter
+[Documentación de la API](../index.md) / NavigationHookAfter
 
 # Interface: NavigationHookAfter
 
@@ -16,11 +16,11 @@ Navigation hook triggered after a navigation is settled.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `to` | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md) |
-| `from` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
-| `failure?` | `void` \| [`NavigationFailure`](NavigationFailure.md) |
+| Name       | Type                                                                              |
+| :--------- | :-------------------------------------------------------------------------------- |
+| `to`       | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
+| `from`     | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
+| `failure?` | `void` \| [`NavigationFailure`](NavigationFailure.md)                             |
 
 #### Returns
 

@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / NavigationFailure
+[Documentación de la API](../index.md) / NavigationFailure
 
 # Interface: NavigationFailure
 
@@ -24,7 +24,7 @@ Extended Error that contains extra information regarding a failed navigation.
 
 Error.cause
 
-___
+---
 
 ### from
 
@@ -32,7 +32,7 @@ ___
 
 Route location we were navigating from
 
-___
+---
 
 ### message
 
@@ -42,7 +42,7 @@ ___
 
 Error.message
 
-___
+---
 
 ### name
 
@@ -52,7 +52,7 @@ ___
 
 Error.name
 
-___
+---
 
 ### stack
 
@@ -62,7 +62,7 @@ ___
 
 Error.stack
 
-___
+---
 
 ### to
 
@@ -70,7 +70,7 @@ ___
 
 Route location we were navigating to
 
-___
+---
 
 ### type
 

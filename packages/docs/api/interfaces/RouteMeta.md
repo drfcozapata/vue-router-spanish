@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteMeta
+[Documentación de la API](../index.md) / RouteMeta
 
 # Interface: RouteMeta
 
@@ -12,7 +12,7 @@ Interface to type `meta` fields in route records.
 
 ```ts
 // typings.d.ts or router.ts
-import 'vue-router';
+import 'vue-router'
 
 declare module 'vue-router' {
   interface RouteMeta {

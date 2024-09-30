@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouterLinkProps
+[Documentación de la API](../index.md) / RouterLinkProps
 
 # Interface: RouterLinkProps
 
@@ -20,11 +20,11 @@ editLink: false
 
 Class to apply when the link is active
 
-___
+---
 
 ### ariaCurrentValue
 
-• `Optional` **ariaCurrentValue**: ``"time"`` \| ``"location"`` \| ``"page"`` \| ``"step"`` \| ``"date"`` \| ``"true"`` \| ``"false"``
+• `Optional` **ariaCurrentValue**: `"time"` \| `"location"` \| `"page"` \| `"step"` \| `"date"` \| `"true"` \| `"false"`
 
 Value passed to the attribute `aria-current` when the link is exact active.
 
@@ -32,7 +32,7 @@ Value passed to the attribute `aria-current` when the link is exact active.
 
 `'page'`
 
-___
+---
 
 ### custom
 
@@ -41,7 +41,7 @@ ___
 Whether RouterLink should not wrap its content in an `a` tag. Useful when
 using `v-slot` to create a custom RouterLink
 
-___
+---
 
 ### exactActiveClass
 
@@ -49,7 +49,7 @@ ___
 
 Class to apply when the link is exact active
 
-___
+---
 
 ### replace
 
@@ -61,7 +61,7 @@ Calls `router.replace` instead of `router.push`.
 
 RouterLinkOptions.replace
 
-___
+---
 
 ### to
 

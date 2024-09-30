@@ -2,7 +2,7 @@
 editLink: false
 ---
 
-[API Documentation](../index.md) / RouteLocationOptions
+[Documentación de la API](../index.md) / RouteLocationOptions
 
 # Interface: RouteLocationOptions
 
@@ -30,7 +30,7 @@ Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
 is passed.
 
-___
+---
 
 ### replace
 
@@ -38,7 +38,7 @@ ___
 
 Replace the entry in the history instead of pushing a new entry
 
-___
+---
 
 ### state
 
