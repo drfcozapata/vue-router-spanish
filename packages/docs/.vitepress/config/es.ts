@@ -165,7 +165,7 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/guide/advanced/navigation-failures.html',
             },
             {
-              text: 'Enrutamiento Dinámico',
+              text: 'Enrutado Dinámico',
               link: '/guide/advanced/dynamic-routing.html',
             },
           ],

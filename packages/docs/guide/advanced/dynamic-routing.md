@@ -1,4 +1,4 @@
-# Enrutamiento Dinámico
+# Enrutado Dinámico
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-dynamic-routing"
