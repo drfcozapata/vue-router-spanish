@@ -1,41 +1,41 @@
-# Typed Routes <Badge type="tip" text="v4.4.0+" />
+# Rutas Tipadas <Badge type="tip" text="v4.4.0+" />
 
 ::: danger
-‼️ Experimental feature
+‼️ Funcionalidad experimental
 :::
 
-![RouterLink to autocomplete](https://user-images.githubusercontent.com/664177/176442066-c4e7fa31-4f06-4690-a49f-ed0fd880dfca.png)
+![RouterLink para autocompletar](https://user-images.githubusercontent.com/664177/176442066-c4e7fa31-4f06-4690-a49f-ed0fd880dfca.png)
 
-It's possible to configure the router to have a _map_ of typed routes. While this can be done manually, it is recommended to use the [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) plugin to generate the routes and the types automatically.
+Es posible configurar el router para que tenga un _mapa_ de rutas tipadas. Aunque esto puede hacerse manualmente, se recomienda usar el plugin [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) para generar las rutas y los tipos automáticamente.
 
-## Manual Configuration
+## Configuración manual
 
-Here is an example of how to manually configure typed routes:
+He aquí un ejemplo de cómo configurar manualmente rutas tipadas:
 
 ```ts
-// import the `RouteRecordInfo` type from vue-router to type your routes
+// importa el tipo `RouteRecordInfo` de vue-router para tipar tus rutas
 import type { RouteRecordInfo } from 'vue-router'
 
-// Define an interface of routes
+// Define una interfaz de rutas
 export interface RouteNamedMap {
-  // each key is a name
+  // cada clave es un nombre
   home: RouteRecordInfo<
-    // here we have the same name
+    // aquí tenemos el mismo nombre
     'home',
-    // this is the path, it will appear in autocompletion
+    // esta es la ruta, aparecerá en el autocompletado
     '/',
-    // these are the raw params. In this case, there are no params allowed
+    // estos son los parámetros en bruto. En este caso, no hay parámetros permitidos
     Record<never, never>,
-    // these are the normalized params
+    // estos son los parámetros normalizados
     Record<never, never>
   >
-  // repeat for each route..
-  // Note you can name them whatever you want
+  // repite para cada ruta..
+  // Ten en cuenta que puedes nombrarlos como quieras
   'named-param': RouteRecordInfo<
     'named-param',
     '/:name',
-    { name: string | number }, // raw value
-    { name: string } // normalized value
+    { name: string | number }, // valor en bruto
+    { name: string } // valor normalizado
   >
   'article-details': RouteRecordInfo<
     'article-details',
@@ -51,7 +51,7 @@ export interface RouteNamedMap {
   >
 }
 
-// Last, you will need to augment the Vue Router types with this map of routes
+// Por último, tendrás que aumentar los tipos de Vue Router con este mapa de rutas
 declare module 'vue-router' {
   interface TypesConfig {
     RouteNamedMap: RouteNamedMap
@@ -61,6 +61,6 @@ declare module 'vue-router' {
 
 ::: tip
 
-This is indeed tedious and error-prone. That's why it's recommended to use [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) to generate the routes and the types automatically.
+Esto es realmente tedioso y propenso a errores. Por eso se recomienda usar [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) para generar las rutas y los tipos automáticamente.
 
 :::

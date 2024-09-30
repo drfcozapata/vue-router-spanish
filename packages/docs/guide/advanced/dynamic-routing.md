@@ -1,17 +1,17 @@
-# Dynamic Routing
+# Enrutamiento Dinámico
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/vue-router-4-dynamic-routing"
-  title="Aprende cómo add routes at runtime"
+  title="Aprende cómo añadir rutas en tiempo de ejecución"
 />
 
-Adding routes to your router is usually done via the `routes` option but in some situations, you might want to add or remove routes while the application is already running. Applications with extensible interfaces like [Vue CLI UI](https://cli.vuejs.org/dev-guide/ui-api.html) can use this to make the application grow.
+Añadir rutas a tu router se hace normalmente a través de la opción `routes` pero en algunas situaciones, puede que quieras añadir o eliminar rutas mientras la aplicación ya se está ejecutando. Las aplicaciones con interfaces extensibles como [Vue CLI UI](https://cli.vuejs.org/dev-guide/ui-api.html) pueden usar esto para hacer crecer la aplicación.
 
-## Adding routes
+## Añadiendo rutas
 
-Dynamic routing is achieved mainly via two functions: `router.addRoute()` and `router.removeRoute()`. They **only** register a new route, meaning that if the newly added route matches the current location, it would require you to **manually navigate** with `router.push()` or `router.replace()` to display that new route. Let's take a look at an example:
+El enrutamiento dinámico se consigue principalmente a través de dos funciones: `router.addRoute()` y `router.removeRoute()`. Estas **sólo** registran una nueva ruta, lo que significa que si la nueva ruta añadida coincide con la ubicación actual, requeriría que **navegues manualmente** con `router.push()` o `router.replace()` para mostrar esa nueva ruta. Veamos un ejemplo:
 
-Imagine having the following router with one single route:
+Imagina que tienes el siguiente enrutador con una única ruta:
 
 ```js
 const router = createRouter({
@@ -20,84 +20,84 @@ const router = createRouter({
 })
 ```
 
-Going to any page like `/about`, `/store`, or `/3-tricks-to-improve-your-routing-code` ends up rendering the `Article` component. If we are on `/about` and we add a new route:
+Ir a cualquier página como `/about`, `/store`, o `/3-tricks-to-improve-your-routing-code` termina mostrando el componente `Article`. Si estamos en `/about` y añadimos una nueva ruta:
 
 ```js
 router.addRoute({ path: '/about', component: About })
 ```
 
-The page will still show the `Article` component. We need to manually call `router.replace()` to change the current location and overwrite where we were (instead of pushing a new entry, ending up in the same location twice in our history):
+La página seguirá mostrando el componente «Artículo». Necesitamos llamar manualmente a `router.replace()` para cambiar la ubicación actual y sobreescribir donde estábamos (en lugar de empujar una nueva entrada, terminando en la misma ubicación dos veces en nuestro historial):
 
 ```js
 router.addRoute({ path: '/about', component: About })
-// we could also use this.$route or useRoute()
+// también podríamos usar this.$route o useRoute()
 router.replace(router.currentRoute.value.fullPath)
 ```
 
-Remember you can `await router.replace()` if you need to wait for the new route to be displayed.
+Recuerda que puedes usar `await router.replace()` si necesitas esperar a que se muestre la nueva ruta.
 
-## Adding routes inside navigation guards
+## Añadiendo rutas dentro de los protectores de navegación
 
-If you decide to add or remove routes inside of a navigation guard, you should not call `router.replace()` but trigger a redirection by returning the new location:
+Si decides añadir o eliminar rutas dentro de un protector de navegación, no debes llamar a `router.replace()` sino provocar una redirección devolviendo la nueva ubicación:
 
 ```js
 router.beforeEach(to => {
   if (!hasNecessaryRoute(to)) {
     router.addRoute(generateRoute(to))
-    // trigger a redirection
+    // disparar una redirección
     return to.fullPath
   }
 })
 ```
 
-The example above assumes two things: first, the newly added route record will match the `to` location, effectively resulting in a different location from the one we were trying to access. Second, `hasNecessaryRoute()` returns `false` after adding the new route to avoid an infinite redirection.
+El ejemplo anterior asume dos cosas: primero, el nuevo registro de ruta añadido coincidirá con la ubicación `to`, resultando efectivamente en una ubicación diferente a la que estábamos intentando acceder. En segundo lugar, `hasNecessaryRoute()` devuelve `false` después de añadir la nueva ruta para evitar una redirección infinita.
 
-Because we are redirecting, we are replacing the ongoing navigation, effectively behaving like the example shown before. In real world scenarios, adding is more likely to happen outside of navigation guards, e.g. when a view component mounts, it register new routes.
+Como estamos redireccionando, estamos reemplazando la navegación en curso, comportándonos efectivamente como en el ejemplo mostrado antes. En escenarios del mundo real, es más probable que la adición ocurra fuera de los protectores de navegación, por ejemplo, cuando un componente de vista se monta, éste registra nuevas rutas.
 
-## Removing routes
+## Removiendo rutas
 
-There are few different ways to remove existing routes:
+Hay varias formas de remover rutas existentes:
 
-- By adding a route with a conflicting name. If you add a route that has the same name as an existing route, it will remove the route first and then add the route:
+- Añadiendo una ruta con un nombre conflictivo. Si añades una ruta que tiene el mismo nombre que una ruta existente, primero se eliminará la ruta y luego se añadirá la ruta:
 
   ```js
   router.addRoute({ path: '/about', name: 'about', component: About })
-  // this will remove the previously added route because they have
-  // the same name and names are unique across all routes
+  // esto eliminará la ruta previamente añadida porque tienen
+  // el mismo nombre y los nombres son únicos en todas las rutas
   router.addRoute({ path: '/other', name: 'about', component: Other })
   ```
 
-- By calling the callback returned by `router.addRoute()`:
+- Llamando al callback retornado por `router.addRoute()`:
 
   ```js
   const removeRoute = router.addRoute(routeRecord)
-  removeRoute() // removes the route if it exists
+  removeRoute() // remueve la ruta si existe
   ```
 
-  This is useful when the routes do not have a name
+Esto es útil cuando las rutas no tienen nombre
 
-- By using `router.removeRoute()` to remove a route by its name:
+- Usando `router.removeRoute()` para remover una ruta por su nombre:
 
   ```js
   router.addRoute({ path: '/about', name: 'about', component: About })
-  // remove the route
+  // remueve la ruta
   router.removeRoute('about')
   ```
 
-  Note you can use `Symbol`s for names in routes if you wish to use this function but want to avoid conflicts in names.
+  Ten en cuenta que puedes utilizar `Symbol`s para los nombres en las rutas si deseas utilizar esta función pero quieres evitar conflictos en los nombres.
 
-Whenever a route is removed, **all of its aliases and children** are removed with it.
+Cuando se remueve una ruta, **todos sus alias e hijos** son removidos con ella.
 
-## Adding nested routes
+## Añadiendo rutas anidadas
 
-To add nested routes to an existing route, you can pass the _name_ of the route as its first parameter to `router.addRoute()`. This will effectively add the route as if it was added through `children`:
+Para añadir rutas anidadas a una ruta existente, puede pasar el _nombre_ de la ruta como primer parámetro a `router.addRoute()`. Esto añadirá la ruta como si se hubiera añadido a través de `children`:
 
 ```js
 router.addRoute({ name: 'admin', path: '/admin', component: Admin })
 router.addRoute('admin', { path: 'settings', component: AdminSettings })
 ```
 
-This is equivalent to:
+Esto es equivalente a:
 
 ```js
 router.addRoute({
@@ -108,9 +108,9 @@ router.addRoute({
 })
 ```
 
-## Looking at existing routes
+## Mirando las rutas existentes
 
-Vue Router gives you two functions to look at existing routes:
+Vue Router te da dos funciones para mirar las rutas existentes:
 
-- [`router.hasRoute()`](/api/interfaces/Router.md#hasRoute): check if a route exists.
-- [`router.getRoutes()`](/api/interfaces/Router.md#getRoutes): get an array with all the route records.
+- [`router.hasRoute()`](/api/interfaces/Router.md#hasRoute): comprueba si existe una ruta.
+- [`router.getRoutes()`](/api/interfaces/Router.md#getRoutes): obtiene un array con todos los registros de rutas.

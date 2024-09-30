@@ -145,7 +145,7 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/guide/advanced/transitions.html',
             },
             {
-              text: 'Comportamiento de Desplazamiento',
+              text: 'Comportamiento del Scroll',
               link: '/guide/advanced/scroll-behavior.html',
             },
             {
@@ -157,7 +157,7 @@ export const esConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
               link: '/guide/advanced/typed-routes.html',
             },
             {
-              text: 'Ampliación de RouterLink',
+              text: 'Extendiendo RouterLink',
               link: '/guide/advanced/extending-router-link.html',
             },
             {

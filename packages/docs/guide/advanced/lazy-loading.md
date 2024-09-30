@@ -1,54 +1,54 @@
-# Lazy Loading Routes
+# Rutas de Carga Perezosa
 
 <VueSchoolLink
   href="https://vueschool.io/lessons/lazy-loading-routes-vue-cli-only"
-  title="Learn about lazy loading routes"
+  title="Aprende acerca de las rutas de carga perezosa"
 />
 
-When building apps with a bundler, the JavaScript bundle can become quite large, and thus affect the page load time. It would be more efficient if we can split each route's components into separate chunks, and only load them when the route is visited.
+Cuando se construyen aplicaciones con un bundler, el bundle de JavaScript puede llegar a ser bastante grande, y por lo tanto afectar al tiempo de carga de la página. Sería más eficiente si pudiéramos dividir los componentes de cada ruta en trozos separados, y sólo cargarlos cuando la ruta es visitada.
 
-Vue Router supports [dynamic imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) out of the box, meaning you can replace static imports with dynamic ones:
+Vue Router soporta [importaciones dinámicas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import), lo que significa que puedes reemplazar las importaciones estáticas por dinámicas:
 
 ```js
-// replace
+// replaza
 // import UserDetails from './views/UserDetails'
-// with
+// con
 const UserDetails = () => import('./views/UserDetails.vue')
 
 const router = createRouter({
   // ...
   routes: [
     { path: '/users/:id', component: UserDetails }
-    // or use it directly in the route definition
+    // o usarlas directamente en la definición de la ruta
     { path: '/users/:id', component: () => import('./views/UserDetails.vue') },
   ],
 })
 ```
 
-The `component` (and `components`) option accepts a function that returns a Promise of a component and Vue Router **will only fetch it when entering the page for the first time**, then use the cached version. Which means you can also have more complex functions as long as they return a Promise:
+La opción `component` (y `components`) acepta una función que devuelve una Promise de un componente y Vue Router **sólo lo buscará cuando accedas a la página por primera vez**, luego usará la versión en caché. Lo que significa que también puedes tener funciones más complejas siempre que devuelvan una Promise:
 
 ```js
 const UserDetails = () =>
   Promise.resolve({
-    /* component definition */
+    /* definición del componente */
   })
 ```
 
-In general, it's a good idea **to always use dynamic imports** for all your routes.
+En general, es una buena idea **utilizar siempre importaciones dinámicas** para todas tus rutas.
 
-::: tip Note
-Do **not** use [Async components](https://vuejs.org/guide/components/async.html) for routes. Async components can still be used inside route components but route component themselves are just dynamic imports.
+::: tip Nota
+**No utilices** [Componentes asíncronos](https://vuejs.org/guide/components/async.html) para las rutas. Los componentes asíncronos se pueden seguir usando dentro de los componentes de ruta, pero los componentes de ruta en sí no son más que importaciones dinámicas.
 :::
 
-When using a bundler like webpack, this will automatically benefit from [code splitting](https://webpack.js.org/guides/code-splitting/)
+Cuando se utiliza un bundler como webpack, esto se beneficiará automáticamente de la [división de código](https://webpack.js.org/guides/code-splitting/)
 
-When using Babel, you will need to add the [syntax-dynamic-import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) plugin so that Babel can properly parse the syntax.
+Si usas Babel, tendrás que añadir el plugin [syntax-dynamic-import](https://babeljs.io/docs/plugins/syntax-dynamic-import/) para que Babel pueda analizar correctamente la sintaxis.
 
-## Grouping Components in the Same Chunk
+## Agrupando Componentes en el Mismo Fragmento
 
-### With webpack
+### Con webpack
 
-Sometimes we may want to group all the components nested under the same route into the same async chunk. To achieve that we need to use [named chunks](https://webpack.js.org/guides/code-splitting/#dynamic-imports) by providing a chunk name using a special comment syntax (requires webpack > 2.4):
+A veces podemos querer agrupar todos los componentes anidados bajo la misma ruta en el mismo fragmento asíncrono. Para conseguirlo necesitamos usar [fragmentos con nombre](https://webpack.js.org/guides/code-splitting/#dynamic-imports) proporcionando un nombre de fragmento usando una sintaxis de comentario especial (requiere webpack > 2.4):
 
 ```js
 const UserDetails = () =>
@@ -59,11 +59,11 @@ const UserProfileEdit = () =>
   import(/* webpackChunkName: "group-user" */ './UserProfileEdit.vue')
 ```
 
-webpack will group any async module with the same chunk name into the same async chunk.
+webpack agrupará cualquier módulo asíncrono con el mismo nombre de fragmento en el mismo fragmento asíncrono.
 
-### With Vite
+### Con Vite
 
-In Vite you can define the chunks under the [`rollupOptions`](https://vitejs.dev/config/#build-rollupoptions):
+En Vite puedes definir los fragmentos bajo [`rollupOptions`](https://vitejs.dev/config/#build-rollupoptions):
 
 ```js
 // vite.config.js
