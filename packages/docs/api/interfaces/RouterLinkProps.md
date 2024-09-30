@@ -6,17 +6,17 @@ editLink: false
 
 # Interface: RouterLinkProps
 
-## Hierarchy
+## Jerarquía
 
 - `RouterLinkOptions`
 
   ↳ **`RouterLinkProps`**
 
-## Properties
+## Propiedades
 
 ### activeClass
 
-• `Optional` **activeClass**: `string`
+• `Opcional` **activeClass**: `string`
 
 Class to apply when the link is active
 
@@ -24,7 +24,7 @@ Class to apply when the link is active
 
 ### ariaCurrentValue
 
-• `Optional` **ariaCurrentValue**: `"time"` \| `"location"` \| `"page"` \| `"step"` \| `"date"` \| `"true"` \| `"false"`
+• `Opcional` **ariaCurrentValue**: `"time"` \| `"location"` \| `"page"` \| `"step"` \| `"date"` \| `"true"` \| `"false"`
 
 Value passed to the attribute `aria-current` when the link is exact active.
 
@@ -36,7 +36,7 @@ Value passed to the attribute `aria-current` when the link is exact active.
 
 ### custom
 
-• `Optional` **custom**: `boolean`
+• `Opcional` **custom**: `boolean`
 
 Whether RouterLink should not wrap its content in an `a` tag. Useful when
 using `v-slot` to create a custom RouterLink
@@ -45,7 +45,7 @@ using `v-slot` to create a custom RouterLink
 
 ### exactActiveClass
 
-• `Optional` **exactActiveClass**: `string`
+• `Opcional` **exactActiveClass**: `string`
 
 Class to apply when the link is exact active
 
@@ -53,22 +53,22 @@ Class to apply when the link is exact active
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Calls `router.replace` instead of `router.push`.
 
-#### Inherited from
+#### Heredado de
 
 RouterLinkOptions.replace
 
 ---
 
-### to
+### hacia
 
 • **to**: `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
 Route Location the link should navigate to when clicked on.
 
-#### Inherited from
+#### Heredado de
 
 RouterLinkOptions.to

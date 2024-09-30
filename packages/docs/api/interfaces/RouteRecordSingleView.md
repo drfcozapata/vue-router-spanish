@@ -8,23 +8,23 @@ editLink: false
 
 Route Record defining one single component with the `component` option.
 
-## Hierarchy
+## Jerarquía
 
 - [`_RouteRecordBase`](RouteRecordBase.md)
 
   ↳ **`RouteRecordSingleView`**
 
-## Properties
+## Propiedades
 
 ### alias
 
-• `Optional` **alias**: `string` \| `string`[]
+• `Opcional` **alias**: `string` \| `string`[]
 
 Aliases for the record. Allows defining extra paths that will behave like a
 copy of the record. Allows having paths shorthands like `/users/:id` and
 `/u/:id`. All `alias` and `path` values must share the same params.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[alias](RouteRecordBase.md#alias)
 
@@ -32,12 +32,12 @@ copy of the record. Allows having paths shorthands like `/users/:id` and
 
 ### beforeEnter
 
-• `Optional` **beforeEnter**: [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> \| [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\>[]
+• `Opcional` **beforeEnter**: [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> \| [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\>[]
 
 Before Enter guard specific to this record. Note `beforeEnter` has no
 effect if the record has a `redirect` property.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[beforeEnter](RouteRecordBase.md#beforeEnter)
 
@@ -45,7 +45,7 @@ effect if the record has a `redirect` property.
 
 ### children
 
-• `Optional` **children**: `undefined`
+• `Opcional` **children**: `undefined`
 
 Array of nested routes.
 
@@ -65,13 +65,13 @@ Component to display when the URL matches this route.
 
 ### components
 
-• `Optional` **components**: `undefined`
+• `Opcional` **components**: `undefined`
 
 ---
 
 ### end
 
-• `Optional` **end**: `boolean`
+• `Opcional` **end**: `boolean`
 
 Should the RegExp match until the end by appending a `$` to it.
 
@@ -79,7 +79,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 `true`
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[end](RouteRecordBase.md#end)
 
@@ -87,29 +87,29 @@ Should the RegExp match until the end by appending a `$` to it.
 
 ### meta
 
-• `Optional` **meta**: [`RouteMeta`](RouteMeta.md)
+• `Opcional` **meta**: [`RouteMeta`](RouteMeta.md)
 
 Arbitrary data attached to the record.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[meta](RouteRecordBase.md#meta)
 
 ---
 
-### name
+### nombre
 
-• `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **nombre** `Opcional`: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name for the route record. Must be unique.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[name](RouteRecordBase.md#name)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
@@ -122,7 +122,7 @@ another record.
 `/users/:id` matches `/users/1` as well as `/users/posva`.
 ```
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[path](RouteRecordBase.md#path)
 
@@ -130,7 +130,7 @@ another record.
 
 ### props
 
-• `Optional` **props**: [`_RouteRecordProps`](../index.md#_RouteRecordProps)
+• `Opcional` **props**: [`_RouteRecordProps`](../index.md#_RouteRecordProps)
 
 Allow passing down params as props to the component rendered by `router-view`.
 
@@ -142,7 +142,7 @@ Allow passing down params as props to the component rendered by `router-view`.
 
 ### redirect
 
-• `Optional` **redirect**: `undefined`
+• `Opcional` **redirect**: `undefined`
 
 Where to redirect if the route is directly matched. The redirection happens
 before any navigation guard and triggers a new navigation with the new
@@ -156,7 +156,7 @@ target location.
 
 ### sensitive
 
-• `Optional` **sensitive**: `boolean`
+• `Opcional` **sensitive**: `boolean`
 
 Makes the RegExp case-sensitive.
 
@@ -164,7 +164,7 @@ Makes the RegExp case-sensitive.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[sensitive](RouteRecordBase.md#sensitive)
 
@@ -172,7 +172,7 @@ Makes the RegExp case-sensitive.
 
 ### strict
 
-• `Optional` **strict**: `boolean`
+• `Opcional` **strict**: `boolean`
 
 Whether to disallow a trailing slash or not.
 
@@ -180,6 +180,6 @@ Whether to disallow a trailing slash or not.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteRecordBase](RouteRecordBase.md).[strict](RouteRecordBase.md#strict)

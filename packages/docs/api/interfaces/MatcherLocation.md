@@ -6,17 +6,15 @@ editLink: false
 
 # Interface: MatcherLocation
 
-Normalized/resolved Route location that returned by the matcher.
+Localización de ruta normalizada/resuelta retornada por el emparejador.
 
-## Properties
+## Propiedades
 
-### matched
+### emparejado
 
-• **matched**: [`RouteRecordNormalized`](RouteRecordNormalized.md)[]
+• **emparejado**: [`RouteRecordNormalized`](RouteRecordNormalized.md)[]
 
-Array of [RouteRecord](../index.md#RouteRecord) containing components as they were
-passed when adding records. It can also contain redirect records. This
-can't be used directly
+Array de [RouteRecord](../index.md#RouteRecord) que contiene los componentes tal y como se pasaron cuando se añadieron los registros. También puede contener registros de redirección. No se puede utilizar directamente
 
 ---
 
@@ -24,28 +22,28 @@ can't be used directly
 
 • **meta**: [`RouteMeta`](RouteMeta.md)
 
-Merged `meta` properties from all the matched route records.
+Propiedades `meta` fusionadas de todos los registros de ruta coincidentes.
 
 ---
 
-### name
+### nombre
 
 • **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
-Name of the matched record
+Nombre del registro coincidente
 
 ---
 
-### params
+### parámetros
 
 • **params**: [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)
 
-Object of decoded params extracted from the `path`.
+Objeto de parámetros decodificados extraídos de la `ruta`.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
-Percentage encoded pathname section of the URL.
+Porcentaje de codificación de la sección pathname de la URL.

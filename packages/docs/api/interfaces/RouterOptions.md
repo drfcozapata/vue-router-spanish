@@ -8,17 +8,17 @@ editLink: false
 
 Options to initialize a [Router](Router.md) instance.
 
-## Hierarchy
+## Jerarquía
 
 - [`PathParserOptions`](../index.md#PathParserOptions)
 
   ↳ **`RouterOptions`**
 
-## Properties
+## Propiedades
 
 ### end
 
-• `Optional` **end**: `boolean`
+• `Opcional` **end**: `boolean`
 
 Should the RegExp match until the end by appending a `$` to it.
 
@@ -26,7 +26,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 `true`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.end
 
@@ -55,7 +55,7 @@ createRouter({
 
 ### linkActiveClass
 
-• `Optional` **linkActiveClass**: `string`
+• `Opcional` **linkActiveClass**: `string`
 
 Default class applied to active [RouterLink](../index.md#RouterLink). If none is provided,
 `router-link-active` will be applied.
@@ -64,7 +64,7 @@ Default class applied to active [RouterLink](../index.md#RouterLink). If none is
 
 ### linkExactActiveClass
 
-• `Optional` **linkExactActiveClass**: `string`
+• `Opcional` **linkExactActiveClass**: `string`
 
 Default class applied to exact active [RouterLink](../index.md#RouterLink). If none is provided,
 `router-link-exact-active` will be applied.
@@ -73,7 +73,7 @@ Default class applied to exact active [RouterLink](../index.md#RouterLink). If n
 
 ### parseQuery
 
-• `Optional` **parseQuery**: (`search`: `string`) => [`LocationQuery`](../index.md#LocationQuery)
+• `Opcional` **parseQuery**: (`search`: `string`) => [`LocationQuery`](../index.md#LocationQuery)
 
 Custom implementation to parse a query. See its counterpart,
 [RouterOptions.stringifyQuery](RouterOptions.md#stringifyQuery).
@@ -93,20 +93,20 @@ createRouter({
 })
 ```
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (`search`): [`LocationQuery`](../index.md#LocationQuery)
 
 Custom implementation to parse a query. See its counterpart,
 [RouterOptions.stringifyQuery](RouterOptions.md#stringifyQuery).
 
-##### Parameters
+##### Parámetros
 
-| Name     | Type     |
+| Nombre   | Tipo     |
 | :------- | :------- |
 | `search` | `string` |
 
-##### Returns
+##### Retorna
 
 [`LocationQuery`](../index.md#LocationQuery)
 
@@ -137,7 +137,7 @@ Initial list of routes that should be added to the router.
 
 ### scrollBehavior
 
-• `Optional` **scrollBehavior**: [`RouterScrollBehavior`](RouterScrollBehavior.md)
+• `Opcional` **scrollBehavior**: [`RouterScrollBehavior`](RouterScrollBehavior.md)
 
 Function to control scrolling when navigating between pages. Can return a
 Promise to delay scrolling. Check ScrollBehavior.
@@ -155,7 +155,7 @@ function scrollBehavior(to, from, savedPosition) {
 
 ### sensitive
 
-• `Optional` **sensitive**: `boolean`
+• `Opcional` **sensitive**: `boolean`
 
 Makes the RegExp case-sensitive.
 
@@ -163,7 +163,7 @@ Makes the RegExp case-sensitive.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.sensitive
 
@@ -171,7 +171,7 @@ PathParserOptions.sensitive
 
 ### strict
 
-• `Optional` **strict**: `boolean`
+• `Opcional` **strict**: `boolean`
 
 Whether to disallow a trailing slash or not.
 
@@ -179,7 +179,7 @@ Whether to disallow a trailing slash or not.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.strict
 
@@ -187,24 +187,24 @@ PathParserOptions.strict
 
 ### stringifyQuery
 
-• `Optional` **stringifyQuery**: (`query`: [`LocationQueryRaw`](../index.md#LocationQueryRaw)) => `string`
+• `Opcional` **stringifyQuery**: (`query`: [`LocationQueryRaw`](../index.md#LocationQueryRaw)) => `string`
 
 Custom implementation to stringify a query object. Should not prepend a leading `?`.
 [parseQuery](RouterOptions.md#parseQuery) counterpart to handle query parsing.
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (`query`): `string`
 
 Custom implementation to stringify a query object. Should not prepend a leading `?`.
 [parseQuery](RouterOptions.md#parseQuery) counterpart to handle query parsing.
 
-##### Parameters
+##### Parámetros
 
-| Name    | Type                                               |
+| Nombre  | Tipo                                               |
 | :------ | :------------------------------------------------- |
 | `query` | [`LocationQueryRaw`](../index.md#LocationQueryRaw) |
 
-##### Returns
+##### Retorna
 
 `string`

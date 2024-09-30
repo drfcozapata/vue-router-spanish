@@ -8,7 +8,7 @@ editLink: false
 
 Base properties for a normalized route location.
 
-## Hierarchy
+## Jerarquía
 
 - `Pick`\<[`MatcherLocation`](MatcherLocation.md), `"name"` \| `"path"` \| `"params"` \| `"meta"`\>
 
@@ -18,7 +18,7 @@ Base properties for a normalized route location.
 
   ↳↳ [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -43,43 +43,43 @@ Hash of the current location. If present, starts with a `#`.
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 Pick.meta
 
 ---
 
-### name
+### nombre
 
 • **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
-#### Inherited from
+#### Heredado de
 
 Pick.name
 
 ---
 
-### params
+### parámetros
 
 • **params**: [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)
 
 Object of decoded params extracted from the `path`.
 
-#### Inherited from
+#### Heredado de
 
 Pick.params
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 Pick.path
 

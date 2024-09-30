@@ -6,22 +6,22 @@ editLink: false
 
 # Interface: NavigationHookAfter
 
-Navigation hook triggered after a navigation is settled.
+Hook de navegación que se acciona después de resolver una navegación.
 
-## Callable
+## Invocable
 
 ### NavigationHookAfter
 
 ▸ **NavigationHookAfter**(`to`, `from`, `failure?`): `unknown`
 
-#### Parameters
+#### Parámetros
 
-| Name       | Type                                                                              |
+| Nombre     | Tipo                                                                              |
 | :--------- | :-------------------------------------------------------------------------------- |
 | `to`       | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
 | `from`     | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
 | `failure?` | `void` \| [`NavigationFailure`](NavigationFailure.md)                             |
 
-#### Returns
+#### Retorna
 
 `unknown`

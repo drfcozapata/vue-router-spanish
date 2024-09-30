@@ -6,22 +6,22 @@ editLink: false
 
 # Interface: NavigationGuard
 
-Navigation Guard.
+Protector de Navegación.
 
-## Callable
+## Invocable
 
 ### NavigationGuard
 
 ▸ **NavigationGuard**(`to`, `from`, `next`): [`_Awaitable`](../index.md#_Awaitable)\<[`NavigationGuardReturn`](../index.md#NavigationGuardReturn)\>
 
-#### Parameters
+#### Parámetros
 
-| Name   | Type                                                                              |
+| Nombre | Tipo                                                                              |
 | :----- | :-------------------------------------------------------------------------------- |
 | `to`   | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
 | `from` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
 | `next` | [`NavigationGuardNext`](NavigationGuardNext.md)                                   |
 
-#### Returns
+#### Retorna
 
 [`_Awaitable`](../index.md#_Awaitable)\<[`NavigationGuardReturn`](../index.md#NavigationGuardReturn)\>

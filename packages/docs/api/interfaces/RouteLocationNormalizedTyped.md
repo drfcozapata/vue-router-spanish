@@ -10,18 +10,18 @@ Helper to generate a type safe version of the [RouteLocationNormalized](../index
 
 ## Parámetros de tipo
 
-| Name       | Type                                                                                                        |
+| Nombre     | Tipo                                                                                                        |
 | :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
 | `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
 
   ↳ **`RouteLocationNormalizedTyped`**
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -30,7 +30,7 @@ Helper to generate a type safe version of the [RouteLocationNormalized](../index
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[fullPath](RouteLocationNormalizedGeneric.md#fullPath)
 
@@ -42,7 +42,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[hash](RouteLocationNormalizedGeneric.md#hash)
 
@@ -66,13 +66,13 @@ Array of [RouteRecordNormalized](RouteRecordNormalized.md)
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[meta](RouteLocationNormalizedGeneric.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: `Extract`\<`Name`, `string` \| `symbol`\>
 
@@ -84,7 +84,7 @@ Name of the matched record
 
 ---
 
-### params
+### parámetros
 
 • **params**: `RouteMap`[`Name`][``"params"``]
 
@@ -96,13 +96,13 @@ Object of decoded params extracted from the `path`.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[path](RouteLocationNormalizedGeneric.md#path)
 
@@ -114,7 +114,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[query](RouteLocationNormalizedGeneric.md#query)
 
@@ -127,6 +127,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedGeneric](RouteLocationNormalizedGeneric.md).[redirectedFrom](RouteLocationNormalizedGeneric.md#redirectedFrom)

@@ -6,28 +6,28 @@ editLink: false
 
 # Interface: LocationAsRelativeRaw
 
-## Hierarchy
+## Jerarquía
 
 - **`LocationAsRelativeRaw`**
 
   ↳ [`RouteLocationNamedRaw`](RouteLocationNamedRaw.md)
 
-## Properties
+## Propiedades
 
-### name
+### nombre
 
-• `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
-
----
-
-### params
-
-• `Optional` **params**: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
+• **nombre** `Opcional`: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 ---
 
-### path
+### parámetros
 
-• `Optional` **path**: `undefined`
+• **parámetro** `Opcional`: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
 
-Ignored path property since we are dealing with a relative location. Only `undefined` is allowed.
+---
+
+### ruta
+
+• **ruta** `Opcional`: `undefined`
+
+Propiedad path ignorada ya que se trata de una ubicación relativa. Sólo se permite `undefined`.

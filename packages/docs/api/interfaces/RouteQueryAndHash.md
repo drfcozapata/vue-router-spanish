@@ -6,7 +6,7 @@ editLink: false
 
 # Interface: RouteQueryAndHash
 
-## Hierarchy
+## Jerarquía
 
 - **`RouteQueryAndHash`**
 
@@ -18,14 +18,14 @@ editLink: false
 
   ↳ [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
-## Properties
+## Propiedades
 
 ### hash
 
-• `Optional` **hash**: `string`
+• `Opcional` **hash**: `string`
 
 ---
 
 ### query
 
-• `Optional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
+• `Opcional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)

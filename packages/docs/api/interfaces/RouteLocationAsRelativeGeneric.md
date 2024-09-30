@@ -8,7 +8,7 @@ editLink: false
 
 Generic version of [RouteLocationAsRelative](../index.md#RouteLocationAsRelative). It is used when no [RouteMap](../index.md#RouteMap) is provided.
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteQueryAndHash`](RouteQueryAndHash.md)
 
@@ -18,17 +18,17 @@ Generic version of [RouteLocationAsRelative](../index.md#RouteLocationAsRelative
 
   ↳↳ [`RouteLocationAsRelativeTyped`](RouteLocationAsRelativeTyped.md)
 
-## Properties
+## Propiedades
 
 ### force
 
-• `Optional` **force**: `boolean`
+• `Opcional` **force**: `boolean`
 
 Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
 is passed.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[force](RouteLocationOptions.md#force)
 
@@ -36,29 +36,29 @@ is passed.
 
 ### hash
 
-• `Optional` **hash**: `string`
+• `Opcional` **hash**: `string`
 
-#### Inherited from
+#### Heredado de
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[hash](RouteQueryAndHash.md#hash)
 
 ---
 
-### name
+### nombre
 
-• `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
-
----
-
-### params
-
-• `Optional` **params**: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
+• **nombre** `Opcional`: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 ---
 
-### path
+### parámetros
 
-• `Optional` **path**: `undefined`
+• **parámetro** `Opcional`: [`RouteParamsRawGeneric`](../index.md#RouteParamsRawGeneric)
+
+---
+
+### ruta
+
+• **ruta** `Opcional`: `undefined`
 
 A relative path to the current location. This property should be removed
 
@@ -66,9 +66,9 @@ A relative path to the current location. This property should be removed
 
 ### query
 
-• `Optional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
+• `Opcional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
 
-#### Inherited from
+#### Heredado de
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[query](RouteQueryAndHash.md#query)
 
@@ -76,11 +76,11 @@ A relative path to the current location. This property should be removed
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Replace the entry in the history instead of pushing a new entry
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[replace](RouteLocationOptions.md#replace)
 
@@ -88,12 +88,12 @@ Replace the entry in the history instead of pushing a new entry
 
 ### state
 
-• `Optional` **state**: [`HistoryState`](HistoryState.md)
+• `Opcional` **state**: [`HistoryState`](HistoryState.md)
 
 State to save using the History API. This cannot contain any reactive
 values and some primitives like Symbols are forbidden. More info at
 https://developer.mozilla.org/en-US/docs/Web/API/History/state
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[state](RouteLocationOptions.md#state)

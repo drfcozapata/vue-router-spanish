@@ -8,13 +8,13 @@ editLink: false
 
 Generic version of [RouteLocationResolved](../index.md#RouteLocationResolved). It is used when no [RouteMap](../index.md#RouteMap) is provided.
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationGeneric`](RouteLocationGeneric.md)
 
   ↳ **`RouteLocationResolvedGeneric`**
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -23,7 +23,7 @@ Generic version of [RouteLocationResolved](../index.md#RouteLocationResolved). I
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[fullPath](RouteLocationGeneric.md#fullPath)
 
@@ -35,7 +35,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[hash](RouteLocationGeneric.md#hash)
 
@@ -57,7 +57,7 @@ Array of [RouteRecord](../index.md#RouteRecord) containing components as they we
 passed when adding records. It can also contain redirect records. This
 can't be used directly. **This property is non-enumerable**.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[matched](RouteLocationGeneric.md#matched)
 
@@ -69,43 +69,43 @@ can't be used directly. **This property is non-enumerable**.
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[meta](RouteLocationGeneric.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[name](RouteLocationGeneric.md#name)
 
 ---
 
-### params
+### parámetros
 
 • **params**: [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)
 
 Object of decoded params extracted from the `path`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[params](RouteLocationGeneric.md#params)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[path](RouteLocationGeneric.md#path)
 
@@ -117,7 +117,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[query](RouteLocationGeneric.md#query)
 
@@ -130,6 +130,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationGeneric](RouteLocationGeneric.md).[redirectedFrom](RouteLocationGeneric.md#redirectedFrom)

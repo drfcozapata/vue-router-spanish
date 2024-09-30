@@ -8,7 +8,7 @@ editLink: false
 
 Internal type for common properties among all kind of [RouteRecordRaw](../index.md#RouteRecordRaw).
 
-## Hierarchy
+## Jerarquía
 
 - [`PathParserOptions`](../index.md#PathParserOptions)
 
@@ -24,11 +24,11 @@ Internal type for common properties among all kind of [RouteRecordRaw](../index.
 
   ↳↳ [`RouteRecordRedirect`](RouteRecordRedirect.md)
 
-## Properties
+## Propiedades
 
 ### alias
 
-• `Optional` **alias**: `string` \| `string`[]
+• `Opcional` **alias**: `string` \| `string`[]
 
 Aliases for the record. Allows defining extra paths that will behave like a
 copy of the record. Allows having paths shorthands like `/users/:id` and
@@ -38,7 +38,7 @@ copy of the record. Allows having paths shorthands like `/users/:id` and
 
 ### beforeEnter
 
-• `Optional` **beforeEnter**: [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> \| [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\>[]
+• `Opcional` **beforeEnter**: [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\> \| [`NavigationGuardWithThis`](NavigationGuardWithThis.md)\<`undefined`\>[]
 
 Before Enter guard specific to this record. Note `beforeEnter` has no
 effect if the record has a `redirect` property.
@@ -47,7 +47,7 @@ effect if the record has a `redirect` property.
 
 ### children
 
-• `Optional` **children**: [`RouteRecordRaw`](../index.md#RouteRecordRaw)[]
+• `Opcional` **children**: [`RouteRecordRaw`](../index.md#RouteRecordRaw)[]
 
 Array of nested routes.
 
@@ -55,7 +55,7 @@ Array of nested routes.
 
 ### end
 
-• `Optional` **end**: `boolean`
+• `Opcional` **end**: `boolean`
 
 Should the RegExp match until the end by appending a `$` to it.
 
@@ -63,7 +63,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 `true`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.end
 
@@ -71,21 +71,21 @@ PathParserOptions.end
 
 ### meta
 
-• `Optional` **meta**: [`RouteMeta`](RouteMeta.md)
+• `Opcional` **meta**: [`RouteMeta`](RouteMeta.md)
 
 Arbitrary data attached to the record.
 
 ---
 
-### name
+### nombre
 
-• `Optional` **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
+• **nombre** `Opcional`: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name for the route record. Must be unique.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
@@ -102,7 +102,7 @@ another record.
 
 ### props
 
-• `Optional` **props**: [`_RouteRecordProps`](../index.md#_RouteRecordProps) \| `Record`\<`string`, [`_RouteRecordProps`](../index.md#_RouteRecordProps)\>
+• `Opcional` **props**: [`_RouteRecordProps`](../index.md#_RouteRecordProps) \| `Record`\<`string`, [`_RouteRecordProps`](../index.md#_RouteRecordProps)\>
 
 Allow passing down params as props to the component rendered by `router-view`.
 
@@ -110,7 +110,7 @@ Allow passing down params as props to the component rendered by `router-view`.
 
 ### redirect
 
-• `Optional` **redirect**: [`RouteRecordRedirectOption`](../index.md#RouteRecordRedirectOption)
+• `Opcional` **redirect**: [`RouteRecordRedirectOption`](../index.md#RouteRecordRedirectOption)
 
 Where to redirect if the route is directly matched. The redirection happens
 before any navigation guard and triggers a new navigation with the new
@@ -120,7 +120,7 @@ target location.
 
 ### sensitive
 
-• `Optional` **sensitive**: `boolean`
+• `Opcional` **sensitive**: `boolean`
 
 Makes the RegExp case-sensitive.
 
@@ -128,7 +128,7 @@ Makes the RegExp case-sensitive.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.sensitive
 
@@ -136,7 +136,7 @@ PathParserOptions.sensitive
 
 ### strict
 
-• `Optional` **strict**: `boolean`
+• `Opcional` **strict**: `boolean`
 
 Whether to disallow a trailing slash or not.
 
@@ -144,6 +144,6 @@ Whether to disallow a trailing slash or not.
 
 `false`
 
-#### Inherited from
+#### Heredado de
 
 PathParserOptions.strict

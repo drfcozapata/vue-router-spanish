@@ -6,33 +6,33 @@ editLink: false
 
 # Interface: NavigationGuardWithThis\<T\>
 
-Navigation Guard with a type parameter for `this`.
+Protector de navegación con un parámetro de tipo para `this`.
 
-**`See`**
+**`Mira`**
 
 [TypesConfig](TypesConfig.md)
 
 ## Parámetros de tipo
 
-| Name |
-| :--- |
-| `T`  |
+| Nombre |
+| :----- |
+| `T`    |
 
-## Callable
+## Invocable
 
 ### NavigationGuardWithThis
 
 ▸ **NavigationGuardWithThis**(`this`, `to`, `from`, `next`): [`_Awaitable`](../index.md#_Awaitable)\<[`NavigationGuardReturn`](../index.md#NavigationGuardReturn)\>
 
-#### Parameters
+#### Parámetros
 
-| Name   | Type                                                                              |
+| Nombre | Tipo                                                                              |
 | :----- | :-------------------------------------------------------------------------------- |
 | `this` | `T`                                                                               |
 | `to`   | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             |
 | `from` | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) |
 | `next` | [`NavigationGuardNext`](NavigationGuardNext.md)                                   |
 
-#### Returns
+#### Retorna
 
 [`_Awaitable`](../index.md#_Awaitable)\<[`NavigationGuardReturn`](../index.md#NavigationGuardReturn)\>

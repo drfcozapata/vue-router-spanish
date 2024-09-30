@@ -8,7 +8,7 @@ editLink: false
 
 Generic version of [RouteLocationNormalized](../index.md#RouteLocationNormalized) that is used when no [RouteMap](../index.md#RouteMap) is provided.
 
-## Hierarchy
+## Jerarquía
 
 - [`_RouteLocationBase`](RouteLocationBase.md)
 
@@ -18,7 +18,7 @@ Generic version of [RouteLocationNormalized](../index.md#RouteLocationNormalized
 
   ↳↳ [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md)
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -27,7 +27,7 @@ Generic version of [RouteLocationNormalized](../index.md#RouteLocationNormalized
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[fullPath](RouteLocationBase.md#fullPath)
 
@@ -39,7 +39,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[hash](RouteLocationBase.md#hash)
 
@@ -59,13 +59,13 @@ Array of [RouteRecordNormalized](RouteRecordNormalized.md)
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[meta](RouteLocationBase.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
@@ -77,7 +77,7 @@ Name of the matched record
 
 ---
 
-### params
+### parámetros
 
 • **params**: [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)
 
@@ -89,13 +89,13 @@ Object of decoded params extracted from the `path`.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[path](RouteLocationBase.md#path)
 
@@ -107,7 +107,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[query](RouteLocationBase.md#query)
 
@@ -120,6 +120,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[redirectedFrom](RouteLocationBase.md#redirectedFrom)

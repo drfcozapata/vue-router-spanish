@@ -8,7 +8,7 @@ editLink: false
 
 Generic version of [RouteLocation](../index.md#RouteLocation). It is used when no [RouteMap](../index.md#RouteMap) is provided.
 
-## Hierarchy
+## Jerarquía
 
 - [`_RouteLocationBase`](RouteLocationBase.md)
 
@@ -18,7 +18,7 @@ Generic version of [RouteLocation](../index.md#RouteLocation). It is used when n
 
   ↳↳ [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md)
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -27,7 +27,7 @@ Generic version of [RouteLocation](../index.md#RouteLocation). It is used when n
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[fullPath](RouteLocationBase.md#fullPath)
 
@@ -39,7 +39,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[hash](RouteLocationBase.md#hash)
 
@@ -61,43 +61,43 @@ can't be used directly. **This property is non-enumerable**.
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[meta](RouteLocationBase.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: `null` \| [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name of the matched record
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[name](RouteLocationBase.md#name)
 
 ---
 
-### params
+### parámetros
 
 • **params**: [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)
 
 Object of decoded params extracted from the `path`.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[params](RouteLocationBase.md#params)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[path](RouteLocationBase.md#path)
 
@@ -109,7 +109,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[query](RouteLocationBase.md#query)
 
@@ -122,6 +122,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [\_RouteLocationBase](RouteLocationBase.md).[redirectedFrom](RouteLocationBase.md#redirectedFrom)

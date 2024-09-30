@@ -6,7 +6,7 @@ editLink: false
 
 # Enumeración: NavigationFailureType
 
-.Enumeración con todos los tipos posibles de fallos de navegación. Puede pasarse a [isNavigationFailure](../index.md#isNavigationFailure) para comprobar fallos específicos.
+Enumeración con todos los tipos posibles de fallos de navegación. Puede pasarse a [isNavigationFailure](../index.md#isNavigationFailure) para comprobar fallos específicos.
 
 ## Miembros de Enumeración
 

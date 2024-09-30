@@ -10,11 +10,11 @@ Return type of [useLink](../index.md#useLink).
 
 ## Parámetros de tipo
 
-| Name   | Type                                                                                        |
+| Nombre | Tipo                                                                                        |
 | :----- | :------------------------------------------------------------------------------------------ |
 | `Name` | extends keyof [`RouteMap`](../index.md#RouteMap) = keyof [`RouteMap`](../index.md#RouteMap) |
 
-## Properties
+## Propiedades
 
 ### href
 
@@ -44,12 +44,12 @@ Return type of [useLink](../index.md#useLink).
 
 ▸ **navigate**(`e?`): `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\>
 
-#### Parameters
+#### Parámetros
 
-| Name | Type         |
-| :--- | :----------- |
-| `e?` | `MouseEvent` |
+| Nombre | Tipo         |
+| :----- | :----------- |
+| `e?`   | `MouseEvent` |
 
-#### Returns
+#### Retorna
 
 `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\>

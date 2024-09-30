@@ -8,13 +8,13 @@ editLink: false
 
 Helper type to define a Typed `RouteRecord`
 
-**`See`**
+**`Mira`**
 
 [RouteRecord](../index.md#RouteRecord)
 
 ## Parámetros de tipo
 
-| Name        | Type                                                                                                                                |
+| Nombre      | Tipo                                                                                                                                |
 | :---------- | :---------------------------------------------------------------------------------------------------------------------------------- |
 | `Name`      | extends `string` \| `symbol` = `string`                                                                                             |
 | `Path`      | extends `string` = `string`                                                                                                         |
@@ -22,7 +22,7 @@ Helper type to define a Typed `RouteRecord`
 | `Params`    | extends [`RouteParamsGeneric`](../index.md#RouteParamsGeneric) = [`RouteParamsGeneric`](../index.md#RouteParamsGeneric)             |
 | `Meta`      | extends [`RouteMeta`](RouteMeta.md) = [`RouteMeta`](RouteMeta.md)                                                                   |
 
-## Properties
+## Propiedades
 
 ### meta
 
@@ -30,24 +30,24 @@ Helper type to define a Typed `RouteRecord`
 
 ---
 
-### name
+### nombre
 
 • **name**: `Name`
 
 ---
 
-### params
+### parámetros
 
 • **params**: `Params`
 
 ---
 
-### paramsRaw
+### parámetrosRaw
 
 • **paramsRaw**: `ParamsRaw`
 
 ---
 
-### path
+### ruta
 
 • **path**: `Path`

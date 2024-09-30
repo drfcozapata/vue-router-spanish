@@ -8,13 +8,13 @@ editLink: false
 
 Normalized version of a [route record](../index.md#RouteRecord).
 
-## Hierarchy
+## Jerarquía
 
 - **`RouteRecordNormalized`**
 
   ↳ [`RouteLocationMatched`](RouteLocationMatched.md)
 
-## Properties
+## Propiedades
 
 ### aliasOf
 
@@ -95,7 +95,7 @@ Contains the original modules for lazy loaded components.
 
 ---
 
-### name
+### nombre
 
 • **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
@@ -103,7 +103,7 @@ Name for the route record. Must be unique.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 

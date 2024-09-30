@@ -10,28 +10,28 @@ Helper to generate a type safe version of the [RouteLocationAsRelative](../index
 
 ## Parámetros de tipo
 
-| Name       | Type                                                                                                        |
+| Nombre     | Tipo                                                                                                        |
 | :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
 | `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md)
 
   ↳ **`RouteLocationAsRelativeTyped`**
 
-## Properties
+## Propiedades
 
 ### force
 
-• `Optional` **force**: `boolean`
+• `Opcional` **force**: `boolean`
 
 Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
 is passed.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[force](RouteLocationAsRelativeGeneric.md#force)
 
@@ -39,17 +39,17 @@ is passed.
 
 ### hash
 
-• `Optional` **hash**: `string`
+• `Opcional` **hash**: `string`
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[hash](RouteLocationAsRelativeGeneric.md#hash)
 
 ---
 
-### name
+### nombre
 
-• `Optional` **name**: `Extract`\<`Name`, `string` \| `symbol`\>
+• **nombre** `Opcional`: `Extract`\<`Name`, `string` \| `symbol`\>
 
 #### Overrides
 
@@ -57,9 +57,9 @@ is passed.
 
 ---
 
-### params
+### parámetros
 
-• `Optional` **params**: `RouteMap`[`Name`][``"paramsRaw"``]
+• **parámetro** `Opcional`: `RouteMap`[`Name`][``"paramsRaw"``]
 
 #### Overrides
 
@@ -67,13 +67,13 @@ is passed.
 
 ---
 
-### path
+### ruta
 
-• `Optional` **path**: `undefined`
+• **ruta** `Opcional`: `undefined`
 
 A relative path to the current location. This property should be removed
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[path](RouteLocationAsRelativeGeneric.md#path)
 
@@ -81,9 +81,9 @@ A relative path to the current location. This property should be removed
 
 ### query
 
-• `Optional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
+• `Opcional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[query](RouteLocationAsRelativeGeneric.md#query)
 
@@ -91,11 +91,11 @@ A relative path to the current location. This property should be removed
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Replace the entry in the history instead of pushing a new entry
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[replace](RouteLocationAsRelativeGeneric.md#replace)
 
@@ -103,12 +103,12 @@ Replace the entry in the history instead of pushing a new entry
 
 ### state
 
-• `Optional` **state**: [`HistoryState`](HistoryState.md)
+• `Opcional` **state**: [`HistoryState`](HistoryState.md)
 
 State to save using the History API. This cannot contain any reactive
 values and some primitives like Symbols are forbidden. More info at
 https://developer.mozilla.org/en-US/docs/Web/API/History/state
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsRelativeGeneric](RouteLocationAsRelativeGeneric.md).[state](RouteLocationAsRelativeGeneric.md#state)

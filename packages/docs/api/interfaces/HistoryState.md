@@ -6,7 +6,7 @@ editLink: false
 
 # Interface: HistoryState
 
-Allowed HTML history.state
+HTML history.state permitido
 
 ## Indexable
 

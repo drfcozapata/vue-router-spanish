@@ -6,15 +6,15 @@ editLink: false
 
 # Interface: NavigationGuardNext
 
-`next()` callback passed to navigation guards.
+Callback `next()` pasado a los protectores de navegación.
 
-## Callable
+## Invocable
 
 ### NavigationGuardNext
 
 ▸ **NavigationGuardNext**(): `void`
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -22,13 +22,13 @@ editLink: false
 
 ▸ **NavigationGuardNext**(`error`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name    | Type    |
+| Nombre  | Tipo    |
 | :------ | :------ |
 | `error` | `Error` |
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -36,13 +36,13 @@ editLink: false
 
 ▸ **NavigationGuardNext**(`location`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name       | Type                                                                                                                                               |
+| Nombre     | Tipo                                                                                                                                               |
 | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `location` | `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md) |
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -50,13 +50,13 @@ editLink: false
 
 ▸ **NavigationGuardNext**(`valid`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name    | Type                     |
+| Nombre  | Tipo                     |
 | :------ | :----------------------- |
 | `valid` | `undefined` \| `boolean` |
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -64,12 +64,12 @@ editLink: false
 
 ▸ **NavigationGuardNext**(`cb`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name | Type                                                                     |
-| :--- | :----------------------------------------------------------------------- |
-| `cb` | [`NavigationGuardNextCallback`](../index.md#NavigationGuardNextCallback) |
+| Nombre | Tipo                                                                     |
+| :----- | :----------------------------------------------------------------------- |
+| `cb`   | [`NavigationGuardNextCallback`](../index.md#NavigationGuardNextCallback) |
 
-#### Returns
+#### Retorna
 
 `void`

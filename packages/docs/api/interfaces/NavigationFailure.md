@@ -6,49 +6,49 @@ editLink: false
 
 # Interface: NavigationFailure
 
-Extended Error that contains extra information regarding a failed navigation.
+Error Extendido que contiene información extra sobre una navegación fallida.
 
-## Hierarchy
+## Jerarquía
 
 - `Error`
 
   ↳ **`NavigationFailure`**
 
-## Properties
+## Propiedades
 
-### cause
+### causa
 
-• `Optional` **cause**: `unknown`
+• **causa** `Opcional`: `unknown`
 
-#### Inherited from
+#### Heredado de
 
 Error.cause
 
 ---
 
-### from
+### desde
 
-• **from**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
+• **desde**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
 
-Route location we were navigating from
+Ubicación de la ruta desde la que navegábamos
 
 ---
 
-### message
+### mensaje
 
-• **message**: `string`
+• **mensaje**: `string`
 
-#### Inherited from
+#### Heredado de
 
 Error.message
 
 ---
 
-### name
+### nombre
 
-• **name**: `string`
+• **nombre**: `string`
 
-#### Inherited from
+#### Heredado de
 
 Error.name
 
@@ -56,24 +56,24 @@ Error.name
 
 ### stack
 
-• `Optional` **stack**: `string`
+• **stack** `Opcional`: `string`
 
-#### Inherited from
+#### Heredado de
 
 Error.stack
 
 ---
 
-### to
+### hacia
 
-• **to**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
+• **hacia**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
 
-Route location we were navigating to
+Ubicación de la ruta hacia la que navegábamos
 
 ---
 
-### type
+### tipo
 
-• **type**: [`NAVIGATION_ABORTED`](../enums/ErrorTypes.md#NAVIGATION_ABORTED) \| [`NAVIGATION_CANCELLED`](../enums/ErrorTypes.md#NAVIGATION_CANCELLED) \| [`NAVIGATION_DUPLICATED`](../enums/ErrorTypes.md#NAVIGATION_DUPLICATED)
+• **tipo**: [`NAVIGATION_ABORTED`](../enums/ErrorTypes.md#NAVIGATION_ABORTED) \| [`NAVIGATION_CANCELLED`](../enums/ErrorTypes.md#NAVIGATION_CANCELLED) \| [`NAVIGATION_DUPLICATED`](../enums/ErrorTypes.md#NAVIGATION_DUPLICATED)
 
-Type of the navigation. One of [NavigationFailureType](../enums/NavigationFailureType.md)
+Tipo de navegación. Uno de [NavigationFailureType](../enums/NavigationFailureType.md)

@@ -10,18 +10,18 @@ Helper to generate a type safe version of the [RouteLocationNormalizedLoaded](..
 
 ## Parámetros de tipo
 
-| Name       | Type                                                                                                        |
+| Nombre     | Tipo                                                                                                        |
 | :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
 | `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md)
 
   ↳ **`RouteLocationNormalizedLoadedTyped`**
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -30,7 +30,7 @@ Helper to generate a type safe version of the [RouteLocationNormalizedLoaded](..
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[fullPath](RouteLocationNormalizedLoadedGeneric.md#fullPath)
 
@@ -42,7 +42,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[hash](RouteLocationNormalizedLoadedGeneric.md#hash)
 
@@ -57,7 +57,7 @@ lazy-loaded components have been loaded and were replaced inside the
 `components` object) so it can be directly used to display routes. It
 cannot contain redirect records either. **This property is non-enumerable**.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[matched](RouteLocationNormalizedLoadedGeneric.md#matched)
 
@@ -69,13 +69,13 @@ cannot contain redirect records either. **This property is non-enumerable**.
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[meta](RouteLocationNormalizedLoadedGeneric.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: `Extract`\<`Name`, `string` \| `symbol`\>
 
@@ -87,7 +87,7 @@ Name of the matched record
 
 ---
 
-### params
+### parámetros
 
 • **params**: `RouteMap`[`Name`][``"params"``]
 
@@ -99,13 +99,13 @@ Object of decoded params extracted from the `path`.
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[path](RouteLocationNormalizedLoadedGeneric.md#path)
 
@@ -117,7 +117,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[query](RouteLocationNormalizedLoadedGeneric.md#query)
 
@@ -130,6 +130,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationNormalizedLoadedGeneric](RouteLocationNormalizedLoadedGeneric.md).[redirectedFrom](RouteLocationNormalizedLoadedGeneric.md#redirectedFrom)

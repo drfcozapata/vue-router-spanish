@@ -8,30 +8,30 @@ editLink: false
 
 Internal RouterMatcher
 
-## Properties
+## Propiedades
 
 ### addRoute
 
 • **addRoute**: (`record`: [`RouteRecordRaw`](../index.md#RouteRecordRaw), `parent?`: `RouteRecordMatcher`) => () => `void`
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (`record`, `parent?`): () => `void`
 
-##### Parameters
+##### Parámetros
 
-| Name      | Type                                           |
+| Nombre    | Tipo                                           |
 | :-------- | :--------------------------------------------- |
 | `record`  | [`RouteRecordRaw`](../index.md#RouteRecordRaw) |
 | `parent?` | `RouteRecordMatcher`                           |
 
-##### Returns
+##### Retorna
 
 `fn`
 
 ▸ (): `void`
 
-##### Returns
+##### Retorna
 
 `void`
 
@@ -41,11 +41,11 @@ Internal RouterMatcher
 
 • **clearRoutes**: () => `void`
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (): `void`
 
-##### Returns
+##### Retorna
 
 `void`
 
@@ -55,17 +55,17 @@ Internal RouterMatcher
 
 • **getRecordMatcher**: (`name`: `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\>) => `undefined` \| `RouteRecordMatcher`
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (`name`): `undefined` \| `RouteRecordMatcher`
 
-##### Parameters
+##### Parámetros
 
-| Name   | Type                                                                            |
+| Nombre | Tipo                                                                            |
 | :----- | :------------------------------------------------------------------------------ |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> |
 
-##### Returns
+##### Retorna
 
 `undefined` \| `RouteRecordMatcher`
 
@@ -75,11 +75,11 @@ Internal RouterMatcher
 
 • **getRoutes**: () => `RouteRecordMatcher`[]
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (): `RouteRecordMatcher`[]
 
-##### Returns
+##### Retorna
 
 `RouteRecordMatcher`[]
 
@@ -99,20 +99,20 @@ MatcherLocationRaw to resolve to a url
 
 MatcherLocation of the current location
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ (`location`, `currentLocation`): [`MatcherLocation`](MatcherLocation.md)
 
 Resolves a location. Gives access to the route record that corresponds to the actual path as well as filling the corresponding params objects
 
-##### Parameters
+##### Parámetros
 
-| Name              | Type                                    | Description                             |
+| Nombre            | Tipo                                    | Descripción                             |
 | :---------------- | :-------------------------------------- | :-------------------------------------- |
 | `location`        | `MatcherLocationRaw`                    | MatcherLocationRaw to resolve to a url  |
 | `currentLocation` | [`MatcherLocation`](MatcherLocation.md) | MatcherLocation of the current location |
 
-##### Returns
+##### Retorna
 
 [`MatcherLocation`](MatcherLocation.md)
 
@@ -122,24 +122,24 @@ Resolves a location. Gives access to the route record that corresponds to the ac
 
 ▸ **removeRoute**(`matcher`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name      | Type                 |
+| Nombre    | Tipo                 |
 | :-------- | :------------------- |
 | `matcher` | `RouteRecordMatcher` |
 
-#### Returns
+#### Retorna
 
 `void`
 
 ▸ **removeRoute**(`name`): `void`
 
-#### Parameters
+#### Parámetros
 
-| Name   | Type                                                                            |
+| Nombre | Tipo                                                                            |
 | :----- | :------------------------------------------------------------------------------ |
 | `name` | `NonNullable`\<[`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)\> |
 
-#### Returns
+#### Retorna
 
 `void`

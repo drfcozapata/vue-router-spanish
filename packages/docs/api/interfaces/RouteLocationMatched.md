@@ -8,13 +8,13 @@ editLink: false
 
 Normalized version of a [route record](../index.md#RouteRecord).
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteRecordNormalized`](RouteRecordNormalized.md)
 
   ↳ **`RouteLocationMatched`**
 
-## Properties
+## Propiedades
 
 ### aliasOf
 
@@ -23,7 +23,7 @@ Normalized version of a [route record](../index.md#RouteRecord).
 Defines if this record is the alias of another one. This property is
 `undefined` if the record is the original one.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[aliasOf](RouteRecordNormalized.md#aliasOf)
 
@@ -35,7 +35,7 @@ Defines if this record is the alias of another one. This property is
 
 Registered beforeEnter guards
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[beforeEnter](RouteRecordNormalized.md#beforeEnter)
 
@@ -47,7 +47,7 @@ Registered beforeEnter guards
 
 Nested route records.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[children](RouteRecordNormalized.md#children)
 
@@ -71,7 +71,7 @@ Components to display when the URL matches this route. Allow using named views.
 
 Registered beforeRouteEnter callbacks passed to `next` or returned in guards
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[enterCallbacks](RouteRecordNormalized.md#enterCallbacks)
 
@@ -89,7 +89,7 @@ view, basically duplicating the content on the page, which shouldn't happen
 in practice. It will work if multiple apps are rendering different named
 views.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[instances](RouteRecordNormalized.md#instances)
 
@@ -101,7 +101,7 @@ views.
 
 Registered leave guards
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[leaveGuards](RouteRecordNormalized.md#leaveGuards)
 
@@ -113,7 +113,7 @@ Registered leave guards
 
 Arbitrary data attached to the record.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[meta](RouteRecordNormalized.md#meta)
 
@@ -125,32 +125,32 @@ Arbitrary data attached to the record.
 
 Contains the original modules for lazy loaded components.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[mods](RouteRecordNormalized.md#mods)
 
 ---
 
-### name
+### nombre
 
 • **name**: [`RouteRecordNameGeneric`](../index.md#RouteRecordNameGeneric)
 
 Name for the route record. Must be unique.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[name](RouteRecordNormalized.md#name)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Path of the record. Should start with `/` unless the record is the child of
 another record.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[path](RouteRecordNormalized.md#path)
 
@@ -164,7 +164,7 @@ Allow passing down params as props to the component rendered by
 `router-view`. Should be an object with the same keys as `components` or a
 boolean to be applied to every component.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[props](RouteRecordNormalized.md#props)
 
@@ -178,7 +178,7 @@ Where to redirect if the route is directly matched. The redirection happens
 before any navigation guard and triggers a new navigation with the new
 target location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[redirect](RouteRecordNormalized.md#redirect)
 
@@ -190,6 +190,6 @@ target location.
 
 Registered update guards
 
-#### Inherited from
+#### Heredado de
 
 [RouteRecordNormalized](RouteRecordNormalized.md).[updateGuards](RouteRecordNormalized.md#updateGuards)

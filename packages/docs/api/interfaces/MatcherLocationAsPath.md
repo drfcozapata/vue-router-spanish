@@ -6,14 +6,14 @@ editLink: false
 
 # Interface: MatcherLocationAsPath
 
-## Hierarchy
+## Jerarquía
 
 - **`MatcherLocationAsPath`**
 
   ↳ [`RouteLocationPathRaw`](RouteLocationPathRaw.md)
 
-## Properties
+## Propiedades
 
-### path
+### ruta
 
 • **path**: `string`

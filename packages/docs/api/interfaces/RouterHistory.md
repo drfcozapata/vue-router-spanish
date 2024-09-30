@@ -9,7 +9,7 @@ editLink: false
 Interface implemented by History implementations that can be passed to the
 router as Router.history
 
-## Properties
+## Propiedades
 
 ### base
 
@@ -43,13 +43,13 @@ Current History state
 
 Generates the corresponding href to be used in an anchor tag.
 
-#### Parameters
+#### Parámetros
 
-| Name       | Type     | Description                                 |
+| Nombre     | Tipo     | Descripción                                 |
 | :--------- | :------- | :------------------------------------------ |
 | `location` | `string` | history location that should create an href |
 
-#### Returns
+#### Retorna
 
 `string`
 
@@ -61,7 +61,7 @@ Generates the corresponding href to be used in an anchor tag.
 
 Clears any event listener attached by the history implementation.
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -73,14 +73,14 @@ Clears any event listener attached by the history implementation.
 
 Traverses history in a given direction.
 
-#### Parameters
+#### Parámetros
 
-| Name                | Type      | Description                                                                                                        |
+| Nombre              | Tipo      | Descripción                                                                                                        |
 | :------------------ | :-------- | :----------------------------------------------------------------------------------------------------------------- |
 | `delta`             | `number`  | distance to travel. If delta is \< 0, it will go back, if it's \> 0, it will go forward by that amount of entries. |
 | `triggerListeners?` | `boolean` | whether this should trigger listeners attached to the history                                                      |
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -102,13 +102,13 @@ navigation is triggered from outside (like the Browser back and forward
 buttons) or when passing `true` to RouterHistory.back and
 RouterHistory.forward
 
-#### Parameters
+#### Parámetros
 
-| Name       | Type                 | Description        |
+| Nombre     | Tipo                 | Descripción        |
 | :--------- | :------------------- | :----------------- |
 | `callback` | `NavigationCallback` | listener to attach |
 
-#### Returns
+#### Retorna
 
 `fn`
 
@@ -116,7 +116,7 @@ a callback to remove the listener
 
 ▸ (): `void`
 
-##### Returns
+##### Retorna
 
 `void`
 
@@ -129,14 +129,14 @@ a callback to remove the listener
 Navigates to a location. In the case of an HTML5 History implementation,
 this will call `history.pushState` to effectively change the URL.
 
-#### Parameters
+#### Parámetros
 
-| Name    | Type                              | Description                                                                         |
+| Nombre  | Tipo                              | Descripción                                                                         |
 | :------ | :-------------------------------- | :---------------------------------------------------------------------------------- |
 | `to`    | `string`                          | location to push                                                                    |
 | `data?` | [`HistoryState`](HistoryState.md) | optional [HistoryState](HistoryState.md) to be associated with the navigation entry |
 
-#### Returns
+#### Retorna
 
 `void`
 
@@ -149,13 +149,13 @@ this will call `history.pushState` to effectively change the URL.
 Same as [RouterHistory.push](RouterHistory.md#push) but performs a `history.replaceState`
 instead of `history.pushState`
 
-#### Parameters
+#### Parámetros
 
-| Name    | Type                              | Description                                                                         |
+| Nombre  | Tipo                              | Descripción                                                                         |
 | :------ | :-------------------------------- | :---------------------------------------------------------------------------------- |
 | `to`    | `string`                          | location to set                                                                     |
 | `data?` | [`HistoryState`](HistoryState.md) | optional [HistoryState](HistoryState.md) to be associated with the navigation entry |
 
-#### Returns
+#### Retorna
 
 `void`

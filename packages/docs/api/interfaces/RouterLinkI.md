@@ -15,17 +15,17 @@ automatically for JSX.
 
 • **new \_RouterLinkI**(): `Object`
 
-#### Returns
+#### Retorna
 
 `Object`
 
-| Name              | Type                                                                                                                                                                                                                                                                                                                                                                                     |
+| Nombre            | Tipo                                                                                                                                                                                                                                                                                                                                                                                     |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `$props`          | `AllowedComponentProps` & `ComponentCustomProps` & `VNodeProps` & [`RouterLinkProps`](RouterLinkProps.md)                                                                                                                                                                                                                                                                                |
 | `$slots`          | \{ `default?`: (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\> }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[] } |
 | `$slots.default?` | (`__namedParameters`: \{ `href`: `string` ; `isActive`: `boolean` ; `isExactActive`: `boolean` ; `route`: [`RouteLocationResolvedGeneric`](RouteLocationResolvedGeneric.md) ; `navigate`: (`e?`: `MouseEvent`) => `Promise`\<`void` \| [`NavigationFailure`](NavigationFailure.md)\> }) => `VNode`\<`RendererNode`, `RendererElement`, \{ `[key: string]`: `any`; }\>[]                  |
 
-## Properties
+## Propiedades
 
 ### useLink
 
@@ -33,7 +33,7 @@ automatically for JSX.
 
 Access to `useLink()` without depending on using vue-router
 
-#### Type declaration
+#### Declaración de tipo
 
 ▸ \<`Name`\>(`props`): [`UseLinkReturn`](UseLinkReturn.md)\<`Name`\>
 
@@ -41,16 +41,16 @@ Access to `useLink()` without depending on using vue-router
 
 ##### Parámetros de tipo
 
-| Name   | Type                                                |
+| Nombre | Tipo                                                |
 | :----- | :-------------------------------------------------- |
 | `Name` | extends `string` \| `symbol` = `string` \| `symbol` |
 
-##### Parameters
+##### Parámetros
 
-| Name    | Type                                            |
+| Nombre  | Tipo                                            |
 | :------ | :---------------------------------------------- |
 | `props` | [`UseLinkOptions`](UseLinkOptions.md)\<`Name`\> |
 
-##### Returns
+##### Retorna
 
 [`UseLinkReturn`](UseLinkReturn.md)\<`Name`\>

@@ -8,7 +8,7 @@ editLink: false
 
 Common options for all navigation methods.
 
-## Hierarchy
+## Jerarquía
 
 - **`RouteLocationOptions`**
 
@@ -20,11 +20,11 @@ Common options for all navigation methods.
 
   ↳ [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
-## Properties
+## Propiedades
 
 ### force
 
-• `Optional` **force**: `boolean`
+• `Opcional` **force**: `boolean`
 
 Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
@@ -34,7 +34,7 @@ is passed.
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Replace the entry in the history instead of pushing a new entry
 
@@ -42,7 +42,7 @@ Replace the entry in the history instead of pushing a new entry
 
 ### state
 
-• `Optional` **state**: [`HistoryState`](HistoryState.md)
+• `Opcional` **state**: [`HistoryState`](HistoryState.md)
 
 State to save using the History API. This cannot contain any reactive
 values and some primitives like Symbols are forbidden. More info at

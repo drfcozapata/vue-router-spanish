@@ -10,18 +10,18 @@ Helper to generate a type safe version of the [RouteLocationResolved](../index.m
 
 ## Parámetros de tipo
 
-| Name       | Type                                                     |
+| Nombre     | Tipo                                                     |
 | :--------- | :------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
 | `Name`     | extends keyof `RouteMap`                                 |
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationTyped`](RouteLocationTyped.md)\<`RouteMap`, `Name`\>
 
   ↳ **`RouteLocationResolvedTyped`**
 
-## Properties
+## Propiedades
 
 ### fullPath
 
@@ -30,7 +30,7 @@ Helper to generate a type safe version of the [RouteLocationResolved](../index.m
 The whole location including the `search` and `hash`. This string is
 percentage encoded.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[fullPath](RouteLocationTyped.md#fullPath)
 
@@ -42,7 +42,7 @@ percentage encoded.
 
 Hash of the current location. If present, starts with a `#`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[hash](RouteLocationTyped.md#hash)
 
@@ -64,7 +64,7 @@ Array of [RouteRecord](../index.md#RouteRecord) containing components as they we
 passed when adding records. It can also contain redirect records. This
 can't be used directly. **This property is non-enumerable**.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[matched](RouteLocationTyped.md#matched)
 
@@ -76,43 +76,43 @@ can't be used directly. **This property is non-enumerable**.
 
 Merged `meta` properties from all the matched route records.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[meta](RouteLocationTyped.md#meta)
 
 ---
 
-### name
+### nombre
 
 • **name**: `Extract`\<`Name`, `string` \| `symbol`\>
 
 Name of the matched record
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[name](RouteLocationTyped.md#name)
 
 ---
 
-### params
+### parámetros
 
 • **params**: `RouteMap`[`Name`][``"params"``]
 
 Object of decoded params extracted from the `path`.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[params](RouteLocationTyped.md#params)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
 Percentage encoded pathname section of the URL.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[path](RouteLocationTyped.md#path)
 
@@ -124,7 +124,7 @@ Percentage encoded pathname section of the URL.
 
 Object representation of the `search` property of the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[query](RouteLocationTyped.md#query)
 
@@ -137,6 +137,6 @@ Object representation of the `search` property of the current location.
 Contains the location we were initially trying to access before ending up
 on the current location.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationTyped](RouteLocationTyped.md).[redirectedFrom](RouteLocationTyped.md#redirectedFrom)

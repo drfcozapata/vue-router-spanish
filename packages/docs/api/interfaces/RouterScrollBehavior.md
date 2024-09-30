@@ -8,20 +8,20 @@ editLink: false
 
 Type of the `scrollBehavior` option that can be passed to `createRouter`.
 
-## Callable
+## Invocable
 
 ### RouterScrollBehavior
 
 ▸ **RouterScrollBehavior**(`to`, `from`, `savedPosition`): `Awaitable`\<`false` \| `void` \| `ScrollPosition`\>
 
-#### Parameters
+#### Parámetros
 
-| Name            | Type                                                                              | Description                                   |
+| Nombre          | Tipo                                                                              | Descripción                                   |
 | :-------------- | :-------------------------------------------------------------------------------- | :-------------------------------------------- |
 | `to`            | [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)             | Route location where we are navigating to     |
 | `from`          | [`RouteLocationNormalizedLoadedGeneric`](RouteLocationNormalizedLoadedGeneric.md) | Route location where we are navigating from   |
 | `savedPosition` | `null` \| `_ScrollPositionNormalized`                                             | saved position if it exists, `null` otherwise |
 
-#### Returns
+#### Retorna
 
 `Awaitable`\<`false` \| `void` \| `ScrollPosition`\>

@@ -6,11 +6,11 @@ editLink: false
 
 # Interface: \_PathParserOptions
 
-## Properties
+## Propiedades
 
 ### end
 
-• `Optional` **end**: `boolean`
+• `Opcional` **end**: `boolean`
 
 Should the RegExp match until the end by appending a `$` to it.
 
@@ -22,7 +22,7 @@ Should the RegExp match until the end by appending a `$` to it.
 
 ### sensitive
 
-• `Optional` **sensitive**: `boolean`
+• `Opcional` **sensitive**: `boolean`
 
 Makes the RegExp case-sensitive.
 
@@ -34,7 +34,7 @@ Makes the RegExp case-sensitive.
 
 ### start
 
-• `Optional` **start**: `boolean`
+• `Opcional` **start**: `boolean`
 
 Should the RegExp match from the beginning by prepending a `^` to it.
 
@@ -46,7 +46,7 @@ Should the RegExp match from the beginning by prepending a `^` to it.
 
 ### strict
 
-• `Optional` **strict**: `boolean`
+• `Opcional` **strict**: `boolean`
 
 Whether to disallow a trailing slash or not.
 

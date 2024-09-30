@@ -8,7 +8,7 @@ editLink: false
 
 Route Location that can infer the possible paths.
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteQueryAndHash`](RouteQueryAndHash.md)
 
@@ -18,17 +18,17 @@ Route Location that can infer the possible paths.
 
   ↳ **`RouteLocationPathRaw`**
 
-## Properties
+## Propiedades
 
 ### force
 
-• `Optional` **force**: `boolean`
+• `Opcional` **force**: `boolean`
 
 Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
 is passed.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[force](RouteLocationOptions.md#force)
 
@@ -36,19 +36,19 @@ is passed.
 
 ### hash
 
-• `Optional` **hash**: `string`
+• `Opcional` **hash**: `string`
 
-#### Inherited from
+#### Heredado de
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[hash](RouteQueryAndHash.md#hash)
 
 ---
 
-### path
+### ruta
 
 • **path**: `string`
 
-#### Inherited from
+#### Heredado de
 
 [MatcherLocationAsPath](MatcherLocationAsPath.md).[path](MatcherLocationAsPath.md#path)
 
@@ -56,9 +56,9 @@ is passed.
 
 ### query
 
-• `Optional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
+• `Opcional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
 
-#### Inherited from
+#### Heredado de
 
 [RouteQueryAndHash](RouteQueryAndHash.md).[query](RouteQueryAndHash.md#query)
 
@@ -66,11 +66,11 @@ is passed.
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Replace the entry in the history instead of pushing a new entry
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[replace](RouteLocationOptions.md#replace)
 
@@ -78,12 +78,12 @@ Replace the entry in the history instead of pushing a new entry
 
 ### state
 
-• `Optional` **state**: [`HistoryState`](HistoryState.md)
+• `Opcional` **state**: [`HistoryState`](HistoryState.md)
 
 State to save using the History API. This cannot contain any reactive
 values and some primitives like Symbols are forbidden. More info at
 https://developer.mozilla.org/en-US/docs/Web/API/History/state
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationOptions](RouteLocationOptions.md).[state](RouteLocationOptions.md#state)

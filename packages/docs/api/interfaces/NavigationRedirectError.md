@@ -6,53 +6,53 @@ editLink: false
 
 # Interface: NavigationRedirectError
 
-Internal error used to detect a redirection.
+Error interno utilizado para detectar una redirección.
 
-## Hierarchy
+## Jerarquía
 
 - `Omit`\<[`NavigationFailure`](NavigationFailure.md), `"to"` \| `"type"`\>
 
   ↳ **`NavigationRedirectError`**
 
-## Properties
+## Propiedades
 
-### cause
+### causa
 
-• `Optional` **cause**: `unknown`
+• **causa** `Opcional`: `unknown`
 
-#### Inherited from
+#### Heredado de
 
 Omit.cause
 
 ---
 
-### from
+### desde
 
-• **from**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
+• **desde**: [`RouteLocationNormalizedGeneric`](RouteLocationNormalizedGeneric.md)
 
-Route location we were navigating from
+Ubicación de la ruta desde la que navegamos
 
-#### Inherited from
+#### Heredado de
 
 Omit.from
 
 ---
 
-### message
+### mensaje
 
-• **message**: `string`
+• **mensaje**: `string`
 
-#### Inherited from
+#### Heredado de
 
 Omit.message
 
 ---
 
-### name
+### nombre
 
-• **name**: `string`
+• **nombre**: `string`
 
-#### Inherited from
+#### Heredado de
 
 Omit.name
 
@@ -60,20 +60,20 @@ Omit.name
 
 ### stack
 
-• `Optional` **stack**: `string`
+• **stack** `Opcional`: `string`
 
-#### Inherited from
+#### Heredado de
 
 Omit.stack
 
 ---
 
-### to
+### hacia
 
-• **to**: `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
+• **hacia**: `string` \| [`RouteLocationAsRelativeGeneric`](RouteLocationAsRelativeGeneric.md) \| [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
 ---
 
-### type
+### tipo
 
-• **type**: [`NAVIGATION_GUARD_REDIRECT`](../enums/ErrorTypes.md#NAVIGATION_GUARD_REDIRECT)
+• **tipo**: [`NAVIGATION_GUARD_REDIRECT`](../enums/ErrorTypes.md#NAVIGATION_GUARD_REDIRECT)

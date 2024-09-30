@@ -10,28 +10,28 @@ Helper to generate a type safe version of the [RouteLocationAsPath](../index.md#
 
 ## Parámetros de tipo
 
-| Name       | Type                                                                                                        |
+| Nombre     | Tipo                                                                                                        |
 | :--------- | :---------------------------------------------------------------------------------------------------------- |
 | `RouteMap` | extends [`RouteMapGeneric`](../index.md#RouteMapGeneric) = [`RouteMapGeneric`](../index.md#RouteMapGeneric) |
 | `Name`     | extends keyof `RouteMap` = keyof `RouteMap`                                                                 |
 
-## Hierarchy
+## Jerarquía
 
 - [`RouteLocationAsPathGeneric`](RouteLocationAsPathGeneric.md)
 
   ↳ **`RouteLocationAsPathTyped`**
 
-## Properties
+## Propiedades
 
 ### force
 
-• `Optional` **force**: `boolean`
+• `Opcional` **force**: `boolean`
 
 Triggers the navigation even if the location is the same as the current one.
 Note this will also add a new entry to the history unless `replace: true`
 is passed.
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[force](RouteLocationAsPathGeneric.md#force)
 
@@ -39,15 +39,15 @@ is passed.
 
 ### hash
 
-• `Optional` **hash**: `string`
+• `Opcional` **hash**: `string`
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[hash](RouteLocationAsPathGeneric.md#hash)
 
 ---
 
-### path
+### ruta
 
 • **path**: `_LiteralUnion`\<`RouteMap`[`Name`][``"path"``]\>
 
@@ -61,9 +61,9 @@ Percentage encoded pathname section of the URL.
 
 ### query
 
-• `Optional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
+• `Opcional` **query**: [`LocationQueryRaw`](../index.md#LocationQueryRaw)
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[query](RouteLocationAsPathGeneric.md#query)
 
@@ -71,11 +71,11 @@ Percentage encoded pathname section of the URL.
 
 ### replace
 
-• `Optional` **replace**: `boolean`
+• `Opcional` **replace**: `boolean`
 
 Replace the entry in the history instead of pushing a new entry
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[replace](RouteLocationAsPathGeneric.md#replace)
 
@@ -83,12 +83,12 @@ Replace the entry in the history instead of pushing a new entry
 
 ### state
 
-• `Optional` **state**: [`HistoryState`](HistoryState.md)
+• `Opcional` **state**: [`HistoryState`](HistoryState.md)
 
 State to save using the History API. This cannot contain any reactive
 values and some primitives like Symbols are forbidden. More info at
 https://developer.mozilla.org/en-US/docs/Web/API/History/state
 
-#### Inherited from
+#### Heredado de
 
 [RouteLocationAsPathGeneric](RouteLocationAsPathGeneric.md).[state](RouteLocationAsPathGeneric.md#state)
