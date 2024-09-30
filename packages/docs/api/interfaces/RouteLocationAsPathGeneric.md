@@ -6,7 +6,7 @@ editLink: false
 
 # Interface: RouteLocationAsPathGeneric
 
-Generic version of [RouteLocationAsPath](../index.md#RouteLocationAsPath). It is used when no [RouteMap](../index.md#RouteMap) is provided.
+Versión genérica de [RouteLocationAsPath](../index.md#RouteLocationAsPath). Ésta se utiliza cuando no se proporciona [RouteMap](../index.md#RouteMap).
 
 ## Jerarquía
 
